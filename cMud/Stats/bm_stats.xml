@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<cmud>
+  <class name="Stats">
+    <var name="xp">1002572128</var>
+    <var name="to_lev">-2572128</var>
+    <trigger priority="80" newline="false" prompt="true" enabled="false">
+      <pattern>&lt; %1 %2 &gt;</pattern>
+      <value><![CDATA[avg_hp = (@hp/ @mhp)
+avg_mv = (@mv/@mmv)
+avg_mp = (@mp/@mmp)
+per_mv = (@avg_mv*100)
+per_hp = (@avg_hp*100)
+
+#if (@per_hp > 98) {
+    hp_status = %ansi(bold,green)@hp":" %ansi(bold,green)%round(@per_hp)
+}
+#if ((@per_hp < 98) & (@per_hp > 74)) {
+    hp_status = %ansi(bold,cyan)@hp":" %ansi(bold,cyan)%round(@per_hp)
+}
+#if ((@per_hp < 74) & (@per_hp > 49)) {
+    hp_status = %ansi(bold,white)@hp":" %ansi(bold,white)%round(@per_hp)
+}
+#if ((@per_hp < 49) & (@per_hp > 24)) {
+    hp_status = %ansi(bold,yellow)@hp":" %ansi(bold,yellow)%round(@per_hp)
+}
+#if ((@per_hp < 24) & (@per_hp > 10)) {
+    hp_status = %ansi(bold,red)@hp":" %ansi(bold,red)%round(@per_hp)
+}
+#if ((@per_hp < 11) & (@per_hp > 0)) {
+    hp_status = %ansi(red)@hp":" %ansi(red)%round(@per_hp)
+}
+
+#if (@per_mv > 98) {
+    mv_status = %ansi(bold,green)@mv":" %ansi(bold,green)%round(@per_mv)
+}
+#if ((@per_mv < 98) & (@per_mv > 74)) {
+    mv_status = %ansi(bold,cyan)@mv":" %ansi(bold,cyan)%round(@per_mv)
+}
+#if ((@per_mv < 74) & (@per_mv > 49)) {
+    mv_status = %ansi(bold,white)@mv":" %ansi(bold,white)%round(@per_mv)
+}
+#if ((@per_mv < 49) & (@per_mv > 24)) {
+    mv_status = %ansi(bold,yellow)@mv":" %ansi(bold,yellow)%round(@per_mv)
+}
+#if ((@per_mv < 24) & (@per_mv > 10)) {
+    mv_status = %ansi(bold,red)@mv":" %ansi(bold,red)%round(@per_mv)
+}
+#if ((@per_mv < 11) & (@per_mv > 0)) {
+    mv_status = %ansi(red)@mv":" %ansi(red)%round(@per_mv)
+}
+
+#SUB {%ansi(gray)< @hp_status~% @mv_status~% %ansi(gray)>}]]></value>
+    </trigger>
+    <trigger priority="100">
+      <pattern>You have scored %1 experience points.</pattern>
+      <value>xp = %1</value>
+    </trigger>
+    <trigger priority="120">
+      <pattern>You need %1 experience points to become a level %2 </pattern>
+      <value>to_lev = %1</value>
+    </trigger>
+    <stat name="StatusBar - XP GP" priority="180">
+      <value>To Level: @to_lev GP: @gp  Banked: @gp_bank</value>
+    </stat>
+    <trigger priority="190">
+      <pattern>You receive (%d) experience.</pattern>
+      <value>#if (%1 != @xp_temp) {
+  to_lev = @to_lev - %1
+  xp = @xp + %1
+  xp_gained = @xp_gained + %1
+  //Update timer
+  tracker
+  //Update xp info
+  xpcalc
+  //Track xp to prevent duplicate gain
+  xp_temp = %1
+} {
+  xp_temp = 0
+}
+</value>
+    </trigger>
+    <trigger priority="210">
+      <pattern>You have scored %1 exp, and have %2 gold coins.</pattern>
+      <value>xp = %1
+gp = %2
+#if (@gp_bank &gt; 0) {
+  #SUB {You have scored %1 exp, and have %2 gold coins carried, and @gp_bank banked.}
+}
+</value>
+    </trigger>
+    <var name="gp">378602</var>
+    <trigger priority="230">
+      <pattern>You have %1~(%2~) hit, %3~(%4~) mana and %5~(%6~) movement points.</pattern>
+      <value>hp = %1
+mhp = (%2 + 0.001)
+mp = %3
+mmp = (%4 + 0.001)
+mv = %5
+mmv = (%6 + 0.001)</value>
+    </trigger>
+    <var name="mhp">953.001</var>
+    <var name="mmv">651.001</var>
+    <var name="mmp">210.001</var>
+    <trigger priority="310" enabled="false">
+      <pattern>You receive your share of %1 experience.</pattern>
+      <value>#gag 2
+to_lev = @to_lev - %1
+xp = @xp + %1</value>
+    </trigger>
+    <alias name="replev">
+      <value>ooc I have @to_lev experience to go before reaching level (@lvl+1)</value>
+    </alias>
+    <trigger priority="330">
+      <pattern>You are level %1</pattern>
+      <value>lvl = %1</value>
+    </trigger>
+    <var name="lvl">50</var>
+    <trigger>
+      <pattern>You are now sober.</pattern>
+      <value>#TS 60</value>
+    </trigger>
+    <var name="avg_mp" type="Float">1.00951900229047</var>
+    <var name="avg_mv" type="Float">1.00307065580544</var>
+    <var name="per_mv" type="Integer">100.307065580544</var>
+    <var name="per_hp" type="Integer">101.573870331721</var>
+    <var name="hp_status">&#27;[0;32;1m968:&#27;[0;32;1m102</var>
+    <var name="mv_status">&#27;[0;32;1m653:&#27;[0;32;1m100</var>
+    <class name="Food">
+      <var name="auto_consume">1</var>
+      <trigger priority="1660">
+        <pattern>You are hungry.</pattern>
+        <value><![CDATA[#if (@auto_consume = 1) {
+  #if ( @auto_forage = 0  & @auto_search = 0) {
+    #if ( @status_combat = 0) {
+      #if ((@per_hp < 99) | (@per_mv < 99) | (@per_mp < 99)) {
+        #if (@status_pos = 2) {
+          re_sleep = 1
+          wake
+        }
+       // #if ((@cnt_meat > 0) & (@cnt_mush >= 0) & (@cnt_bread >= 0)) {
+       //   get meat @bag_food
+       //   eat meat
+       //   cnt_meat = (@cnt_meat -1)
+       // }
+       // #if ((@cnt_meat <= 0) & (@cnt_mush > 0) & (@cnt_bread >= 0)) {
+       //   get mushroom @bag_food
+       //   eat mushroom
+       //   cnt_mush = (@cnt_mush -1)
+       // }
+       // #if ((@cnt_meat <= 0) & (@cnt_mush <= 0) & (@cnt_bread >= 0)) {
+       //   get bread @bag_food
+       //   eat bread
+       //   cnt_bread = (@cnt_bread -1)
+       // }
+        cfood me
+        #if (@re_sleep = 1) {
+          sleep
+          re_sleep = 0
+        }
+        // cnt_food = (@cnt_food-1)
+        //#if (@cnt_food <= 4) {
+        //  #echo Food remaining: @cnt_food
+        //}
+      }
+    }
+  } {
+    status_hunger = 1
+  }
+}]]></value>
+      </trigger>
+      <var name="cnt_food" type="Integer">2220</var>
+      <var name="food">meat</var>
+      <var name="bag_food">bag</var>
+      <alias name="fexam">
+        <value>#T+ "controller"
+#T+ "%sa large chunk of meat~[%1~]"
+#T+ "^%sa large chunk of meat$"
+#T+ "%sa large mushroom~[%1~]"
+#T+ "^%sa large mushroom$"
+cnt_food = 0
+cnt_mush = 0
+cnt_meat = 0
+cnt_bread = 0
+exam @bag_food</value>
+      </alias>
+      <trigger priority="1740" enabled="false">
+        <pattern>%sa large mushroom~[%1~]</pattern>
+        <value>cnt_food = (@cnt_food+%1)
+cnt_mush = (@cnt_mush+%1)</value>
+      </trigger>
+      <var name="bag_water">canteen</var>
+      <trigger priority="1760">
+        <pattern>You are thirsty.</pattern>
+        <value><![CDATA[#if (@auto_consume = 1) {
+  #if ( @auto_forage = 0 & @auto_search = 0) {
+    #if ((@per_hp < 99) | (@per_mv < 99)) {
+      #if (@status_pos = 2) {
+        re_sleep = 1
+        wake
+      }
+      drink @bag_water
+      #if (@re_sleep = 1) {
+        sleep
+        re_sleep = 0
+      }
+      cnt_water = (@cnt_water-1)
+      #if (@cnt_water <= 1) {
+        //#echo Water remaining: @cnt_water
+      }
+    }
+  } {
+    status_thirst = 1
+  }
+}]]></value>
+      </trigger>
+      <var name="cnt_water" type="Integer">-281</var>
+      <trigger priority="1740" enabled="false">
+        <pattern>%sa large chunk of meat~[%1~]</pattern>
+        <value>cnt_food = (@cnt_food+%1)
+cnt_meat = (@cnt_meat+%1)</value>
+      </trigger>
+      <trigger priority="1790">
+        <pattern>A water skin is filled.</pattern>
+        <value>cnt_water = 3</value>
+      </trigger>
+      <class name="controller" enabled="false">
+        <trigger priority="1310">
+          <pattern>$</pattern>
+          <value>#T- "%sa large chunk of meat~[%1~]"
+#T- "^%sa large chunk of meat$"
+#T- "%sa large mushroom~[%1~]"
+#T- "^%sa large mushroom$"
+#T- "controller"</value>
+        </trigger>
+      </class>
+      <trigger priority="1740" enabled="false">
+        <pattern>^%sa large chunk of meat$</pattern>
+        <value>cnt_food = (@cnt_food+1)
+cnt_meat = (@cnt_meat+1)</value>
+      </trigger>
+      <trigger priority="1740" enabled="false">
+        <pattern>^%sa large mushroom$</pattern>
+        <value>cnt_food = (@cnt_food+1)
+cnt_mush = (@cnt_mush+1)</value>
+      </trigger>
+      <var name="cnt_meat" type="Integer">3</var>
+      <var name="cnt_mush" type="Integer">1</var>
+      <var name="cnt_bread" type="Integer">3</var>
+      <trigger priority="1870" enabled="false">
+        <pattern>An enormous fountain in the shape of a dragon pours forth cool water.</pattern>
+        <value>#if (@cnt_water &lt; 3) {
+  fill @bag_water
+}</value>
+      </trigger>
+      <var name="re_sleep">0</var>
+      <trigger priority="5550">
+        <pattern>A water skin is partially filled.</pattern>
+        <value>cnt_water = 3</value>
+      </trigger>
+      <var name="status_hunger">0</var>
+      <var name="status_thirst">0</var>
+      <trigger priority="11500">
+        <pattern>You drink the water.</pattern>
+        <value>status_thirst = 0</value>
+      </trigger>
+      <trigger priority="11510">
+        <pattern>You are full.</pattern>
+        <value>status_hunger = 0</value>
+      </trigger>
+      <trigger priority="11520">
+        <pattern>It's empty.</pattern>
+        <value>#if (@auto_consume = 1) {
+    #if ( @status_combat = 0) {
+      #if ((@per_hp &lt; 99) | (@per_mv &lt; 99) | (@per_mp &lt; 99)) {
+        #if (@status_pos = 2) {
+          re_sleep = 1
+          wake
+        }
+        cwater @bag_water
+        drink water
+        #if (@re_sleep = 1) {
+          sleep
+          re_sleep = 0
+        }
+      }
+    }
+}
+#if (@auto_forage = 1) {
+  forage
+}</value>
+      </trigger>
+      <trigger priority="11520" enabled="false">
+        <pattern>You can't find it!</pattern>
+        <value>cwater @bag_water
+drink water
+#if (@auto_forage = 1) {
+  forage
+}</value>
+      </trigger>
+    </class>
+    <var name="avg_hp">1.01573870331721</var>
+    <trigger priority="20" trigontrig="false" stop="true" prompt="true">
+      <pattern>&lt; %n %n %n &gt;</pattern>
+      <value><![CDATA[#sayp ""
+avg_hp = (@hp/ @mhp)
+avg_mv = (@mv/@mmv)
+avg_mp = (@mp/@mmp)
+per_mv = (@avg_mv*100)
+per_hp = (@avg_hp*100)
+per_mp = (@avg_mp*100)
+
+// Color code hp
+#if (@per_hp > 98) {
+    hp_status = %ansi(bold,green)@hp":" %ansi(bold,green)%round(@per_hp)
+}
+#if ((@per_hp < 98) & (@per_hp > 74)) {
+    hp_status = %ansi(bold,cyan)@hp":" %ansi(bold,cyan)%round(@per_hp)
+}
+#if ((@per_hp < 74) & (@per_hp > 49)) {
+    hp_status = %ansi(bold,white)@hp":" %ansi(bold,white)%round(@per_hp)
+}
+#if ((@per_hp < 49) & (@per_hp > 24)) {
+    hp_status = %ansi(bold,yellow)@hp":" %ansi(bold,yellow)%round(@per_hp)
+}
+#if ((@per_hp < 24) & (@per_hp > 10)) {
+    hp_status = %ansi(bold,red)@hp":" %ansi(bold,red)%round(@per_hp)
+}
+#if ((@per_hp < 11) & (@per_hp > 0)) {
+    hp_status = %ansi(red)@hp":" %ansi(red)%round(@per_hp)
+}
+
+// Color code mana
+#if (@per_mp > 98) {
+    mp_status = %ansi(bold,green)@mp":" %ansi(bold,green)%round(@per_mp)
+}
+#if ((@per_mp < 98) & (@per_mp > 74)) {
+    mp_status = %ansi(bold,cyan)@mp":" %ansi(bold,cyan)%round(@per_mp)
+}
+#if ((@per_mp < 74) & (@per_mp > 49)) {
+    mp_status = %ansi(bold,white)@mp":" %ansi(bold,white)%round(@per_mp)
+}
+#if ((@per_mp < 49) & (@per_mp > 24)) {
+    mp_status = %ansi(bold,yellow)@mp":" %ansi(bold,yellow)%round(@per_mp)
+}
+#if ((@per_mp < 24) & (@per_mp > 10)) {
+    mp_status = %ansi(bold,red)@mp":" %ansi(bold,red)%round(@per_mp)
+}
+#if ((@per_mp < 11) & (@per_mp > 0)) {
+    mp_status = %ansi(red)@mp":" %ansi(red)%round(@per_mp)
+}
+
+// Color code movement
+#if (@per_mv > 98) {
+    mv_status = %ansi(bold,green)@mv":" %ansi(bold,green)%round(@per_mv)
+}
+#if ((@per_mv < 98) & (@per_mv > 74)) {
+    mv_status = %ansi(bold,cyan)@mv":" %ansi(bold,cyan)%round(@per_mv)
+}
+#if ((@per_mv < 74) & (@per_mv > 49)) {
+    mv_status = %ansi(bold,white)@mv":" %ansi(bold,white)%round(@per_mv)
+}
+#if ((@per_mv < 49) & (@per_mv > 24)) {
+    mv_status = %ansi(bold,yellow)@mv":" %ansi(bold,yellow)%round(@per_mv)
+}
+#if ((@per_mv < 24) & (@per_mv > 10)) {
+    mv_status = %ansi(bold,red)@mv":" %ansi(bold,red)%round(@per_mv)
+}
+#if ((@per_mv < 11) & (@per_mv > 0)) {
+    mv_status = %ansi(red)@mv":" %ansi(red)%round(@per_mv)
+}
+
+// Replace Prompt
+#SUB {%ansi(gray)< @hp_status~% @mp_status% @mv_status~% %ansi(gray)>}
+
+// If forage bot = true, recall when hp is less than 15%
+// #if (@auto_forage = 1) {
+//  #if (@hp < 100) {
+//    get shard sack
+//    recall
+//  }
+// }]]></value>
+    </trigger>
+    <var name="per_mp">100.951900229047</var>
+    <var name="mp_status">&#27;[0;32;1m212:&#27;[0;32;1m101</var>
+    <var name="mp_status">&#27;[0;32;1m153:&#27;[0;32;1m100</var>
+    <var name="per_mp">99.9993464095006</var>
+    <var name="gp_bank">7600000</var>
+    <trigger priority="5730">
+      <pattern>Your balance is %1.</pattern>
+      <value>gp_bank = %1</value>
+    </trigger>
+    <class name="Conditions">
+      <trigger priority="5860">
+        <pattern>^%1 looks pretty hurt.$</pattern>
+        <value>#sub {%1 looks pretty hurt. 35~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 is in bad condition.$</pattern>
+        <value>#sub {%1 is in bad condition. 25~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 has a few scratches.$</pattern>
+        <value>#sub {%1 has a few scratches. 99~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 has some minor injuries.$</pattern>
+        <value>#sub {%1 has some minor injuries. 75~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 is in good condition.$</pattern>
+        <value>#sub {%1 is in good condition. 85~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 has some small wounds and bruises.$</pattern>
+        <value>#sub {%1 has some small wounds and bruises. 65~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 has some big nasty wounds.$</pattern>
+        <value>#sub {%1 has some big nasty wounds. 45~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 has quite a few wounds.$</pattern>
+        <value>#sub {%1 has quite a few wounds. 60~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 has some large wounds.$</pattern>
+        <value>#sub {%1 has some large wounds. 55~%}</value>
+      </trigger>
+      <trigger priority="5860">
+        <pattern>^%1 is in awful condition.$</pattern>
+        <value>#sub {%1 is in awful condition. 15~%}</value>
+      </trigger>
+    </class>
+    <var name="xp_temp">67500</var>
+    <trigger priority="11720">
+      <pattern>There were %1 coins.</pattern>
+      <value>gp = (@gp + %1)</value>
+    </trigger>
+    <var name="xp_gained" type="Float">200460100</var>
+    <var name="gp_phr"/>
+    <alias name="xpcalc">
+      <value><![CDATA[#if (@mins > 0 or @hours > 0 or @secs > 0 and @xp_gained > 0) {
+  xp_sec = @xp_gained / (@secs + (@mins*60) + (@hours*60*60))
+  xp_min = @xp_sec *60
+  xp_hour = @xp_min * 60
+  
+  xp_tolev_sec = (@to_lev / @xp_sec)
+  xp_tolev_min = (@to_lev / @xp_sec) * 60
+  xp_tolev_hour = @xp_tolev_min * 60
+  
+  
+  #IF (@xp_tolev_sec >3599) {
+    #MATH xp_tolev_hours  %round(@xp_tolev_sec)/3600
+    #MATH xp_tolev_minsrem  (%round(@xp_tolev_sec)- (@xp_tolev_hours*3600))
+    xp_tolev_minsrem = %mod(@xp_tolev_minsrem/60,60)
+    #MATH xp_tolev_time2  @xp_tolev_sec-@xp_tolev_minsrem
+    //#IF (@xp_tolev_time2>59) {
+    //  #MATH xp_tolev_mins  @xp_tolev_time2/60
+    //  #MATH xp_tolev_secsrem  @xp_tolev_mins*60
+    //  #MATH xp_tolev_secs  @xp_tolev_time2-@xp_tolev_secsrem
+    //}
+  }
+  #IF (@xp_tolev_sec<3559) {
+    xp_tolev_hours = 0
+    #MATH xp_tolev_minsrem  %round(@xp_tolev_sec)/60
+    #MATH xp_tolev_secsrem  (%round(@xp_tolev_sec)- (@xp_tolev_minsrem*60))
+    xp_tolev_secsrem = %mod(@xp_tolev_secsrem,60)
+  }
+}
+]]></value>
+    </alias>
+    <var name="xp_min" type="Float">82935.851554581</var>
+    <var name="xp_sec" type="Float">1382.26419257635</var>
+    <var name="xp_hour" type="Float">4976151.09327486</var>
+    <stat name="StatsWindow" showinbar="false" showinwindow="true" priority="12290">
+      <value><![CDATA[Session Time: %format("&3.0n",@hours):%format("&0.0n",@mins):%format("&0.0n",@secs)
+Time to Level: %format("&3.0n",@xp_tolev_hours):%format("&0.0n",@xp_tolev_minsrem):%format("&0.0n",@xp_tolev_secs)
+XP Gained: %format("&12.0n",@xp_gained)
+XP Per Min: %format("&11.0n",@xp_min,)
+XP Per Hour: %format("&10.0n",@xp_hour,)]]></value>
+    </stat>
+    <var name="xp_tolev_min" type="Float">-111648.468381688</var>
+    <var name="xp_tolev_hour">-6698908.10290127</var>
+    <var name="xp_tolev_sec">-1860.80780636147</var>
+    <var name="xp_tolev_time2" type="Float">164738.210365169</var>
+    <var name="xp_tolev_mins" type="Float"/>
+    <var name="xp_tolev_mins">0</var>
+    <var name="xp_tolev_secsrem">-1</var>
+    <var name="xp_tolev_secs">0.073044725133375</var>
+    <var name="xp_tolev_hours" type="Float">0</var>
+    <var name="xp_tolev_minsrem" type="Float">-31</var>
+  </class>
+</cmud>
