@@ -1,0 +1,4577 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<cmud>
+  <class name="Armory">
+    <var name="eq_ring1">a bright white ring (excellent)..It glows softly</var>
+    <var name="eq_ring2">A large golden ring with a royal seal (excellent)</var>
+    <var name="eq_wrist1">a green scaled bracer (excellent)</var>
+    <var name="eq_wrist2">a green scaled bracer (excellent)</var>
+    <var name="eq_body">a blazing iron cuirass (excellent)..It glows softly</var>
+    <var name="eq_neck1">a large circular white amulet (excellent)..It hums powerfully</var>
+    <var name="eq_neck2">a large circular white amulet (excellent)..It hums powerfully</var>
+    <var name="eq_legs">some dragon scale leggings (excellent)</var>
+    <var name="eq_feet">boots made from ancient white dragon hide (excellent)..They hum with power</var>
+    <var name="eq_arms">a pair of black iron armbands (excellent)</var>
+    <var name="eq_hands">a pair of black leather gloves (excellent)</var>
+    <var name="eq_waist">a black leather belt with dangling skulls (excellent)..It hums powerfully</var>
+    <var name="eq_about">a flowing gray cape with a white swirl embroidered on it (excellent)</var>
+    <var name="eq_skirt">a wolf skin skirt (excellent)</var>
+    <var name="eq_face">a mithril face plate (excellent)</var>
+    <var name="bag_consum">bag</var>
+    <var name="bag_stuff1">stuff</var>
+    <var name="kw_body">iron-cuirass</var>
+    <var name="kw_about">gray-cape</var>
+    <var name="kw_ring1">white-ring</var>
+    <var name="kw_ring2">royal-seal</var>
+    <var name="kw_wrist1">scaled-bracer</var>
+    <var name="kw_wrist2">scaled-bracer</var>
+    <var name="kw_neck1">white-amulet</var>
+    <var name="kw_neck2">white-amulet</var>
+    <var name="kw_arms">black-armbands</var>
+    <var name="kw_face">face-plate</var>
+    <var name="kw_feet">ancient-hide</var>
+    <var name="kw_hands">black-gloves</var>
+    <var name="kw_skirt">skin-skirt</var>
+    <var name="kw_legs">scale-leggings</var>
+    <var name="kw_waist">belt-skulls</var>
+    <var name="temp">@var8</var>
+    <var name="kw_head">diamond-pot</var>
+    <var name="eq_head">a huge polished diamond cooking pot (excellent)</var>
+    <var name="eq_held">a solid adamantium sphere (excellent)..It hums powerfully</var>
+    <var name="eq_light" type="Literal"/>
+    <var name="eq_shield">a reflective brass buckler adorned with silver spikes (excellent)..It glows softly..It hums powerfully</var>
+    <var name="eq_back">a massive diamond-tipped claymore with an iron hilt..It hums powerfully</var>
+    <var name="eq_sheath1">a steel mace pulsing with energy..It glows softly..It hums powerfully</var>
+    <var name="eq_sheath2" type="Literal"/>
+    <var name="kw_sheath1" type="Literal"/>
+    <var name="kw_sheath2" type="Literal"/>
+    <var name="kw_back">claymore-iron</var>
+    <var name="kw_light">light-sphere</var>
+    <var name="kw_held" type="Literal"/>
+    <var name="kw_shield">buckler-silver</var>
+    <class name="AC">
+      <var name="ring1_1">white-ring</var>
+      <var name="ring2_1">royal-seal</var>
+      <var name="neck1_1">white-amulet</var>
+      <var name="neck2_1">white-amulet</var>
+      <var name="wrist1_1">scaled-bracer</var>
+      <var name="wrist2_1">scaled-bracer</var>
+      <var name="body_1">iron-cuirass</var>
+      <var name="head_1">diamond-pot</var>
+      <var name="feet_1">ancient-hide</var>
+      <var name="arms_1">black-armbands</var>
+      <var name="about_1">gray-cape</var>
+      <var name="back_1"/>
+      <var name="face_1">face-plate</var>
+      <var name="light_1"/>
+      <var name="held_1">adamantium-sphere</var>
+      <var name="shield_1">buckler-silver</var>
+      <var name="legs_1">scale-leggings</var>
+      <var name="skirt_1">skin-skirt</var>
+      <var name="waist_1">belt-skulls</var>
+      <var name="hands_1">black-gloves</var>
+    </class>
+    <class name="DMG">
+      <var name="about_2">cloak-material</var>
+      <var name="arms_2">black-armbands</var>
+      <var name="back_2"/>
+      <var name="body_2">iron-cuirass</var>
+      <var name="face_2">cold-glasses</var>
+      <var name="feet_2">ancient-hide</var>
+      <var name="hands_2">black-gloves</var>
+      <var name="head_2">iron-helm</var>
+      <var name="held_2"/>
+      <var name="legs_2">scale-leggings</var>
+      <var name="light_2"/>
+      <var name="neck1_2">white-amulet</var>
+      <var name="neck2_2">white-amulet</var>
+      <var name="ring1_2">white-gold</var>
+      <var name="ring2_2">white-gold</var>
+      <var name="shield_2"/>
+      <var name="skirt_2">skin-skirt</var>
+      <var name="waist_2">belt-skulls</var>
+      <var name="wrist1_2">white-bracer</var>
+      <var name="wrist2_2">white-bracer</var>
+    </class>
+    <class name="Regen1">
+      <var name="about_4">gray-cape</var>
+      <var name="arms_4">black-armbands</var>
+      <var name="back_4"/>
+      <var name="body_4">leather-jerkin</var>
+      <var name="face_4">cold-glasses</var>
+      <var name="feet_4">ancient-hide</var>
+      <var name="hands_4">black-gloves</var>
+      <var name="head_4">skullcap-coalescing</var>
+      <var name="held_4">yellow-pebble</var>
+      <var name="legs_4">rough-pants</var>
+      <var name="light_4">brass-lamp</var>
+      <var name="neck1_4">onyx-necklace</var>
+      <var name="neck2_4">onyx-necklace</var>
+      <var name="ring1_4">royal-seal</var>
+      <var name="ring2_4">white-ring</var>
+      <var name="shield_4">brass-shield</var>
+      <var name="skirt_4">skin-skirt</var>
+      <var name="waist_4">belt-skulls</var>
+      <var name="wrist1_4">bronze-bangle</var>
+      <var name="wrist2_4">bronze-bangle</var>
+    </class>
+    <class name="Regen2">
+      <var name="wrist2_5">oakwood-bracelet</var>
+      <var name="wrist1_5">oakwood-bracelet</var>
+      <var name="waist_5">belt-skulls</var>
+      <var name="skirt_5">skin-skirt</var>
+      <var name="shield_5">buckler-silver</var>
+      <var name="ring2_5">emerald-ring</var>
+      <var name="ring1_5">emerald-ring</var>
+      <var name="neck2_5">onyx-necklace</var>
+      <var name="neck1_5">silver-pendant</var>
+      <var name="light_5">brass-lamp</var>
+      <var name="legs_5">rough-pants</var>
+      <var name="held_5">yellow-pebble</var>
+      <var name="head_5">skullcap-coalescing</var>
+      <var name="hands_5">black-gloves</var>
+      <var name="feet_5">ancient-hide</var>
+      <var name="face_5">cold-glasses</var>
+      <var name="body_5">ever-changing-armor</var>
+      <var name="back_5"/>
+      <var name="arms_5">sleeves-volcanic</var>
+      <var name="about_5">gray-cape</var>
+    </class>
+    <class name="Hybrid">
+      <var name="wrist2_3">scaled-bracer</var>
+      <var name="wrist1_3">scaled-bracer</var>
+      <var name="waist_3">belt-skulls</var>
+      <var name="skirt_3">skin-skirt</var>
+      <var name="shield_3">shield-eagle</var>
+      <var name="ring2_3">royal-seal</var>
+      <var name="ring1_3">white-ring</var>
+      <var name="neck2_3">white-amulet</var>
+      <var name="neck1_3">white-amulet</var>
+      <var name="light_3"/>
+      <var name="legs_3">scale-leggings</var>
+      <var name="held_3">adamantium-sphere</var>
+      <var name="head_3">diamond-pot</var>
+      <var name="hands_3">black-gloves</var>
+      <var name="feet_3">ancient-hide</var>
+      <var name="face_3">face-plate</var>
+      <var name="body_3">iron-cuirass</var>
+      <var name="back_3"/>
+      <var name="arms_3">black-armbands</var>
+      <var name="about_3">gray-cape</var>
+    </class>
+    <alias name="save_armor">
+      <value>#if (%1 = "1") {
+  about_1 = @kw_about
+  arms_1 = @kw_arms
+  body_1 = @kw_body
+  face_1 = @kw_face
+  feet_1 = @kw_feet
+  head_1 = @kw_head
+  held_1 = @kw_held
+  legs_1 = @kw_legs
+  light_1 = @kw_light
+  neck1_1 = @kw_neck1
+  neck2_1 = @kw_neck2
+  ring1_1 = @kw_ring1
+  ring2_1 = @kw_ring2
+  shield_1 = @kw_shield
+  skirt_1 = @kw_skirt
+  waist_1 = @kw_waist
+  wrist1_1 = @kw_wrist1
+  wrist2_1 = @kw_wrist2
+  hands_1 = @kw_hands
+}
+#if (%1 = "2") {
+  about_2 = @kw_about
+  arms_2 = @kw_arms
+  body_2 = @kw_body
+  face_2 = @kw_face
+  feet_2 = @kw_feet
+  head_2 = @kw_head
+  held_2 = @kw_held
+  legs_2 = @kw_legs
+  light_2 = @kw_light
+  neck1_2 = @kw_neck1
+  neck2_2 = @kw_neck2
+  ring1_2 = @kw_ring1
+  ring2_2 = @kw_ring2
+  shield_2 = @kw_shield
+  skirt_2 = @kw_skirt
+  waist_2 = @kw_waist
+  wrist1_2 = @kw_wrist1
+  wrist2_2 = @kw_wrist2
+  hands_2 = @kw_hands
+}
+#if (%1 = "3") {
+  about_3 = @kw_about
+  arms_3 = @kw_arms
+  body_3 = @kw_body
+  face_3 = @kw_face
+  feet_3 = @kw_feet
+  head_3 = @kw_head
+  held_3 = @kw_held
+  legs_3 = @kw_legs
+  light_3 = @kw_light
+  neck1_3 = @kw_neck1
+  neck2_3 = @kw_neck2
+  ring1_3 = @kw_ring1
+  ring2_3 = @kw_ring2
+  shield_3 = @kw_shield
+  skirt_3 = @kw_skirt
+  waist_3 = @kw_waist
+  wrist1_3 = @kw_wrist1
+  wrist2_3 = @kw_wrist2
+  hands_3 = @kw_hands
+}
+#if (%1 = "4") {
+  about_4 = @kw_about
+  arms_4 = @kw_arms
+  body_4 = @kw_body
+  face_4 = @kw_face
+  feet_4 = @kw_feet
+  head_4 = @kw_head
+  held_4 = @kw_held
+  legs_4 = @kw_legs
+  light_4 = @kw_light
+  neck1_4 = @kw_neck1
+  neck2_4 = @kw_neck2
+  ring1_4 = @kw_ring1
+  ring2_4 = @kw_ring2
+  shield_4 = @kw_shield
+  skirt_4 = @kw_skirt
+  waist_4 = @kw_waist
+  wrist1_4 = @kw_wrist1
+  wrist2_4 = @kw_wrist2
+  hands_4 = @kw_hands
+}
+#if (%1 = "5") {
+  about_5 = @kw_about
+  arms_5 = @kw_arms
+  body_5 = @kw_body
+  face_5 = @kw_face
+  feet_5 = @kw_feet
+  head_5 = @kw_head
+  held_5 = @kw_held
+  legs_5 = @kw_legs
+  light_5 = @kw_light
+  neck1_5 = @kw_neck1
+  neck2_5 = @kw_neck2
+  ring1_5 = @kw_ring1
+  ring2_5 = @kw_ring2
+  shield_5 = @kw_shield
+  skirt_5 = @kw_skirt
+  waist_5 = @kw_waist
+  wrist1_5 = @kw_wrist1
+  wrist2_5 = @kw_wrist2
+  hands_5 = @kw_hands
+}
+#if (%1 = "6") {
+  about_6 = @kw_about
+  arms_6 = @kw_arms
+  body_6 = @kw_body
+  face_6 = @kw_face
+  feet_6 = @kw_feet
+  head_6 = @kw_head
+  held_6 = @kw_held
+  legs_6 = @kw_legs
+  light_6 = @kw_light
+  neck1_6 = @kw_neck1
+  neck2_6 = @kw_neck2
+  ring1_6 = @kw_ring1
+  ring2_6 = @kw_ring2
+  shield_6 = @kw_shield
+  skirt_6 = @kw_skirt
+  waist_6 = @kw_waist
+  wrist1_6 = @kw_wrist1
+  wrist2_6 = @kw_wrist2
+  hands_6 = @kw_hands
+}</value>
+    </alias>
+    <alias name="armor">
+      <value><![CDATA[#echo ""
+#echo "    "%ansi(gray)"<========"%ansi(gray,high)"|"%ansi(brown)"%%%%"%ansi(gray,high)> %ansi(cyan,high)ARMORY %ansi(gray,high)"<"%ansi(brown)"%%%%"%ansi(gray,high)"|"%ansi(gray)"========>"
+// Identify equipped gear keywords
+#if (%1 = "inspect" | %1 = "ins" | %1 = "inv") {
+  clear_armor 0
+  status_ins = 0
+  cnt_kw = 0
+  conf_ins_2hand = 1
+  conf_ins_abody = 1
+  conf_ins_alegs = 1
+  conf_ins_arms = 1
+  conf_ins_back = 1
+  conf_ins_body = 1
+  conf_ins_face = 1
+  conf_ins_feet = 1
+  conf_ins_hands = 1
+  conf_ins_head = 1
+  conf_ins_held = 1
+  conf_ins_legs = 1
+  conf_ins_light = 1
+  conf_ins_neck = 1
+  conf_ins_ring = 1
+  conf_ins_sheath = 1
+  conf_ins_shield = 1
+  conf_ins_waist = 1
+  conf_ins_wleft = 1
+  conf_ins_wright = 1
+  conf_ins_wrist = 1
+  eq
+}
+
+// Change equipment
+#if (%1 = "equip" | %1 = "eq") {
+  #if (%2 = 1 | %2 = 2 | %2 = 3 | %2 = 4 | %2 = 5 | %2 = 6) {
+    #echo %2
+    eq_armor %2
+    #echo Armory: Equipping config #%2
+  }
+  #if (%2 = "ac" ) {
+    eq_armor 1
+    #echop Armory: AC armor equipped.
+  }
+  #if (%2 = "dmg" ) {
+    eq_armor 2
+    #echop Armory: DMG armor equipped.
+  }
+  #if (%2 = "hybrid" ) {
+    eq_armor 3
+    #echop Armory: Hybrid armor equipped.
+  }
+  #if (%2 = "regen1" ) {
+    eq_armor 4
+    #echop Armory: Regen1 armor equipped.
+  }
+  #if (%2 = "regen2" ) {
+    eq_armor 5
+    #echop Armory: Regen2 armor equipped.
+  }
+  #if (%2 = "forage" ) {
+    eq_armor 6
+    #echop Armory: Forage armor equipped.
+  }
+}
+
+#if (%1 = "save") {
+  #if (%2 = "" | %2 = "h" | %2 = "help") {
+    #echo ""
+    #echo Specify armor configuration to save
+    #echo   1 = AC
+    #echo   2 = DMG
+    #echo   3 = Hybrid
+    #echo   4 = Regen1
+    #echo   5 = Regen2
+    #echo   6 = Travel
+  }
+  #if (%2 = "ac" | %2 = "1") {
+    save_armor %2
+    #echop Armory: AC armor config saved.
+  }
+  #if (%2 = "dmg" | %2 = "2") {
+    save_armor %2
+    #echop Armory: DMG armor config saved.
+  }
+  #if (%2 = "hybrid" | %2 = "3") {
+    save_armor %2
+    #echop Armory: Hybrid armor config saved.
+  }
+  #if (%2 = "regen1" | %2 = "4") {
+    save_armor %2
+    #echop Armory: Regen1 armor config saved.
+  }
+  #if (%2 = "regen2" | %2 = "5") {
+    save_armor %2
+    #echop Armory: Regen2 armor config saved.
+  }
+  #if (%2 = "forage" | %2 = "6") {
+    save_armor %2
+    #echop Armory: Forage armor config saved.
+  }
+}
+#if (%1 = "clear") {
+  #if (%2 = "" | %2 = "h" | %2 = "help") {
+    #echo ""
+    #echo Specify armor configuration to clear
+    #echo   1 = AC
+    #echo   2 = DMG
+    #echo   3 = Hybrid
+    #echo   4 = Regen1
+    #echo   5 = Regen2
+    #echo   6 = Travel
+  }
+  #if (%2 = "ac" | %2 = "1") {
+    clear_armor %2
+    #echop Armory: AC armor config cleared.
+  }
+  #if (%2 = "dmg" | %2 = "2") {
+    clear_armor %2
+    #echop Armory: DMG armor config cleared.
+  }
+  #if (%2 = "hybrid" | %2 = "3") {
+    clear_armor %2
+    #echop Armory: Hybrid armor config cleared.
+  }
+  #if (%2 = "regen1" | %2 = "4") {
+    clear_armor %2
+    #echop Armory: Regen1 armor config cleared.
+  }
+  #if (%2 = "regen2" | %2 = "5") {
+    clear_armor %2
+    #echop Armory: Regen2 armor config cleared.
+  }
+  #if (%2 = "forage" | %2 = "6") {
+    clear_armor %2
+    #echop Armory: Forage armor config cleared.
+  }
+}
+
+#if (%1 = "show") {
+  #if (%2 = "" | %2 = "h" | %2 = "help") {
+    #say ""
+    #say %ansi(gray)Specify armor configuration to show
+    #say %ansi(gray)  1 = AC
+    #say %ansi(gray)  2 = DMG
+    #say %ansi(gray)  3 = Hybrid
+    #say %ansi(gray)  4 = Regen1
+    #say %ansi(gray)  5 = Regen2
+    #say %ansi(gray)  6 = Travel
+    #say ""
+    #say %ansi(gray)Equipment Bag Setup
+    #say %ansi(gray)Light - @bag_light
+    #say %ansi(gray)Rings - @bag_rings
+    #say %ansi(gray)Neck - @bag_neck
+    #say %ansi(gray)Body - @bag_body
+    #say %ansi(gray)Head - @bag_head
+    #say %ansi(gray)Legs - @bag_legs
+    #say %ansi(gray)Feet - @bag_feet
+    #say %ansi(gray)Hands - @bag_hands
+    #say %ansi(gray)Arms - @bag_arms
+    #say %ansi(gray)Shield - @bag_shield
+    #say %ansi(gray)About Body - @bag_about_body
+    #say %ansi(gray)Waist - @bag_waist
+    #say %ansi(gray)Wrists - @bag_wrists
+    #say %ansi(gray)Held - @bag_held
+    #say %ansi(gray)Face - @bag_face
+    #say %ansi(gray)About Legs - @bag_about_legs
+  }
+  #if (%2 = "ac" | %2 = "1") {
+    show_armor 1
+  }
+  #if (%2 = "dmg" | %2 = "2") {
+    show_armor 2
+  }
+  #if (%2 = "hybrid" | %2 = "3") {
+    show_armor 3
+  }
+  #if (%2 = "regen1" | %2 = "4") {
+    show_armor 4
+  }
+  #if (%2 = "regen2" | %2 = "5") {
+    show_armor 5
+  }
+  #if (%2 = "forage" | %2 = "6") {
+    show_armor 6
+  }
+}
+
+#if (%1 = "" ) {
+  #say ""
+  #say %ansi(gray)"|`-._/\_.-`|   "
+  #say %ansi(gray)"|    ||    |    "%ansi(green,high)1%ansi(gray):%ansi(green,high)Ac"      "%ansi(gray)-"  "%ansi(gray)Armor Suit
+  #say %ansi(gray)"|___o()o___|    "%ansi(green,high)2%ansi(gray):%ansi(green,high)Dmg"     "%ansi(gray)-"  "Damage Suit
+  #say %ansi(gray)"|__((<>))__|    "%ansi(green,high)3%ansi(gray):%ansi(green,high)Hybrid"  "%ansi(gray)-"  "Hybrid Suit
+  #say %ansi(gray)"\   o\/o   /    "%ansi(green,high)4%ansi(gray):%ansi(green,high)Regen"   "%ansi(gray)-"  "Regeneration Suit 1
+  #say %ansi(gray)" \   ||   /     "%ansi(green,high)5%ansi(gray):%ansi(green,high)Regen2"  "%ansi(gray)-"  "Regeneration Suit 2
+  #say %ansi(gray)"  \  ||  /      "%ansi(green,high)6%ansi(gray):%ansi(green,high)Travel"  "%ansi(gray)-"  "Travel Suit
+  #say %ansi(gray)"   '.||.'"
+  #say %ansi(gray)"     ``         "%ansi(yellow,high)h:Help "   "%ansi(gray)-"  "Armory Help
+}
+
+#if (%1 = "h" | %1 = "help") {
+  #say ""
+  #echo Commands:
+  #echo armor inspect
+  #echo armor ins
+  #echo "   Identifies keywords for currently equipped items"
+  #echo ""
+  #echo armor show (Name/ID#)
+  #echo "   Shows saved armor configuration"
+  #echo ""
+  #echo armor save (Name/ID#)
+  #echo "   Saves current item keywords to specified configuration"
+  #echo ""
+  #echo armor clear (Name/ID#)
+  #echo "   Clears specified configuration"
+  #echo ""
+  #echo "armor eq (1-5)"
+  #echo armor equip regen1
+  #echo "   Equips saved armor configuration"
+  #echo ""
+  #echo Reference options:
+  #echo Configurations can be called by name or ID #
+  #echo  AC = 1, DMG = 2, Hybrid = 3, Regen1 = 4, Regen2 = 5, Forage = 6
+  #echo ""
+  #echo Example 1: Show armor configuration for Hybrid
+  #echo armor show hybrid
+  #echo armor show 3
+  #echo ""
+  #echo Example 2: Save armor config for Regen1
+  #echo armor save regen1
+  #echo armor save 4
+}
+
+#if (%1 = "setup") {
+  #say %ansi(gray)Armory setup.  Each equipment slot has its items kept in its own 'bag'.
+  #say %ansi(gray)Items of different equipment slots can be kept in the same bag.
+  #say %ansi(gray)As an underling principal items of each slot are always kept in the same bag.
+  #say %ansi(gray)At the following prompts, provide the keywords for each respective slot.
+  #say %ansi(gray)Example: %ansi(yellow)large-sack
+  #say ""
+  #prompt @bag_light "Light Container:"
+  #prompt @bag_rings "Rings Container:"
+  #prompt @bag_neck "Neck Container:"
+  #prompt @bag_body "Body Container:"
+  #prompt @bag_head "Head Container:"
+  #prompt @bag_legs "Legs Container:"
+  #prompt @bag_feet "Feet Container:"
+  #prompt @bag_hands "Hands Container:"
+  #prompt @bag_arms "Arms Container:"
+  #prompt @bag_shield "Shield Container:"
+  #prompt @bag_about_body "About Body Container:"
+  #prompt @bag_waist "Waist Container:"
+  #prompt @bag_wrists "Wrists Container:"
+  #prompt @bag_held "Held Container:"
+  #prompt @bag_face "Face Container:"
+  #prompt @bag_about_legs "About Legs Container:"
+  #say ""
+  #say %ansi(gray)Setup complete.
+  armor show
+}]]></value>
+    </alias>
+    <alias name="show_armor">
+      <value>#if (%1 = "1") {
+  #echo ""
+  #echo "Armor Config: 1"
+  #echo Light:   @light_1
+  #echo Ring1:   @ring1_1
+  #echo Ring2:   @ring2_1
+  #echo Neck1:   @neck1_1
+  #echo Neck2:   @neck2_1
+  #echo Body:    @body_1
+  #echo Head:    @head_1
+  #echo Legs:    @legs_1
+  #echo Feet:    @feet_1
+  #echo Hands:   @hands_1
+  #echo Arms:    @arms_1
+  #echo About:   @about_1
+  #echo Waist:   @waist_1
+  #echo Wrist1:  @wrist1_1
+  #echo Wrist2:  @wrist2_1
+  #echo Held:    @held_1
+  #echo Shield:  @shield_1
+  #echo Face:    @face_1
+  #echo Skirt:   @skirt_1
+}
+#if (%1 = "2") {
+  #echo ""
+  #echo "Armor Config: 2"
+  #echo Light:   @light_2
+  #echo Ring1:   @ring1_2
+  #echo Ring2:   @ring2_2
+  #echo Neck1:   @neck1_2
+  #echo Neck2:   @neck2_2
+  #echo Body:    @body_2
+  #echo Head:    @head_2
+  #echo Legs:    @legs_2
+  #echo Feet:    @feet_2
+  #echo Hands:   @hands_2
+  #echo Arms:    @arms_2
+  #echo About:   @about_2
+  #echo Waist:   @waist_2
+  #echo Wrist1:  @wrist1_2
+  #echo Wrist2:  @wrist2_2
+  #echo Held:    @held_2
+  #echo Shield:  @shield_2
+  #echo Face:    @face_2
+  #echo Skirt:   @skirt_2
+}
+#if (%1 = "3") {
+  #echo ""
+  #echo "Armor Config: 3"
+  #echo Light:   @light_3
+  #echo Ring1:   @ring1_3
+  #echo Ring2:   @ring2_3
+  #echo Neck1:   @neck1_3
+  #echo Neck2:   @neck2_3
+  #echo Body:    @body_3
+  #echo Head:    @head_3
+  #echo Legs:    @legs_3
+  #echo Feet:    @feet_3
+  #echo Hands:   @hands_3
+  #echo Arms:    @arms_3
+  #echo About:   @about_3
+  #echo Waist:   @waist_3
+  #echo Wrist1:  @wrist1_3
+  #echo Wrist2:  @wrist2_3
+  #echo Held:    @held_3
+  #echo Shield:  @shield_3
+  #echo Face:    @face_3
+  #echo Skirt:   @skirt_3
+}
+#if (%1 = "4") {
+  #echo ""
+  #echo "Armor Config: 4"
+  #echo Light:   @light_4
+  #echo Ring1:   @ring1_4
+  #echo Ring2:   @ring2_4
+  #echo Neck1:   @neck1_4
+  #echo Neck2:   @neck2_4
+  #echo Body:    @body_4
+  #echo Head:    @head_4
+  #echo Legs:    @legs_4
+  #echo Feet:    @feet_4
+  #echo Hands:   @hands_4
+  #echo Arms:    @arms_4
+  #echo About:   @about_4
+  #echo Waist:   @waist_4
+  #echo Wrist1:  @wrist1_4
+  #echo Wrist2:  @wrist2_4
+  #echo Held:    @held_4
+  #echo Shield:  @shield_4
+  #echo Face:    @face_4
+  #echo Skirt:   @skirt_4
+}
+#if (%1 = "5") {
+  #echo ""
+  #echo "Armor Config: 5"
+  #echo Light:   @light_5
+  #echo Ring1:   @ring1_5
+  #echo Ring2:   @ring2_5
+  #echo Neck1:   @neck1_5
+  #echo Neck2:   @neck2_5
+  #echo Body:    @body_5
+  #echo Head:    @head_5
+  #echo Legs:    @legs_5
+  #echo Feet:    @feet_5
+  #echo Hands:   @hands_5
+  #echo Arms:    @arms_5
+  #echo About:   @about_5
+  #echo Waist:   @waist_5
+  #echo Wrist1:  @wrist1_5
+  #echo Wrist2:  @wrist2_5
+  #echo Held:    @held_5
+  #echo Shield:  @shield_5
+  #echo Face:    @face_5
+  #echo Skirt:   @skirt_5
+}
+#if (%1 = "6") {
+  #echo ""
+  #echo "Armor Config: 6"
+  #echo Light:   @light_6
+  #echo Ring1:   @ring1_6
+  #echo Ring2:   @ring2_6
+  #echo Neck1:   @neck1_6
+  #echo Neck2:   @neck2_6
+  #echo Body:    @body_6
+  #echo Head:    @head_6
+  #echo Legs:    @legs_6
+  #echo Feet:    @feet_6
+  #echo Hands:   @hands_6
+  #echo Arms:    @arms_6
+  #echo About:   @about_6
+  #echo Waist:   @waist_6
+  #echo Wrist1:  @wrist1_6
+  #echo Wrist2:  @wrist2_6
+  #echo Held:    @held_6
+  #echo Shield:  @shield_6
+  #echo Face:    @face_6
+  #echo Skirt:   @skirt_6
+}</value>
+    </alias>
+    <class name="eq_controller">
+      <trigger priority="500">
+        <pattern>&lt;worn on finger&gt;%s%1</pattern>
+        <value><![CDATA[#if ((@conf_ins_ring <= 2) and (@conf_ins_ring != 0)) {
+  cnt_ring = (@cnt_ring + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #if (@cnt_ring = 1) {
+    kw_ring1 = ""
+    eq_ring1 = %1
+    #echop %regex(@eq_ring1,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8,var9))
+    #LOO 1,8 {
+      temp= "@var"+%i
+      #if (@temp = "A" | @temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "large" | @temp = "lensed" | @temp = "colored" | @temp = "") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+      }
+    }
+    #if (@var1 != 0 ) {
+      kw_ring1 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_ring1 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_ring1 = @var1+"-"+@var2
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_ring1 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_ring1 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_ring1 = @var2+"-"+@var5
+    }
+    
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_ring1 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_ring1 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_ring1 = @var3+"-"+@var6
+    }
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_ring1 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_ring1 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_ring1 = @var4+"-"+@var7
+    }
+    #if (@var2 != 0 & @var8 != 0 ) {
+      kw_ring1 = @var2+"-"+@var8
+    }
+    #if (@var3 != 0 & @var8 != 0 ) {
+      kw_ring1 = @var3+"-"+@var8
+    }
+    #if (@var4 != 0 & @var8 != 0 ) {
+      kw_ring1 = @var4+"-"+@var8
+    }
+    #if (@var5 != 0 & @var8 != 0 ) {
+      kw_ring1 = @var5+"-"+@var8
+    }
+    #if (@var6 != 0 & @var8 != 0 ) {
+      kw_ring1 = @var6+"-"+@var8
+    }
+    #if (@var7 != 0 & @var8 != 0 ) {
+      kw_ring1 = @var7+"-"+@var8
+    }
+    cnt_kw = (@cnt_kw + 1)
+    #if (@armory_debug > 0) {
+      #echo Ring #1: @kw_ring1
+    }
+  } 
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #if (@cnt_ring >= 2) {
+    kw_ring2 = ""
+    eq_ring2 = %1
+    #echop %regex(@eq_ring2,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8,var9))
+    #LOO 1,8 {
+      temp= "@var"+%i
+      #if (@temp = "A" |@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "large" | @temp = "lensed" | @temp = "colored" | @temp = "") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+      }
+    }
+    #if (@var1 != 0 ) {
+      kw_ring2 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_ring2 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_ring2 = @var1+"-"+@var2
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_ring2 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_ring2 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_ring2 = @var2+"-"+@var5
+    }
+    
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_ring2 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_ring2 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_ring2 = @var3+"-"+@var6
+    }
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_ring2 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_ring2 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_ring2 = @var4+"-"+@var7
+    }
+    #if (@var2 != 0 & @var8 != 0 ) {
+      kw_ring2 = @var2+"-"+@var8
+    }
+    #if (@var3 != 0 & @var8 != 0 ) {
+      kw_ring2 = @var3+"-"+@var8
+    }
+    #if (@var4 != 0 & @var8 != 0 ) {
+      kw_ring2 = @var4+"-"+@var8
+    }
+    #if (@var5 != 0 & @var8 != 0 ) {
+      kw_ring2 = @var5+"-"+@var8
+    }
+    #if (@var6 != 0 & @var8 != 0 ) {
+      kw_ring2 = @var6+"-"+@var8
+    }
+    #if (@var7 != 0 & @var8 != 0 ) {
+      kw_ring2 = @var7+"-"+@var8
+    }
+    #if (@armory_debug > 0) {
+      #echo Ring #2: @kw_ring2
+    }
+    cnt_ring = 0
+    cnt_kw = (@cnt_kw + 1)
+  }
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+#if (@conf_ins_ring > 0) {
+  conf_ins_ring = (@conf_ins_ring + 1)
+}
+]]></value>
+      </trigger>
+      <var name="cnt_ring" type="Integer">1</var>
+      <trigger priority="500">
+        <pattern>&lt;worn on wrist&gt;%s%1</pattern>
+        <value><![CDATA[#if ((@conf_ins_wrist <= 2) and (@conf_ins_wrist != 0)) {
+  cnt_wrist = (@cnt_wrist + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #if (@cnt_wrist = 1) {
+    kw_wrist1 = ""
+    eq_wrist1 = %1
+    #echop %regex(@eq_wrist1,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+    #LOO 1,8 {
+      temp= "@var"+%i
+      #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "lensed"  |  @temp = "hums"   | @temp = "powerfully"  | @temp = "" | @temp = "bone..It" | @temp = "intricately") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+      }
+    }
+    #if (@var1 != 0 ) {
+      kw_wrist1 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_wrist1 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_wrist1 = @var1+"-"+@var2
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_wrist1 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_wrist1 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_wrist1 = @var2+"-"+@var5
+    }
+      
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_wrist1 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_wrist1 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_wrist1 = @var3+"-"+@var6
+    }
+
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_wrist1 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_wrist1 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_wrist1 = @var4+"-"+@var7
+    }
+    #if (@armory_debug > 0) {
+      #echo Wrist #1: @kw_wrist1
+    }
+    cnt_kw = (@cnt_kw + 1)
+    
+  }
+  #if (@cnt_wrist >= 2) {
+    kw_wrist2 = ""
+    var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+    eq_wrist2 = %1
+    #echop %regex(@eq_wrist2,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+    #LOO 1,8 {
+      temp= "@var"+%i
+      #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "lensed"  | @temp = "hums"   | @temp = "powerfully"  | @temp = ""  | @temp = "bone..It" | @temp = "intricately") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+      }
+    }
+    #if (@var1 != 0 ) {
+      kw_wrist2 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_wrist2 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_wrist2 = @var1+"-"+@var2
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_wrist2 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_wrist2 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_wrist2 = @var2+"-"+@var5
+    }
+      
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_wrist2 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_wrist2 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_wrist2 = @var3+"-"+@var6
+    }
+
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_wrist2 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_wrist2 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_wrist2 = @var4+"-"+@var7
+    }
+    #if (@armory_debug > 0) {
+      #echo Wrist #2: @kw_wrist2
+    }
+    cnt_kw = (@cnt_kw + 1)
+    cnt_wrist = 0
+  }
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+#if (@conf_ins_wrist > 0) {
+  conf_ins_wrist = (@conf_ins_wrist + 1)
+}
+]]></value>
+      </trigger>
+      <var name="cnt_wrist" type="Integer">0</var>
+      <trigger priority="500">
+        <pattern>&lt;worn around neck&gt;%s%1</pattern>
+        <value><![CDATA[#if ((@conf_ins_neck <= 2) and (@conf_ins_neck != 0)) {
+  cnt_neck = (@cnt_neck + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = "";var9 = ""
+  #if (@cnt_neck = 1) {
+    kw_neck1 = ""
+    eq_neck1 = %1
+    #echop %regex(@eq_neck1,"(\b[^\s]+\b)? (\b[^\s]+\b)?,?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8,var9))
+      #LOO 1,9 {
+      temp= "@var"+%i
+      #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed" | @temp = "pair" | @temp= "heavy" | @temp= "the" | @temp= "bearing" | @temp= "tree-shaped" |@temp= "holy" | @temp= "symbol" | @temp = "") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+        #if (%i = 9) {
+          var9 = 0
+        }
+      }
+    }
+    #if (@armory_debug = 1) {
+      #say V1:@var1 V2:@var2 V3:@var3 V4:@var4 V5:@var5 V6:@var6 V7:@var7 V8:@var8 V9:@var9
+    }
+    #if (@var1 != 0 ) {
+      kw_neck1 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_neck1 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_neck1 = @var1+"-"+@var2
+    }
+    #if (@var1 != 0 & @var3 != 0 ) {
+      kw_neck1 = @var1+"-"+@var3
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_neck1 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_neck1 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_neck1 = @var2+"-"+@var5
+    }
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_neck1 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_neck1 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_neck1 = @var3+"-"+@var6
+    }
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_neck1 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_neck1 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_neck1 = @var4+"-"+@var7
+    }
+    #if (@var2 != 0 & @var8 != 0 ) {
+      kw_neck1 = @var2+"-"+@var8
+    }
+    #if (@var3 != 0 & @var8 != 0 ) {
+      kw_neck1 = @var3+"-"+@var8
+    }
+    #if (@var4 != 0 & @var8 != 0 ) {
+      kw_neck1 = @var4+"-"+@var8
+    }
+    #if (@var5 != 0 & @var8 != 0 ) {
+      kw_neck1 = @var5+"-"+@var8
+    }
+    #if (@var6 != 0 & @var8 != 0 ) {
+      kw_neck1 = @var6+"-"+@var8
+    }
+    #if (@var7 != 0 & @var8 != 0 ) {
+      kw_neck1 = @var7+"-"+@var8
+    }
+    #if (@armory_debug = 1) {
+      #echo Necklace #1: @kw_neck1
+    }
+  } 
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #if (@cnt_neck >= 2) {
+    kw_neck2 = ""
+    eq_neck2 = %1
+    #echop %regex(@eq_neck2,"(\b[^\s]+\b)? (\b[^\s]+\b)?,?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8,var9))
+    #LOO 1,9 {
+      temp= "@var"+%i
+      #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed" | @temp = "pair" | @temp= "heavy" | @temp= "the" | @temp= "bearing" | @temp= "tree-shaped" | @temp= "holy" | @temp= "symbol" | @temp = "") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+        #if (%i = 9) {
+          var9 = 0
+        }
+      }
+    }
+    #if (@armory_debug = 1) {
+      #say V1:@var1 V2:@var2 V3:@var3 V4:@var4 V5:@var5 V6:@var6 V7:@var7 V8:@var8 V9:@var9
+    }
+
+    #if (@var1 != 0 ) {
+      kw_neck2 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_neck2 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_neck2 = @var1+"-"+@var2
+    }
+    #if (@var1 != 0 & @var3 != 0 ) {
+      kw_neck2 = @var1+"-"+@var3
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_neck2 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_neck2 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_neck2 = @var2+"-"+@var5
+    }
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_neck2 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_neck2 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_neck2 = @var3+"-"+@var6
+    }
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_neck2 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_neck2 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_neck2 = @var4+"-"+@var7
+    }
+    #if (@var2 != 0 & @var8 != 0 ) {
+      kw_neck2 = @var2+"-"+@var8
+    }
+    #if (@var3 != 0 & @var8 != 0 ) {
+      kw_neck2 = @var3+"-"+@var8
+    }
+    #if (@var4 != 0 & @var8 != 0 ) {
+      kw_neck2 = @var4+"-"+@var8
+    }
+    #if (@var5 != 0 & @var8 != 0 ) {
+      kw_neck2 = @var5+"-"+@var8
+    }
+    #if (@var6 != 0 & @var8 != 0 ) {
+      kw_neck2 = @var6+"-"+@var8
+    }
+    #if (@var7 != 0 & @var8 != 0 ) {
+      kw_neck2 = @var7+"-"+@var8
+    }
+    #if (@armory_debug = 1) {
+      #echo Necklace #2: @kw_neck2
+    }
+    cnt_neck = 0
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+#if (@conf_ins_neck > 0) {
+  conf_ins_neck = (@conf_ins_neck + 1)
+}]]></value>
+      </trigger>
+      <var name="cnt_neck" type="Integer">1</var>
+      <trigger priority="500">
+        <pattern>&lt;worn on body&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_body = 1) {
+  kw_body = ""
+  eq_body = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_body,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8,var9))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "suit"  |@temp = "from"| @temp = "with" |  @temp = "heavy" |  @temp = "decorated" | @temp = "lensed"  | @temp = "and"  |@temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_body = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_body = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_body = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_body = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_body = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_body = @var2+"-"+@var5
+  }
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_body = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_body = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_body = @var3+"-"+@var6
+  }
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_body = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_body = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_body = @var4+"-"+@var7
+  }
+
+  #if (@var5 != 0 & @var6 != 0 ) {
+    kw_body = @var5+"-"+@var6
+  }
+  #if (@var5 != 0 & @var7 != 0 ) {
+    kw_body = @var5+"-"+@var7
+  }
+  #if (@var5 != 0 & @var8 != 0 ) {
+    kw_body = @var5+"-"+@var8
+  }
+  #if (@var6 != 0 & @var7 != 0 ) {
+    kw_body = @var6+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Body: @kw_body
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_body = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn on legs&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_legs = 1) {
+  kw_legs = ""
+  eq_legs = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_legs,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_legs = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_legs = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_legs = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_legs = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_legs = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_legs = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_legs = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_legs = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_legs = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_legs = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_legs = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_legs = @var4+"-"+@var7
+  }
+  #if (@armory_debug > 0) {
+      #echo Legs: @kw_legs
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_legs = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn on feet&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_feet = 1) {
+  kw_feet = ""
+  eq_feet = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_feet,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_feet = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_feet = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_feet = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_feet = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_feet = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_feet = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_feet = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_feet = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_feet = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_feet = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_feet = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_feet = @var4+"-"+@var7
+  }
+  #if (@armory_debug > 0) {
+    #echo Feet: @kw_feet
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_feet = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn on hands&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_hands = 1) {
+  kw_hands = ""
+  eq_hands = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = ""
+  #echop %regex(@eq_hands,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_hands = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_hands = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_hands = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_hands = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_hands = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_hands = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_hands = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_hands = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_hands = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_hands = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_hands = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_hands = @var4+"-"+@var7
+  }
+  #if (@armory_debug > 0) {
+      #echo Hands: @kw_hands
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_hands = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn on face&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_face = 1) {
+  kw_face = ""
+  eq_face = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_face,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_face = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_face = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_face = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_face = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_face = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_face = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_face = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_face = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_face = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_face = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_face = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_face = @var4+"-"+@var7
+  }
+  #if (@armory_debug > 0) {
+    #echo Face: @kw_face
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_face = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn about legs&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_alegs = 1) {
+  kw_skirt = ""
+  eq_skirt = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_skirt,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_skirt = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_skirt = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_skirt = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_skirt = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_skirt = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_skirt = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_skirt = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_skirt = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_skirt = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_skirt = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_skirt = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_skirt = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo About legs: @kw_skirt
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_alegs = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn about waist&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_waist = 1) {
+  kw_waist = ""
+  eq_waist = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_waist,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "leathery" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_waist = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_waist = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_waist = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_waist = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_waist = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_waist = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_waist = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_waist = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_waist = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_waist = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_waist = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_waist = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo About waist: @kw_waist
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_waist = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn about body&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_abody = 1) {
+  kw_about = ""
+  eq_about = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_about,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made" | @temp = "suit" | @temp = "from" | @temp = "with" | @temp = "leathery" | @temp = "white"  | @temp = "colors..It"  | @temp = "softly"  | @temp = "glows"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_about = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_about = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_about = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_about = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_about = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_about = @var2+"-"+@var5
+  }
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_about = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_about = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_about = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_about = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_about = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_about = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo About body: @kw_about
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_abody = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;wielded left handed&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_wleft = 1) {
+  kw_wleft = ""
+  eq_wleft = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_wleft,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_wleft = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_wleft = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_wleft = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_wleft = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_wleft = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_wleft = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_wleft = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_wleft = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_wleft = @var3+"-"+@var6
+  }
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_wleft = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_wleft = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_wleft = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Wielded left: @kw_wleft
+  }
+}
+conf_ins_wleft = 0]]></value>
+      </trigger>
+      <var name="var1" type="Literal"/>
+      <var name="var2" type="Literal"/>
+      <var name="var3" type="Literal"/>
+      <var name="var4" type="Literal"/>
+      <var name="var5" type="Literal"/>
+      <var name="var6" type="Literal"/>
+      <var name="var7" type="Literal"/>
+      <var name="var8" type="Literal"/>
+      <trigger priority="500">
+        <pattern>&lt;worn on head&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_head = 1) {
+  kw_head = ""
+  eq_head = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_head,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "carved" | @temp = "leathery" | @temp = "softly"  | @temp = "glows"  | @temp = "colors..It"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_head = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_head = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_head = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_head = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_head = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_head = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_head = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_head = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_head = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_head = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_head = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_head = @var4+"-"+@var7
+  }
+  #if (@armory_debug > 0) {
+      #echo Head: @kw_head
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_head = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;strapped across back&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_back = 1) {
+  kw_back = ""
+  eq_back = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_back,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_back = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_back = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_back = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_back = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_back = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_back = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_back = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_back = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_back = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_back = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_back = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_back = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Across back: @kw_back
+  }
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_back = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;hung from belt&gt;%s%1</pattern>
+        <value><![CDATA[#if ((@conf_ins_sheath <= 2) and (@conf_ins_sheath != 0)) {
+  kw_sheath1 = ""
+  kw_sheath2 = ""
+  cnt_sheath = (@cnt_sheath + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #if (@cnt_sheath = 1) { 
+    eq_sheath1 = %1
+    #echop %regex(@eq_sheath1,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+    #LOO 1,8 {
+      temp= "@var"+%i
+      #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "lensed"  | @temp = "") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+      }
+    }
+    #if (@var1 != 0 ) {
+      kw_sheath1 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_sheath1 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_sheath1 = @var1+"-"+@var2
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_sheath1 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_sheath1 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_sheath1 = @var2+"-"+@var5
+    }
+      
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_sheath1 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_sheath1 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_sheath1 = @var3+"-"+@var6
+    }
+
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_sheath1 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_sheath1 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_sheath1 = @var4+"-"+@var7
+    }
+    #if (@armory_debug = 1) {
+      #echo Sheathed weapon #1: @kw_sheath1
+    }
+  }
+  #if (@cnt_sheath >= 2) { 
+    eq_sheath2 = %1
+    #echop %regex(@eq_sheath2,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+    #LOO 1,8 {
+      temp= "@var"+%i
+      #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "lensed"  | @temp = "") {
+        #if (%i = 1) {
+          var1 = 0
+        }
+        #if (%i = 2) {
+          var2 = 0
+        }
+        #if (%i = 3) {
+          var3 = 0
+        }
+        #if (%i = 4) {
+          var4 = 0
+        }
+        #if (%i = 5) {
+          var5 = 0
+        }
+        #if (%i = 6) {
+          var6 = 0
+        }
+        #if (%i = 7) {
+          var7 = 0
+        }
+        #if (%i = 8) {
+          var8 = 0
+        }
+      }
+    }
+    #if (@var1 != 0 ) {
+      kw_sheath2 = @var1
+    }
+    #if (@var2 != 0 ) {
+      kw_sheath2 = @var2
+    }
+    #if (@var1 != 0 & @var2 != 0 ) {
+      kw_sheath2 = @var1+"-"+@var2
+    }
+    #if (@var2 != 0 & @var3 != 0 ) {
+      kw_sheath2 = @var2+"-"+@var3
+    }
+    #if (@var2 != 0 & @var4 != 0 ) {
+      kw_sheath2 = @var2+"-"+@var4
+    }
+    #if (@var2 != 0 & @var5 != 0 ) {
+      kw_sheath2 = @var2+"-"+@var5
+    }
+      
+    #if (@var3 != 0 & @var4 != 0 ) {
+      kw_sheath2 = @var3+"-"+@var4
+    }
+    #if (@var3 != 0 & @var5 != 0 ) {
+      kw_sheath2 = @var3+"-"+@var5
+    }
+    #if (@var3 != 0 & @var6 != 0 ) {
+      kw_sheath2 = @var3+"-"+@var6
+    }
+
+    #if (@var4 != 0 & @var5 != 0 ) {
+      kw_sheath2 = @var4+"-"+@var5
+    }
+    #if (@var4 != 0 & @var6 != 0 ) {
+      kw_sheath2 = @var4+"-"+@var6
+    }
+    #if (@var4 != 0 & @var7 != 0 ) {
+      kw_sheath2 = @var4+"-"+@var7
+    }
+    #if (@armory_debug = 1) {
+      #echo Sheathed weapon #2: @kw_sheath2
+    }
+    cnt_sheath = 0
+  }
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+#if (@conf_ins_sheath > 0) {
+  conf_ins_sheath = (@conf_ins_sheath + 1)
+}]]></value>
+      </trigger>
+      <var name="cnt_sheath">1</var>
+      <trigger priority="500">
+        <pattern>&lt;wielded right handed&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_wright = 1) {
+  kw_wright = ""
+  eq_wright = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_wright,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_wright = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_wright = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_wright = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_wright = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_wright = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_wright = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_wright = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_wright = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_wright = @var3+"-"+@var6
+  }
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_wright = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_wright = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_wright = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Wielded right: @kw_wright
+  }
+}
+conf_ins_wright = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;wielded two-handed&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_2hand = 1) {
+  kw_w2hand = ""
+  eq_w2hand = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_w2hand,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_w2hand = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_w2hand = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_w2hand = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_w2hand = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_w2hand = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_w2hand = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_w2hand = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_w2hand = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_w2hand = @var3+"-"+@var6
+  }
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_w2hand = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_w2hand = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_w2hand = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Wielded two-handed: @kw_w2hand
+  }
+}
+conf_ins_2hand = 0
+]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;used as light&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_light = 1) {
+  kw_light = ""
+  eq_light = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_light,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "light..It" |@temp = "glows" | @temp = "topped" | @temp = "softly"  | @temp = "bright" |@temp = ""| @temp = "powerfully" | @temp = "softly..It" | @temp = "hums") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var4 = "darkfire..It") {
+    var4 = darkfire
+  }
+  #if (@var3 = "sphere..It") {
+    var3 = sphere
+  }
+  #if (@var1 != 0 ) {
+    kw_light = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_light = @var2
+  }
+  #if (@var3 != 0 ) {
+    kw_light = @var3
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_light = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_light = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_light = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_light = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_light = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_light = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_light = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_light = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_light = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_light = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Light: @kw_light
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_light = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn on arms&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_arms = 1) {
+  kw_arms = ""
+  eq_arms = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_arms,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "lensed"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_arms = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_arms = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_arms = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_arms = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_arms = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_arms = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_arms = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_arms = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_arms = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_arms = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_arms = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_arms = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Arms: @kw_arms
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_arms = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;worn as shield&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_shield = 1) {
+  kw_shield = ""
+  eq_shield = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_shield,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from" | @temp = "with" | @temp = "adorned"  | @temp = "the"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_shield = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_shield = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_shield = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_shield = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_shield = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_shield = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_shield = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_shield = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_shield = @var3+"-"+@var6
+  }
+
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_shield = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_shield = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_shield = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Arms: @kw_shield
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_shield = 0]]></value>
+      </trigger>
+      <trigger priority="500">
+        <pattern>&lt;held&gt;%s%1</pattern>
+        <value><![CDATA[#if (@conf_ins_held = 1) {
+  kw_held = ""
+  eq_held = %1
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+  #echop %regex(@eq_held,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "from"| @temp = "with" | @temp = "lensed"  | @temp = "hums"   | @temp = "powerfully"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+  #if (@var1 != 0 ) {
+    kw_held = @var1
+  }
+  #if (@var2 != 0 ) {
+    kw_held = @var2
+  }
+  #if (@var1 != 0 & @var2 != 0 ) {
+    kw_held = @var1+"-"+@var2
+  }
+  #if (@var2 != 0 & @var3 != 0 ) {
+    kw_held = @var2+"-"+@var3
+  }
+  #if (@var2 != 0 & @var4 != 0 ) {
+    kw_held = @var2+"-"+@var4
+  }
+  #if (@var2 != 0 & @var5 != 0 ) {
+    kw_held = @var2+"-"+@var5
+  }
+    
+  #if (@var3 != 0 & @var4 != 0 ) {
+    kw_held = @var3+"-"+@var4
+  }
+  #if (@var3 != 0 & @var5 != 0 ) {
+    kw_held = @var3+"-"+@var5
+  }
+  #if (@var3 != 0 & @var6 != 0 ) {
+    kw_held = @var3+"-"+@var6
+  }
+  #if (@var4 != 0 & @var5 != 0 ) {
+    kw_held = @var4+"-"+@var5
+  }
+  #if (@var4 != 0 & @var6 != 0 ) {
+    kw_held = @var4+"-"+@var6
+  }
+  #if (@var4 != 0 & @var7 != 0 ) {
+    kw_held = @var4+"-"+@var7
+  }
+  #if (@armory_debug = 1) {
+    #echo Held: @kw_held
+  }
+  cnt_kw = (@cnt_kw + 1)
+  var1 = "";var2 = "";var3 = "";var4 = "";var5 = "";var6 = "";var7 = "";var8 = ""
+}
+conf_ins_held = 0]]></value>
+      </trigger>
+      <var name="var9" type="Literal">23</var>
+      <var name="cnt_kw">20</var>
+    </class>
+    <alias name="clear_armor">
+      <value>#if (%1 = "0") {
+  kw_about = ""
+  kw_arms = ""
+  kw_body = ""
+  kw_face = ""
+  kw_feet = ""
+  kw_head = ""
+  kw_held = ""
+  kw_legs = ""
+  kw_light = ""
+  kw_neck1 = ""
+  kw_neck2 = ""
+  kw_ring1 = ""
+  kw_ring2 = ""
+  kw_shield = ""
+  kw_skirt = ""
+  kw_waist = ""
+  kw_wrist1 = ""
+  kw_wrist2 = ""
+  kw_hands = ""
+  kw_w2hand = ""
+  kw_wright = ""
+  kw_wleft = ""
+  kw_back = ""
+  eq_about = ""
+  eq_arms = ""
+  eq_back = ""
+  eq_body = ""
+  eq_face = ""
+  eq_feet = ""
+  eq_hands = ""
+  eq_head = ""
+  eq_held = ""
+  eq_legs = ""
+  eq_light = ""
+  eq_neck1 = ""
+  eq_neck2 = ""
+  eq_ring1 = ""
+  eq_ring2 = ""
+  eq_sheath1 = ""
+  eq_sheath2 = ""
+  eq_shield = ""
+  eq_skirt = ""
+  eq_waist = ""
+  eq_wrist1 = ""
+  eq_wrist2 = ""
+  eq_w2hand = ""
+  eq_wright = ""
+  eq_wleft = ""
+}
+#if (%1 = "1") {
+  about_1 = ""
+  arms_1 = ""
+  body_1 = ""
+  face_1 = ""
+  feet_1 = ""
+  head_1 = ""
+  held_1 = ""
+  legs_1 = ""
+  light_1 = ""
+  neck1_1 = ""
+  neck2_1 = ""
+  ring1_1 = ""
+  ring2_1 = ""
+  shield_1 = ""
+  skirt_1 = ""
+  waist_1 = ""
+  wrist1_1 = ""
+  wrist2_1 = ""
+  hands_1 = ""
+}
+#if (%1 = "2") {
+  about_2 = ""
+  arms_2 = ""
+  body_2 = ""
+  face_2 = ""
+  feet_2 = ""
+  head_2 = ""
+  held_2 = ""
+  legs_2 = ""
+  light_2 = ""
+  neck1_2 = ""
+  neck2_2 = ""
+  ring1_2 = ""
+  ring2_2 = ""
+  shield_2 = ""
+  skirt_2 = ""
+  waist_2 = ""
+  wrist1_2 = ""
+  wrist2_2 = ""
+  hands_2 = ""
+}
+#if (%1 = "3") {
+  about_3 = ""
+  arms_3 = ""
+  body_3 = ""
+  face_3 = ""
+  feet_3 = ""
+  head_3 = ""
+  held_3 = ""
+  legs_3 = ""
+  light_3 = ""
+  neck1_3 = ""
+  neck2_3 = ""
+  ring1_3 = ""
+  ring2_3 = ""
+  shield_3 = ""
+  skirt_3 = ""
+  waist_3 = ""
+  wrist1_3 = ""
+  wrist2_3 = ""
+  hands_3 = ""
+}
+#if (%1 = "4") {
+  about_4 = ""
+  arms_4 = ""
+  body_4 = ""
+  face_4 = ""
+  feet_4 = ""
+  head_4 = ""
+  held_4 = ""
+  legs_4 = ""
+  light_4 = ""
+  neck1_4 = ""
+  neck2_4 = ""
+  ring1_4 = ""
+  ring2_4 = ""
+  shield_4 = ""
+  skirt_4 = ""
+  waist_4 = ""
+  wrist1_4 = ""
+  wrist2_4 = ""
+  hands_4 = ""
+}
+#if (%1 = "5") {
+  about_5 = ""
+  arms_5 = ""
+  body_5 = ""
+  face_5 = ""
+  feet_5 = ""
+  head_5 = ""
+  held_5 = ""
+  legs_5 = ""
+  light_5 = ""
+  neck1_5 = ""
+  neck2_5 = ""
+  ring1_5 = ""
+  ring2_5 = ""
+  shield_5 = ""
+  skirt_5 = ""
+  waist_5 = ""
+  wrist1_5 = ""
+  wrist2_5 = ""
+  hands_5 = ""
+}
+#if (%1 = "6") {
+  about_6 = ""
+  arms_6 = ""
+  body_6 = ""
+  face_6 = ""
+  feet_6 = ""
+  head_6 = ""
+  held_6 = ""
+  legs_6 = ""
+  light_6 = ""
+  neck1_6 = ""
+  neck2_6 = ""
+  ring1_6 = ""
+  ring2_6 = ""
+  shield_6 = ""
+  skirt_6 = ""
+  waist_6 = ""
+  wrist1_6 = ""
+  wrist2_6 = ""
+  hands_6 = ""
+}</value>
+    </alias>
+    <var name="bag_eq1">ball-gear</var>
+    <var name="bag_eq2">holy-sack</var>
+    <alias name="eq_armor">
+      <value><![CDATA[#say ""
+#say Changing to armor config: %1
+armor ins
+#wa 1000
+#if (@cnt_kw > 10) {
+  #say Keyword count: @cnt_kw
+  status_ins = 1
+}
+#if (@status_ins = 1) {
+  conf_ins_2hand = 0
+  conf_ins_abody = 0
+  conf_ins_alegs = 0
+  conf_ins_arms = 0
+  conf_ins_back = 0
+  conf_ins_body = 0
+  conf_ins_face = 0
+  conf_ins_feet = 0
+  conf_ins_hands = 0
+  conf_ins_head = 0
+  conf_ins_held = 0
+  conf_ins_legs = 0
+  conf_ins_light = 0
+  conf_ins_neck = 0
+  conf_ins_ring = 0
+  conf_ins_sheath = 0
+  conf_ins_shield = 0
+  conf_ins_waist = 0
+  conf_ins_wleft = 0
+  conf_ins_wright = 0
+  conf_ins_wrist = 0
+  wear_eq %1
+} {
+  #wa 1000
+  #if (@cnt_kw > 10) {
+    status_ins = 1
+  }
+  #if (@status_ins = 1) {
+    conf_ins_2hand = 0
+    conf_ins_abody = 0
+    conf_ins_alegs = 0
+    conf_ins_arms = 0
+    conf_ins_back = 0
+    conf_ins_body = 0
+    conf_ins_face = 0
+    conf_ins_feet = 0
+    conf_ins_hands = 0
+    conf_ins_head = 0
+    conf_ins_held = 0
+    conf_ins_legs = 0
+    conf_ins_light = 0
+    conf_ins_neck = 0
+    conf_ins_ring = 0
+    conf_ins_sheath = 0
+    conf_ins_shield = 0
+    conf_ins_waist = 0
+    conf_ins_wleft = 0
+    conf_ins_wright = 0
+    conf_ins_wrist = 0
+    wear_eq %1
+  } {
+    #wa 1000
+    #if (@cnt_kw > 10) {
+    status_ins = 1
+    }
+    #if (@status_ins = 1) {
+      conf_ins_2hand = 0
+      conf_ins_abody = 0
+      conf_ins_alegs = 0
+      conf_ins_arms = 0
+      conf_ins_back = 0
+      conf_ins_body = 0
+      conf_ins_face = 0
+      conf_ins_feet = 0
+      conf_ins_hands = 0
+      conf_ins_head = 0
+      conf_ins_held = 0
+      conf_ins_legs = 0
+      conf_ins_light = 0
+      conf_ins_neck = 0
+      conf_ins_ring = 0
+      conf_ins_sheath = 0
+      conf_ins_shield = 0
+      conf_ins_waist = 0
+      conf_ins_wleft = 0
+      conf_ins_wright = 0
+      conf_ins_wrist = 0
+      wear_eq %1
+    } {
+      #wa 1000
+      #if (@cnt_kw > 10) {
+        status_ins = 1
+      }
+      #if (@status_ins = 1) {
+        conf_ins_2hand = 0
+        conf_ins_abody = 0
+        conf_ins_alegs = 0
+        conf_ins_arms = 0
+        conf_ins_back = 0
+        conf_ins_body = 0
+        conf_ins_face = 0
+        conf_ins_feet = 0
+        conf_ins_hands = 0
+        conf_ins_head = 0
+        conf_ins_held = 0
+        conf_ins_legs = 0
+        conf_ins_light = 0
+        conf_ins_neck = 0
+        conf_ins_ring = 0
+        conf_ins_sheath = 0
+        conf_ins_shield = 0
+        conf_ins_waist = 0
+        conf_ins_wleft = 0
+        conf_ins_wright = 0
+        conf_ins_wrist = 0
+        wear_eq %1
+      } {
+        #wa 1000
+        #if (@cnt_kw > 10) {
+          status_ins = 1
+        }
+        #if (@status_ins = 1) {
+          conf_ins_2hand = 0
+          conf_ins_abody = 0
+          conf_ins_alegs = 0
+          conf_ins_arms = 0
+          conf_ins_back = 0
+          conf_ins_body = 0
+          conf_ins_face = 0
+          conf_ins_feet = 0
+          conf_ins_hands = 0
+          conf_ins_head = 0
+          conf_ins_held = 0
+          conf_ins_legs = 0
+          conf_ins_light = 0
+          conf_ins_neck = 0
+          conf_ins_ring = 0
+          conf_ins_sheath = 0
+          conf_ins_shield = 0
+          conf_ins_waist = 0
+          conf_ins_wleft = 0
+          conf_ins_wright = 0
+          conf_ins_wrist = 0
+          wear_eq %1
+        }
+      }
+    }
+  }
+}]]></value>
+    </alias>
+    <var name="kw_wleft" type="Literal"/>
+    <var name="kw_wright">tipped-adamantium</var>
+    <var name="eq_wright">a multi-tailed whip tipped by sharp adamantium lashes..It glows softly..It hums powerfully</var>
+    <var name="eq_wleft" type="Literal"/>
+    <var name="eq_w2hand" type="Literal"/>
+    <var name="kw_w2hand" type="Literal"/>
+    <alias name="regen">
+      <value>armor eq 4</value>
+    </alias>
+    <alias name="ac">
+      <value>armor eq 1</value>
+    </alias>
+    <alias name="travel">
+      <value>armor eq 6
+</value>
+    </alias>
+    <alias name="hybrid">
+      <value>armor eq 3</value>
+    </alias>
+    <alias name="shard">
+      <value>#if (@kw_held = "demon-horn") {
+  #echo Crystal shard currently equipped.
+}
+#if (@kw_held != "demon-horn") {
+    #if (@kw_light != "") { 
+      remove @kw_light
+      kw_light = ""
+    }
+    #if ((@kw_wright != "") &amp; (@kw_wleft != "")) { sheath @ohand }
+    #if ((@kw_w2hand != "" &amp; @kw_back = "")) { sheath @mhand back }
+    #if ((@kw_w2hand != "" &amp; @kw_back != "")) { remove @mhand;put @mhand @bag_eq1 }
+    get crystal-shard @bag_eq1
+    hold crystal-shard
+    #if (@kw_shield != "") { wear @kw_shield }
+    #if (@kw_held != "") { put @kw_held @bag_eq1 }
+    kw_held = "crystal-shard"
+}</value>
+    </alias>
+    <var name="bag_quiver">bag</var>
+    <alias name="dmg">
+      <value>armor eq 2</value>
+    </alias>
+    <alias name="light">
+      <value><![CDATA[#if (@kw_light != @light_1) {
+  #if (@light_1 != "" ) {
+    #if (@kw_light != "") { 
+      remove @kw_light 
+    }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+      sheath @ohand
+    }
+    #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) { 
+      remove @kw_held
+      put @kw_held @bag_eq1
+      kw_held = ""
+    }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { 
+      sheath @mhand back
+    }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { 
+      remove @mhand
+    }
+    hold @light_1
+    kw_light = @light_1
+  }
+}]]></value>
+    </alias>
+    <alias name="regen2">
+      <value>armor eq 5</value>
+    </alias>
+    <class name="Travel">
+      <var name="wrist2_6">scaled-bracer</var>
+      <var name="wrist1_6">scaled-bracer</var>
+      <var name="waist_6">belt-skulls</var>
+      <var name="skirt_6">skin-skirt</var>
+      <var name="shield_6">buckler-silver</var>
+      <var name="ring2_6">royal-seal</var>
+      <var name="ring1_6">one-ring</var>
+      <var name="neck2_6">white-amulet</var>
+      <var name="neck1_6">white-amulet</var>
+      <var name="light_6">light-sphere</var>
+      <var name="legs_6">scale-leggings</var>
+      <var name="held_6"/>
+      <var name="head_6">diamond-pot</var>
+      <var name="hands_6">black-gloves</var>
+      <var name="feet_6">ethereal-boots</var>
+      <var name="face_6">face-plate</var>
+      <var name="body_6">iron-cuirass</var>
+      <var name="back_6"/>
+      <var name="arms_6">black-armbands</var>
+      <var name="about_6">aura-coalescing</var>
+    </class>
+    <var name="armory_debug">0</var>
+    <var name="bag_rings">ball-gear</var>
+    <var name="bag_neck">holy-sack</var>
+    <var name="bag_body">ball-gear</var>
+    <var name="bag_head">holy-sack</var>
+    <var name="bag_legs">ball-gear</var>
+    <var name="bag_feet">ball-gear</var>
+    <var name="bag_hands">holy-sack</var>
+    <var name="bag_arms">ball-gear</var>
+    <var name="bag_shield">holy-sack</var>
+    <var name="bag_about_body">ball-gear</var>
+    <var name="bag_waist">holy-sack</var>
+    <var name="bag_wrists">holy-sack</var>
+    <var name="bag_face">holy-sack</var>
+    <var name="bag_about_legs">ball-gear</var>
+    <var name="bag_held">holy-sack</var>
+    <var name="bag_light">ball-gear</var>
+    <var name="conf_ins_held">0</var>
+    <var name="conf_ins_ring">0</var>
+    <var name="conf_ins_neck">0</var>
+    <var name="conf_ins_body">0</var>
+    <var name="conf_ins_abody">0</var>
+    <var name="conf_ins_wrist">0</var>
+    <var name="conf_ins_legs">0</var>
+    <var name="conf_ins_head">0</var>
+    <var name="conf_ins_hands">0</var>
+    <var name="conf_ins_waist">0</var>
+    <var name="conf_ins_alegs">0</var>
+    <var name="conf_ins_sheath">0</var>
+    <var name="conf_ins_back">0</var>
+    <var name="conf_ins_wleft">0</var>
+    <var name="conf_ins_wright">0</var>
+    <var name="conf_ins_2hand">0</var>
+    <var name="conf_ins_face">0</var>
+    <var name="conf_ins_shield">0</var>
+    <var name="conf_ins_arms">0</var>
+    <var name="conf_ins_light">0</var>
+    <var name="conf_ins_feet">0</var>
+    <var name="kw_swap"/>
+    <var name="conf_ins_2hand">0</var>
+    <var name="conf_ins_abody">0</var>
+    <var name="conf_ins_alegs">0</var>
+    <var name="conf_ins_arms">0</var>
+    <var name="conf_ins_back">0</var>
+    <var name="conf_ins_body">0</var>
+    <var name="conf_ins_face">0</var>
+    <var name="conf_ins_feet">0</var>
+    <var name="conf_ins_hands">0</var>
+    <var name="conf_ins_head">0</var>
+    <var name="conf_ins_held">0</var>
+    <var name="conf_ins_legs">0</var>
+    <var name="conf_ins_light">0</var>
+    <var name="conf_ins_neck">0</var>
+    <var name="conf_ins_ring">0</var>
+    <var name="conf_ins_sheath">0</var>
+    <var name="conf_ins_shield">0</var>
+    <var name="conf_ins_waist">0</var>
+    <var name="conf_ins_wleft">0</var>
+    <var name="conf_ins_wright">0</var>
+    <var name="conf_ins_wrist">0</var>
+    <var name="sum_conf_ns">0</var>
+    <alias name="wear_eq">
+      <value><![CDATA[#if (%1 = "1") {  
+  #if (@kw_light != @light_1) {
+    #if (@kw_light != "") { 
+      remove @kw_light
+      #if (@kw_light = "brass-lamp") {
+        put @kw_light @bag_light
+      }
+    }
+    {
+      #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+        sheath @ohand
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = "")) & (@kw_held != "")) { 
+        sheath @mhand
+      }
+      {
+        #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) { 
+          remove @kw_held
+          put @kw_held @bag_held
+          kw_held = ""
+        }
+      }
+      #if ((@kw_w2hand != "" & @kw_back = "")) { 
+        sheath @mhand back
+      }
+      {
+        remove @mhand
+      }
+    }
+    #if (@light_1 = "brass-lamp") {
+      get @light_1 @bag_eq1
+    }
+    #IF (@light_1 != "") {
+      hold @light_1
+      kw_light = @light_1
+    }
+    {
+      kw_light = ""
+    }
+  }
+  #if (@kw_ring2 != @ring2_1) {
+    #if (@kw_ring2 != "") { remove @kw_ring2 }
+    get @ring2_1 @bag_rings
+    wear @ring2_1
+    #if (@kw_ring2 != "") { put @kw_ring2 @bag_rings }
+    kw_ring2 = @ring2_1
+  }
+  #if (@kw_ring1 != @ring1_1) {
+    #if (@kw_ring1 != "") { remove @kw_ring1 }
+    get @ring1_1 @bag_rings
+    wear @ring1_1
+    #if (@kw_ring1 != "") { put @kw_ring1 @bag_rings }
+    kw_ring1 = @ring1_1
+  }
+  #if (@kw_neck2 != @neck2_1) {
+    #if (@kw_neck2 != "") { remove @kw_neck2 }
+    get @neck2_1 @bag_neck
+    wear @neck2_1
+    #if (@kw_neck2 != "") { put @kw_neck2 @bag_neck }
+    kw_neck2 = @neck2_1
+  } 
+  #if (@kw_neck1 != @neck1_1) {
+    #if (@kw_neck1 != "") { remove @kw_neck1 }
+    get @neck1_1 @bag_neck
+    wear @neck1_1
+    #if (@kw_neck1 != "") { put @kw_neck1 @bag_neck }
+    kw_neck1 = @neck1_1
+  } 
+  #if (@kw_body != @body_1) {
+    #if (@kw_body != "") { remove @kw_body }
+    get @body_1 @bag_body
+    wear @body_1
+    #if (@kw_body != "") { put @kw_body @bag_body }
+    kw_body = @body_1
+  }
+  #if (@kw_head != @head_1) {
+    #if (@kw_head != "") { remove @kw_head }
+    get @head_1 @bag_head
+    wear @head_1
+    #if (@kw_head != "") { put @kw_head @bag_head }
+    kw_head = @head_1
+  }
+  #if (@kw_legs != @legs_1) {
+    #if (@kw_legs != "") { remove @kw_legs }
+    get @legs_1 @bag_legs
+    wear @legs_1
+    #if (@kw_legs != "") { put @kw_legs @bag_legs }
+    kw_legs = @legs_1
+  }
+  #if (@kw_feet != @feet_1) {
+    #if (@kw_feet != "") { remove @kw_feet }
+    get @feet_1 @bag_feet
+    wear @feet_1
+    #if (@kw_feet != "") { put @kw_feet @bag_feet }
+    kw_feet = @feet_1
+  }
+  #if (@kw_hands != @hands_1) {
+    #if (@kw_hands != "") { remove @kw_hands }
+    get @hands_1 @bag_hands
+    wear @hands_1
+    #if (@kw_hands != "") { put @kw_hands @bag_hands }
+    kw_hands = @hands_1
+  }
+  #if (@kw_arms != @arms_1) {
+    #if (@kw_arms != "") { remove @kw_arms }
+    get @arms_1 @bag_arms
+    wear @arms_1
+    #if (@kw_arms != "") { put @kw_arms @bag_arms }
+    kw_arms = @arms_1
+  }
+  #if (@kw_about != @about_1) {
+    #if (@kw_about != "") { remove @kw_about }
+    get @about_1 @bag_about_body
+    wear @about_1
+    #if (@kw_about != "") { put @kw_about @bag_about_body }
+    kw_about = @about_1
+  }
+  #if (@kw_waist != @waist_1) {
+    #if (@kw_waist != "") { remove @kw_waist }
+    get @waist_1 @bag_waist
+    wear @waist_1
+    #if (@kw_waist != "") { put @kw_waist @bag_waist }
+    kw_waist = @waist_1
+  }
+  #if (@kw_wrist2 != @wrist2_1) {
+    #if (@kw_wrist2 != "") { remove @kw_wrist2 }
+    get @wrist2_1 @bag_wrists
+    wear @wrist2_1
+    #if (@kw_wrist2 != "") { put @kw_wrist2 @bag_wrists }
+    kw_wrist2 = @wrist2_1
+  }
+  #if (@kw_wrist1 != @wrist1_1) {
+    #if (@kw_wrist1 != "") { remove @kw_wrist1 }
+    get @wrist1_1 @bag_wrists
+    wear @wrist1_1
+    #if (@kw_wrist1 != "") { put @kw_wrist1 @bag_wrists }
+    kw_wrist1 = @wrist1_1
+  }
+  #if (@kw_shield != @shield_1) {
+    #if (@kw_shield != "") { remove @kw_shield }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { sheath @ohand }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { sheath @mhand back }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { remove @mhand }
+    #if (@shield_1 != "" ) {
+      get @shield_1 @bag_shield
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        remove @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        remove @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        remove @kw_held
+      }
+      wear @shield_1
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        hold @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (@kw_shield != "") { 
+        put @kw_shield @bag_shield
+      }
+      kw_shield = @shield_1
+    }
+  }
+  #if (@kw_held != @held_1) {
+    #if (@held_1 != "" ) {
+      #if (@kw_held != "") { 
+        remove @kw_held 
+                put @kw_held @bag_held
+      }
+      {
+        #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+          sheath @ohand
+        }
+        #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) { 
+          remove @kw_light
+          kw_light = ""
+        }
+        #if ((@kw_w2hand != "" & @kw_back = "")) { 
+          sheath @mhand back
+          kw_w2hand = @mhand
+        }
+        #if ((@kw_w2hand != "" & @kw_back != "")) { 
+          remove @mhand
+        }
+      }
+      get @held_1 @bag_held
+      hold @held_1
+      kw_held = @held_1
+    }
+    {
+      remove @kw_held
+      put @kw_held @bag_held
+      kw_held = ""
+    }
+  }
+  #if (@kw_face != @face_1) {
+    #if (@kw_face != "") { remove @kw_face }
+    get @face_1 @bag_face
+    wear @face_1
+    #if (@kw_face != "") { put @kw_face @bag_face}
+    kw_face = @face_1
+  }
+  #if (@kw_skirt != @skirt_1) {
+    #if (@kw_skirt != "") { remove @kw_skirt }
+    get @skirt_1 @bag_about_legs
+    wear @skirt_1
+    #if (@kw_skirt != "") { put @kw_skirt @bag_about_legs }
+    kw_skirt = @skirt_1
+  }
+}
+#if (%1 = "2") {
+  #if (@kw_light != @light_2) {
+    #if (@kw_light != "") { 
+      remove @kw_light
+      #if (@kw_light = "brass-lamp") {
+        put @kw_light @bag_light
+      }
+    }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+      sheath @ohand
+    }
+    #if (((@kw_wright != "") | (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = "")) & (@kw_held != "")) { 
+      sheath @mhand
+    }
+//    #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) { 
+//      remove @kw_held
+//      put @kw_light @bag_held
+//      kw_held = ""
+//    }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { 
+      sheath @mhand back
+    }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { 
+      remove @mhand
+    }
+    #if (@light_2 = "brass-lamp") {
+      get @light_2 @bag_light
+    }
+    #IF (@light_2 != "") {
+      hold @light_2
+      kw_light = @light_2
+    }
+    {
+      kw_light = ""
+    }
+  }
+  #if (@kw_ring2 != @ring2_2) {
+    #if (@kw_ring2 != "") { remove @kw_ring2 }
+    get @ring2_2 @bag_rings
+    wear @ring2_2
+    #if (@kw_ring2 != "") { put @kw_ring2 @bag_rings }
+  }
+  #if (@kw_ring1 != @ring1_2) {
+    #if (@kw_ring1 != "") { remove @kw_ring1 }
+    get @ring1_2 @bag_rings
+    wear @ring1_2
+    #if (@kw_ring1 != "") { put @kw_ring1 @bag_rings }
+  }
+  #if (@kw_neck2 != @neck2_2) {
+    #if (@kw_neck2 != "") { remove @kw_neck2 }
+    get @neck2_2 @bag_neck
+    wear @neck2_2
+    #if (@kw_neck2 != "") { put @kw_neck2 @bag_neck }
+  }  
+  #if (@kw_neck1 != @neck1_2) {
+    #if (@kw_neck1 != "") { remove @kw_neck1 }
+    get @neck1_2 @bag_neck
+    wear @neck1_2
+    #if (@kw_neck1 != "") { put @kw_neck1 @bag_neck }
+  }
+  #if (@kw_body != @body_2) {
+    #if (@kw_body != "") { remove @kw_body }
+    get @body_2 @bag_body
+    wear @body_2
+    #if (@kw_body != "") { put @kw_body @bag_body }
+  }
+  #if (@kw_head != @head_2) {
+    #if (@kw_head != "") { remove @kw_head }
+    get @head_2 @bag_head
+    wear @head_2
+    #if (@kw_head != "") { put @kw_head @bag_head }
+  }
+  #if (@kw_legs != @legs_2) {
+    #if (@kw_legs != "") { remove @kw_legs }
+    get @legs_2 @bag_legs
+    wear @legs_2
+    #if (@kw_legs != "") { put @kw_legs @bag_legs }
+  }
+  #if (@kw_feet != @feet_2) {
+    #if (@kw_feet != "") { remove @kw_feet }
+    get @feet_2 @bag_feet
+    wear @feet_2
+    #if (@kw_feet != "") { put @kw_feet @bag_feet }
+  }
+  #if (@kw_hands != @hands_2) {
+    #if (@kw_hands != "") { remove @kw_hands }
+    get @hands_2 @bag_hands
+    wear @hands_2
+    #if (@kw_hands != "") { put @kw_hands @bag_hands }
+  }
+  #if (@kw_arms != @arms_2) {
+    #if (@kw_arms != "") { remove @kw_arms }
+    get @arms_2 @bag_arms
+    wear @arms_2
+    #if (@kw_arms != "") { put @kw_arms @bag_arms }
+  }
+  #if (@kw_about != @about_2) {
+    #if (@kw_about != "") { remove @kw_about }
+    get @about_2 @bag_about_body
+    wear @about_2
+    #if (@kw_about != "") { put @kw_about @bag_about_body }
+  }
+  #if (@kw_waist != @waist_2) {
+    #if (@kw_waist != "") { remove @kw_waist }
+    get @waist_2 @bag_waist
+    wear @waist_2
+    #if (@kw_waist != "") { put @kw_waist @bag_waist }
+  }
+  #if (@kw_wrist2 != @wrist2_2) {
+    #if (@kw_wrist2 != "") { remove @kw_wrist2 }
+    get @wrist2_2 @bag_wrists
+    wear @wrist2_2
+    #if (@kw_wrist2 != "") { put @kw_wrist2 @bag_wrists }
+  }
+  #if (@kw_wrist1 != @wrist1_2) {
+    #if (@kw_wrist1 != "") { remove @kw_wrist1 }
+    get @wrist1_2 @bag_wrists
+    wear @wrist1_2
+    #if (@kw_wrist1 != "") { put @kw_wrist1 @bag_wrists }
+  }
+  #if (@kw_held != @held_2) {
+    #if (@held_2 != "" ) {
+      #if (@kw_held != "") { 
+        remove @kw_held
+                put @kw_held @bag_held
+      }
+      {
+        #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+          sheath @ohand
+        }
+        #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) { 
+          remove @kw_light
+          kw_light = ""
+        }
+        #if ((@kw_w2hand != "" & @kw_back = "")) { 
+          sheath @mhand back
+          kw_w2hand = @mhand
+        }
+        #if ((@kw_w2hand != "" & @kw_back != "")) { 
+          remove @mhand
+        }
+      }
+      get @held_2 @bag_held
+      hold @held_2
+      kw_held = @held_2
+    }
+    {
+      remove @kw_held
+      put @kw_held @bag_held
+      kw_held = ""
+    }
+  }
+  #if (@kw_shield != @shield_2) {
+    #if (@kw_shield != "") { remove @kw_shield }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { sheath @ohand }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { sheath @mhand back }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { remove @mhand }
+    #if (@shield_2 != "" ) {
+      get @shield_2 @bag_shield
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        remove @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        remove @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        remove @kw_held
+      }
+      wear @shield_2
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        hold @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (@kw_shield != "") { 
+        put @kw_shield @bag_shield
+      }
+      kw_shield = @shield_2
+    }
+  }
+  #if (@kw_face != @face_2) {
+    #if (@kw_face != "") { remove @kw_face }
+    get @face_2 @bag_face
+    wear @face_2
+    #if (@kw_face != "") { put @kw_face @bag_face }
+  }
+  #if (@kw_skirt != @skirt_2) {
+    #if (@kw_skirt != "") { remove @kw_skirt }
+    get @skirt_2 @bag_about_legs
+    wear @skirt_2
+    #if (@kw_skirt != "") { put @kw_skirt @bag_about_legs }
+  }
+}
+#if (%1 = "3") {
+  #if (@kw_light != @light_3) {
+    #if (@kw_light != "") { 
+      remove @kw_light
+      #if (@kw_light = "brass-lamp") {
+        put @kw_light @bag_light
+      }
+    }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+      sheath @ohand
+    }
+    #if (((@kw_wright != "") | (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = "")) & (@kw_held != "")) { 
+      sheath @mhand
+    }
+//    #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) { 
+//      remove @kw_held
+//      put @kw_held @bag_held
+//      kw_held = ""
+//    }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { 
+      sheath @mhand back
+    }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { 
+      remove @mhand
+    }
+    #if (@light_3 = "brass-lamp") {
+      get @light_3 @bag_light
+    }
+    #IF (@light_3 != "") {
+      hold @light_3
+      kw_light = @light_3
+    }
+    {
+      kw_light = ""
+    }
+  }
+  #if (@kw_ring2 != @ring2_3) {
+    #if (@kw_ring2 != "") { remove @kw_ring2 }
+    get @ring2_3 @bag_rings
+    wear @ring2_3
+    #if (@kw_ring2 != "") { put @kw_ring2 @bag_rings }
+  }
+  #if (@kw_ring1 != @ring1_3) {
+    #if (@kw_ring1 != "") { remove @kw_ring1 }
+    get @ring1_3 @bag_rings
+    wear @ring1_3
+    #if (@kw_ring1 != "") { put @kw_ring1 @bag_rings }
+  }
+  #if (@kw_neck2 != @neck2_3) {
+    #if (@kw_neck2 != "") { remove @kw_neck2 }
+    get @neck2_3 @bag_neck
+    wear @neck2_3
+    #if (@kw_neck2 != "") { put @kw_neck2 @bag_neck }
+  }  
+  #if (@kw_neck1 != @neck1_3) {
+    #if (@kw_neck1 != "") { remove @kw_neck1 }
+    get @neck1_3 @bag_neck
+    wear @neck1_3
+    #if (@kw_neck1 != "") { put @kw_neck1 @bag_neck }
+  }
+  #if (@kw_body != @body_3) {
+    #if (@kw_body != "") { remove @kw_body }
+    get @body_3 @bag_body
+    wear @body_3
+    #if (@kw_body != "") { put @kw_body @bag_body }
+  }
+  #if (@kw_head != @head_3) {
+    #if (@kw_head != "") { remove @kw_head }
+    get @head_3 @bag_head
+    wear @head_3
+    #if (@kw_head != "") { put @kw_head @bag_head }
+  }
+  #if (@kw_legs != @legs_3) {
+    #if (@kw_legs != "") { remove @kw_legs }
+    get @legs_3 @bag_legs
+    wear @legs_3
+    #if (@kw_legs != "") { put @kw_legs @bag_legs }
+  }
+  #if (@kw_feet != @feet_3) {
+    #if (@kw_feet != "") { remove @kw_feet }
+    get @feet_3 @bag_feet
+    wear @feet_3
+    #if (@kw_feet != "") { put @kw_feet @bag_feet }
+  }
+  #if (@kw_hands != @hands_3) {
+    #if (@kw_hands != "") { remove @kw_hands }
+    get @hands_3 @bag_hands
+    wear @hands_3
+    #if (@kw_hands != "") { put @kw_hands @bag_hands }
+  }
+  #if (@kw_arms != @arms_3) {
+    #if (@kw_arms != "") { remove @kw_arms }
+    get @arms_3 @bag_arms
+    wear @arms_3
+    #if (@kw_arms != "") { put @kw_arms @bag_arms }
+  }
+  #if (@kw_about != @about_3) {
+    #if (@kw_about != "") { remove @kw_about }
+    get @about_3 @bag_about_body
+    wear @about_3
+    #if (@kw_about != "") { put @kw_about @bag_about_body }
+  }
+  #if (@kw_waist != @waist_3) {
+    #if (@kw_waist != "") { remove @kw_waist }
+    get @waist_3 @bag_waist
+    wear @waist_3
+    #if (@kw_waist != "") { put @kw_waist @bag_waist }
+  }
+  #if (@kw_wrist2 != @wrist2_3) {
+    #if (@kw_wrist2 != "") { remove @kw_wrist2 }
+    get @wrist2_3 @bag_wrists
+    wear @wrist2_3
+    #if (@kw_wrist2 != "") { put @kw_wrist2 @bag_wrists }
+  }
+  #if (@kw_wrist1 != @wrist1_3) {
+    #if (@kw_wrist1 != "") { remove @kw_wrist1 }
+    get @wrist1_3 @bag_wrists
+    wear @wrist1_3
+    #if (@kw_wrist1 != "") { put @kw_wrist1 @bag_wrists }
+  }
+  #if (@kw_held != @held_3) {
+    #if (@held_3 != "" ) {
+      #if (@kw_held != "") { 
+        remove @kw_held
+                put @kw_held @bag_held
+      }
+      {
+        #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+          sheath @ohand
+        }
+        #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) { 
+          remove @kw_light
+          kw_light = ""
+        }
+        #if ((@kw_w2hand != "" & @kw_back = "")) { 
+          sheath @mhand back
+          kw_w2hand = @mhand
+        }
+        #if ((@kw_w2hand != "" & @kw_back != "")) { 
+          remove @mhand
+        }
+      }
+      get @held_3 @bag_held
+      hold @held_3
+      kw_held = @held_3
+    }
+    {
+      remove @kw_held
+      put @kw_held @bag_held
+      kw_held = ""
+    }
+  }
+  #if (@kw_shield != @shield_3) {
+    #if (@kw_shield != "") { remove @kw_shield }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { sheath @ohand }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { sheath @mhand back }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { remove @mhand }
+    #if (@shield_3 != "" ) {
+      get @shield_3 @bag_shield
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        remove @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        remove @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        remove @kw_held
+      }
+      wear @shield_3
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        hold @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (@kw_shield != "") { 
+        put @kw_shield @bag_shield
+      }
+      kw_shield = @shield_3
+    }
+  }
+  #if (@kw_face != @face_3) {
+    #if (@kw_face != "") { remove @kw_face }
+    get @face_3 @bag_face
+    wear @face_3
+    #if (@kw_face != "") { put @kw_face @bag_face }
+  }
+  #if (@kw_skirt != @skirt_3) {
+    #if (@kw_skirt != "") { remove @kw_skirt }
+    get @skirt_3 @bag_about_legs
+    wear @skirt_3
+    #if (@kw_skirt != "") { put @kw_skirt @bag_about_legs }
+  }
+}
+#if (%1 = "4") {
+  #if (@kw_light != @light_4) {
+    #if (@kw_light != "") { 
+      remove @kw_light
+      #if (@kw_light = "brass-lamp") {
+        put @kw_light @bag_light
+      }
+    }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+      sheath @ohand
+    }
+    #if (((@kw_wright != "") | (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = "")) & (@kw_held != "")) { 
+      sheath @mhand
+    }
+//    #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) { 
+//      remove @kw_held
+//      put @kw_held @bag_held
+//      kw_held = ""
+//    }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { 
+      sheath @mhand back
+    }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { 
+      remove @mhand
+    }
+    #if (@light_4 = "brass-lamp") {
+      get @light_4 @bag_light
+    }
+    #IF (@light_4 != "") {
+      hold @light_4
+      kw_light = @light_4
+    }
+    {
+      kw_light = ""
+    }
+  }
+  #if (@kw_ring2 != @ring2_4) {
+    #if (@kw_ring2 != "") { remove @kw_ring2 }
+    get @ring2_4 @bag_rings
+    wear @ring2_4
+    #if (@kw_ring2 != "") { put @kw_ring2 @bag_rings }
+  }
+  #if (@kw_ring1 != @ring1_4) {
+    #if (@kw_ring1 != "") { remove @kw_ring1 }
+    get @ring1_4 @bag_rings
+    wear @ring1_4
+    #if (@kw_ring1 != "") { put @kw_ring1 @bag_rings }
+  }
+  #if (@kw_neck2 != @neck2_4) {
+    #if (@kw_neck2 != "") { remove @kw_neck2 }
+    get @neck2_4 @bag_neck
+    wear @neck2_4
+    #if (@kw_neck2 != "") { put @kw_neck2 @bag_neck }
+  }  
+  #if (@kw_neck1 != @neck1_4) {
+    #if (@kw_neck1 != "") { remove @kw_neck1 }
+    get @neck1_4 @bag_neck
+    wear @neck1_4
+    #if (@kw_neck1 != "") { put @kw_neck1 @bag_neck }
+  }
+  #if (@kw_body != @body_4) {
+    #if (@kw_body != "") { remove @kw_body }
+    get @body_4 @bag_body
+    wear @body_4
+    #if (@kw_body != "") { put @kw_body @bag_body }
+  }
+  #if (@kw_head != @head_4) {
+    #if (@kw_head != "") { remove @kw_head }
+    get @head_4 @bag_head
+    wear @head_4
+    #if (@kw_head != "") { put @kw_head @bag_head }
+  }
+  #if (@kw_legs != @legs_4) {
+    #if (@kw_legs != "") { remove @kw_legs }
+    get @legs_4 @bag_legs
+    wear @legs_4
+    #if (@kw_legs != "") { put @kw_legs @bag_legs }
+  }
+  #if (@kw_feet != @feet_4) {
+    #if (@kw_feet != "") { remove @kw_feet }
+    get @feet_4 @bag_feet
+    wear @feet_4
+    #if (@kw_feet != "") { put @kw_feet @bag_feet }
+  }
+  #if (@kw_hands != @hands_4) {
+    #if (@kw_hands != "") { remove @kw_hands }
+    get @hands_4 @bag_hands
+    wear @hands_4
+    #if (@kw_hands != "") { put @kw_hands @bag_hands }
+  }
+  #if (@kw_arms != @arms_4) {
+    #if (@kw_arms != "") { remove @kw_arms }
+    get @arms_4 @bag_arms
+    wear @arms_4
+    #if (@kw_arms != "") { put @kw_arms @bag_arms }
+  }
+  #if (@kw_about != @about_4) {
+    #if (@kw_about != "") { remove @kw_about }
+    get @about_4 @bag_about_body
+    wear @about_4
+    #if (@kw_about != "") { put @kw_about @bag_about_body }
+  }
+  #if (@kw_waist != @waist_4) {
+    #if (@kw_waist != "") { remove @kw_waist }
+    get @waist_4 @bag_waist
+    wear @waist_4
+    #if (@kw_waist != "") { put @kw_waist @bag_waist }
+  }
+  #if (@kw_wrist2 != @wrist2_4) {
+    #if (@kw_wrist2 != "") { remove @kw_wrist2 }
+    get @wrist2_4 @bag_wrists
+    wear @wrist2_4
+    #if (@kw_wrist2 != "") { put @kw_wrist2 @bag_wrists }
+  }
+  #if (@kw_wrist1 != @wrist1_4) {
+    #if (@kw_wrist1 != "") { remove @kw_wrist1 }
+    get @wrist1_4 @bag_wrists
+    wear @wrist1_4
+    #if (@kw_wrist1 != "") { put @kw_wrist1 @bag_wrists }
+  }
+  #if (@kw_held != @held_4) {
+    #if (@held_4 != "" ) {
+      #if (@kw_held != "") { 
+        remove @kw_held
+                put @kw_held @bag_held
+      }
+      {
+        #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+          sheath @ohand
+        }
+        #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) { 
+          remove @kw_light
+          kw_light = ""
+        }
+        #if ((@kw_w2hand != "" & @kw_back = "")) { 
+          sheath @mhand back
+          kw_w2hand = @mhand
+        }
+        #if ((@kw_w2hand != "" & @kw_back != "")) { 
+          remove @mhand
+        }
+      }
+      get @held_4 @bag_held
+      hold @held_4
+      kw_held = @held_1
+    }
+    {
+      remove @kw_held
+      put @kw_held @bag_held
+      kw_held = ""
+    }
+  }
+  #if (@kw_shield != @shield_4) {
+    #if (@kw_shield != "") { remove @kw_shield }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { sheath @ohand }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { sheath @mhand back }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { remove @mhand }
+    #if (@shield_4 != "" ) {
+      get @shield_4 @bag_shield
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        remove @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        remove @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        remove @kw_held
+      }
+      wear @shield_4
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        hold @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (@kw_shield != "") { 
+        put @kw_shield @bag_shield
+      }
+      kw_shield = @shield_4
+    }
+  }
+  #if (@kw_face != @face_4) {
+    #if (@kw_face != "") { remove @kw_face }
+    get @face_4 @bag_face
+    wear @face_4
+    #if (@kw_face != "") { put @kw_face @bag_face }
+  }
+  #if (@kw_skirt != @skirt_4) {
+    #if (@kw_skirt != "") { remove @kw_skirt }
+    get @skirt_4 @bag_about_legs
+    wear @skirt_4
+    #if (@kw_skirt != "") { put @kw_skirt @bag_about_legs }
+  }
+}
+#if (%1 = "5") {
+  #if (@kw_light != @light_5) {
+    #if (@kw_light != "") { 
+      remove @kw_light
+      #if (@kw_light = "brass-lamp") {
+        put @kw_light @bag_light
+      }
+    }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+      sheath @ohand
+    }
+    #if (((@kw_wright != "") | (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = "")) & (@kw_held != "")) { 
+      sheath @mhand
+    }
+//    #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) { 
+//      remove @kw_held
+//      put @kw_held @bag_held
+//      kw_held = ""
+//    }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { 
+      sheath @mhand back
+    }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { 
+      remove @mhand
+    }
+    #if (@light_5 = "brass-lamp") {
+      get @light_5 @bag_light
+    }
+    #IF (@light_5 != "") {
+      hold @light_5
+      kw_light = @light_5
+    }
+    {
+      kw_light = ""
+    }
+  }
+  #if (@kw_ring2 != @ring2_5) {
+    #if (@kw_ring2 != "") { remove @kw_ring2 }
+    get @ring2_5 @bag_rings
+    wear @ring2_5
+    #if (@kw_ring2 != "") { put @kw_ring2 @bag_rings }
+  }
+  #if (@kw_ring1 != @ring1_5) {
+    #if (@kw_ring1 != "") { remove @kw_ring1 }
+    get @ring1_5 @bag_rings
+    wear @ring1_5
+    #if (@kw_ring1 != "") { put @kw_ring1 @bag_rings }
+  }
+  #if (@kw_neck2 != @neck2_5) {
+    #if (@kw_neck2 != "") { remove @kw_neck2 }
+    get @neck2_5 @bag_neck
+    wear @neck2_5
+    #if (@kw_neck2 != "") { put @kw_neck2 @bag_neck }
+  }  
+  #if (@kw_neck1 != @neck1_5) {
+    #if (@kw_neck1 != "") { remove @kw_neck1 }
+    get @neck1_5 @bag_neck
+    wear @neck1_5
+    #if (@kw_neck1 != "") { put @kw_neck1 @bag_neck }
+  }
+  #if (@kw_body != @body_5) {
+    #if (@kw_body != "") { remove @kw_body }
+    get @body_5 @bag_body
+    wear @body_5
+    #if (@kw_body != "") { put @kw_body @bag_body }
+  }
+  #if (@kw_head != @head_5) {
+    #if (@kw_head != "") { remove @kw_head }
+    get @head_5 @bag_head
+    wear @head_5
+    #if (@kw_head != "") { put @kw_head @bag_head }
+  }
+  #if (@kw_legs != @legs_5) {
+    #if (@kw_legs != "") { remove @kw_legs }
+    get @legs_5 @bag_legs
+    wear @legs_5
+    #if (@kw_legs != "") { put @kw_legs @bag_legs }
+  }
+  #if (@kw_feet != @feet_5) {
+    #if (@kw_feet != "") { remove @kw_feet }
+    get @feet_5 @bag_feet
+    wear @feet_5
+    #if (@kw_feet != "") { put @kw_feet @bag_feet }
+  }
+  #if (@kw_hands != @hands_5) {
+    #if (@kw_hands != "") { remove @kw_hands }
+    get @hands_5 @bag_hands
+    wear @hands_5
+    #if (@kw_hands != "") { put @kw_hands @bag_hands }
+  }
+  #if (@kw_arms != @arms_5) {
+    #if (@kw_arms != "") { remove @kw_arms }
+    get @arms_5 @bag_arms
+    wear @arms_5
+    #if (@kw_arms != "") { put @kw_arms @bag_arms }
+  }
+  #if (@kw_about != @about_5) {
+    #if (@kw_about != "") { remove @kw_about }
+    get @about_5 @bag_about_body
+    wear @about_5
+    #if (@kw_about != "") { put @kw_about @bag_about_body }
+  }
+  #if (@kw_waist != @waist_5) {
+    #if (@kw_waist != "") { remove @kw_waist }
+    get @waist_5 @bag_waist
+    wear @waist_5
+    #if (@kw_waist != "") { put @kw_waist @bag_waist }
+  }
+  #if (@kw_wrist2 != @wrist2_5) {
+    #if (@kw_wrist2 != "") { remove @kw_wrist2 }
+    get @wrist2_5 @bag_wrists
+    wear @wrist2_5
+    #if (@kw_wrist2 != "") { put @kw_wrist2 @bag_wrists }
+  }
+  #if (@kw_wrist1 != @wrist1_5) {
+    #if (@kw_wrist1 != "") { remove @kw_wrist1 }
+    get @wrist1_5 @bag_wrists
+    wear @wrist1_5
+    #if (@kw_wrist1 != "") { put @kw_wrist1 @bag_wrists }
+  }
+  #if (@kw_held != @held_5) {
+    #if (@held_5 != "" ) {
+      #if (@kw_held != "") { 
+        remove @kw_held
+                put @kw_held @bag_held
+      }
+      {
+        #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+          sheath @ohand
+        }
+        #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) { 
+          remove @kw_light
+          kw_light = ""
+        }
+        #if ((@kw_w2hand != "" & @kw_back = "")) { 
+          sheath @mhand back
+          kw_w2hand = @mhand
+        }
+        #if ((@kw_w2hand != "" & @kw_back != "")) { 
+          remove @mhand
+        }
+      }
+      get @held_5 @bag_held
+      hold @held_5
+      kw_held = @held_1
+    }
+    {
+      remove @kw_held
+      put @kw_held @bag_held
+      kw_held = ""
+    }
+  }
+  #if (@kw_shield != @shield_5) {
+    #if (@kw_shield != "") { remove @kw_shield }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { sheath @ohand }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { sheath @mhand back }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { remove @mhand }
+    #if (@shield_5 != "" ) {
+      get @shield_5 @bag_shield
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        remove @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        remove @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        remove @kw_held
+      }
+      wear @shield_5
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        hold @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (@kw_shield != "") { 
+        put @kw_shield @bag_shield
+      }
+      kw_shield = @shield_5
+    }
+  }
+  #if (@kw_face != @face_5) {
+    #if (@kw_face != "") { remove @kw_face }
+    get @face_5 @bag_face
+    wear @face_5
+    #if (@kw_face != "") { put @kw_face @bag_face }
+  }
+  #if (@kw_skirt != @skirt_5) {
+    #if (@kw_skirt != "") { remove @kw_skirt }
+    get @skirt_5 @bag_about_legs
+    wear @skirt_5
+    #if (@kw_skirt != "") { put @kw_skirt @bag_about_legs }
+  }
+}
+
+#if (%1 = "6") {
+  #if (@kw_light != @light_6) {
+    #if (@kw_light != "") { 
+      remove @kw_light
+      #if (@kw_light = "brass-lamp") {
+        put @kw_light @bag_light
+      }
+    }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+      sheath @ohand
+    }
+    #if (((@kw_wright != "") | (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = "")) & (@kw_held != "")) { 
+      sheath @mhand
+    }
+//    #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) { 
+//      remove @kw_held
+//      put @kw_held @bag_held
+//      kw_held = ""
+//    }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { 
+      sheath @mhand back
+    }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { 
+      remove @mhand
+    }
+    #if (@light_6 = "brass-lamp") {
+      get @light_6 @bag_light
+    }
+    #IF (@light_6 != "") {
+      hold @light_6
+      kw_light = @light_6
+    }
+    {
+      kw_light = ""
+    }
+  }
+  #if (@kw_ring2 != @ring2_6) {
+    #if (@kw_ring2 != "") { remove @kw_ring2 }
+    get @ring2_6 @bag_rings
+    wear @ring2_6
+    #if (@kw_ring2 != "") { put @kw_ring2 @bag_rings }
+  }
+  #if (@kw_ring1 != @ring1_6) {
+    #if (@kw_ring1 != "") { remove @kw_ring1 }
+    get @ring1_6 @bag_rings
+    wear @ring1_6
+    #if (@kw_ring1 != "") { put @kw_ring1 @bag_rings }
+  }
+  #if (@kw_neck2 != @neck2_6) {
+    #if (@kw_neck2 != "") { remove @kw_neck2 }
+    get @neck2_6 @bag_neck
+    wear @neck2_6
+    #if (@kw_neck2 != "") { put @kw_neck2 @bag_neck }
+  }  
+  #if (@kw_neck1 != @neck1_6) {
+    #if (@kw_neck1 != "") { remove @kw_neck1 }
+    get @neck1_6 @bag_neck
+    wear @neck1_6
+    #if (@kw_neck1 != "") { put @kw_neck1 @bag_neck }
+  }
+  #if (@kw_body != @body_6) {
+    #if (@kw_body != "") { remove @kw_body }
+    get @body_6 @bag_body
+    wear @body_6
+    #if (@kw_body != "") { put @kw_body @bag_body }
+  }
+  #if (@kw_head != @head_6) {
+    #if (@kw_head != "") { remove @kw_head }
+    get @head_6 @bag_head
+    wear @head_6
+    #if (@kw_head != "") { put @kw_head @bag_head }
+  }
+  #if (@kw_legs != @legs_6) {
+    #if (@kw_legs != "") { remove @kw_legs }
+    get @legs_6 @bag_legs
+    wear @legs_6
+    #if (@kw_legs != "") { put @kw_legs @bag_legs }
+  }
+  #if (@kw_feet != @feet_6) {
+    #if (@kw_feet != "") { remove @kw_feet }
+    get @feet_6 @bag_feet
+    wear @feet_6
+    #if (@kw_feet != "") { put @kw_feet @bag_feet }
+  }
+  #if (@kw_hands != @hands_6) {
+    #if (@kw_hands != "") { remove @kw_hands }
+    get @hands_6 @bag_hands
+    wear @hands_6
+    #if (@kw_hands != "") { put @kw_hands @bag_hands }
+  }
+  #if (@kw_arms != @arms_6) {
+    #if (@kw_arms != "") { remove @kw_arms }
+    get @arms_6 @bag_arms
+    wear @arms_6
+    #if (@kw_arms != "") { put @kw_arms @bag_arms }
+  }
+  #if (@kw_about != @about_6) {
+    #if (@kw_about != "") { remove @kw_about }
+    get @about_6 @bag_about_body
+    wear @about_6
+    #if (@kw_about != "") { put @kw_about @bag_about_body }
+  }
+  #if (@kw_waist != @waist_6) {
+    #if (@kw_waist != "") { remove @kw_waist }
+    get @waist_6 @bag_waist
+    wear @waist_6
+    #if (@kw_waist != "") { put @kw_waist @bag_waist }
+  }
+  #if (@kw_wrist2 != @wrist2_6) {
+    #if (@kw_wrist2 != "") { remove @kw_wrist2 }
+    get @wrist2_6 @bag_wrists
+    wear @wrist2_6
+    #if (@kw_wrist2 != "") { put @kw_wrist2 @bag_wrists }
+  }
+  #if (@kw_wrist1 != @wrist1_6) {
+    #if (@kw_wrist1 != "") { remove @kw_wrist1 }
+    get @wrist1_6 @bag_wrists
+    wear @wrist1_6
+    #if (@kw_wrist1 != "") { put @kw_wrist1 @bag_wrists }
+  }
+  #if (@kw_held != @held_6) {
+    #if (@held_6 != "" ) {
+      #if (@kw_held != "") { 
+        remove @kw_held
+                put @kw_held @bag_held
+      }
+      {
+        #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { 
+          sheath @ohand
+        }
+        #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) { 
+          remove @kw_light
+          kw_light = ""
+        }
+        #if ((@kw_w2hand != "" & @kw_back = "")) { 
+          sheath @mhand back
+          kw_w2hand = @mhand
+        }
+        #if ((@kw_w2hand != "" & @kw_back != "")) { 
+          remove @mhand
+        }
+      }
+      get @held_6 @bag_held
+      hold @held_6
+      kw_held = @held_1
+    }
+    {
+      remove @kw_held
+      put @kw_held @bag_held
+      kw_held = ""
+    }
+  }
+  #if (@kw_shield != @shield_6) {
+    #if (@kw_shield != "") { remove @kw_shield }
+    #if (((@kw_wright != "") & (@kw_wleft != "")) & ((@kw_sheath1 = "") | (@kw_sheath2 = ""))) { sheath @ohand }
+    #if ((@kw_w2hand != "" & @kw_back = "")) { sheath @mhand back }
+    #if ((@kw_w2hand != "" & @kw_back != "")) { remove @mhand }
+    #if (@shield_6 != "" ) {
+      get @shield_6 @bag_shield
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        remove @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        remove @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        remove @kw_held
+      }
+      wear @shield_6
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (((@kw_wright != "") | (@kw_wleft != "")) & (@kw_light != "")) {
+        hold @kw_light
+      }
+      #if ((@kw_light != "") & (@kw_held != "")) {
+        hold @kw_held
+      }
+      #if (@kw_shield != "") { 
+        put @kw_shield @bag_shield
+      }
+      kw_shield = @shield_6
+    }
+  }
+  #if (@kw_face != @face_6) {
+    #if (@kw_face != "") { remove @kw_face }
+    get @face_6 @bag_face
+    wear @face_6
+    #if (@kw_face != "") { put @kw_face @bag_face }
+  }
+  #if (@kw_skirt != @skirt_6) {
+    #if (@kw_skirt != "") { remove @kw_skirt }
+    get @skirt_6 @bag_about_legs
+    wear @skirt_6
+    #if (@kw_skirt != "") { put @kw_skirt @bag_about_legs }
+  }
+}]]></value>
+    </alias>
+    <var name="status_ins">1</var>
+    <alias name="id_keywords">
+      <value>  #echop %regex(%1,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",var1,var2, var3,var4,var5,var6,var7,var8))
+  #LOO 1,8 {
+    temp= "@var"+%i
+    #if (@temp = "a" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made" | @temp = "suit" | @temp = "from" | @temp = "with" | @temp = "leathery" | @temp = "white"  | @temp = "colors..It"  | @temp = "softly"  | @temp = "glows"  | @temp = "") {
+      #if (%i = 1) {
+        var1 = 0
+      }
+      #if (%i = 2) {
+        var2 = 0
+      }
+      #if (%i = 3) {
+        var3 = 0
+      }
+      #if (%i = 4) {
+        var4 = 0
+      }
+      #if (%i = 5) {
+        var5 = 0
+      }
+      #if (%i = 6) {
+        var6 = 0
+      }
+      #if (%i = 7) {
+        var7 = 0
+      }
+      #if (%i = 8) {
+        var8 = 0
+      }
+    }
+  }
+</value>
+    </alias>
+  </class>
+</cmud>
