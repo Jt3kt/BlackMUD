@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<cmud>
+  <class name="Forager">
+    <trigger priority="3660">
+      <pattern>You didn't manage to find anything edible.</pattern>
+      <value>#if (@auto_forage = 1) {
+  #if (@mv_dir != "" ) {
+    cnt_qual = (@cnt_qual + 1)
+    #if (@cnt_qual &gt;= 3) {
+      #say This seems like a terrible place to forage.
+      cnt_qual = 0
+    }
+  }
+  #if ( @status_thirst = 1) {
+    drink water
+  }
+  #if ( @status_hunger = 1) {
+    cfood me
+    status_hunger = 0
+  }
+  forage
+}</value>
+    </trigger>
+    <trigger priority="3690" trigontrig="false">
+      <pattern>You manage to find some%s%1.</pattern>
+      <value>config_trig_junk = 1
+dec "a "%1
+#if (@status_food = 1) {
+  #sub  "You find "@fdResult"."
+  status_food = 0
+}
+#say Auto Forage block
+#if (@auto_forage = 1) {
+  #if ( @status_thirst = 1) {
+    drink water
+  }
+  #if ( @status_hunger = 1) {
+    cfood me
+  }
+  forage
+}</value>
+    </trigger>
+    <trigger priority="3730" trigontrig="false">
+      <pattern>You manage to find a%s%1.</pattern>
+      <value>config_trig_junk = 1
+dec "a "%1
+#if (@status_food = 1) {
+  #sub  "You find "@fdResult"."
+  status_food = 0
+}
+#if (@auto_forage = 1) {
+  #if ( @status_thirst = 1) {
+    drink water
+  }
+  #if ( @status_hunger = 1) {
+    cfood me
+  }
+  forage
+}</value>
+    </trigger>
+    <trigger priority="3860" trigontrig="false">
+      <pattern>You manage to find an%s%1.</pattern>
+      <value>config_trig_junk = 1
+dec "a "%1
+#say @fdResult
+#if (@status_food = 1) {
+  #sub  "You find "@fdResult"."
+  status_food = 0
+}
+#if (@auto_forage = 1) {
+  #if ( @status_thirst = 1) {
+    drink water
+  }
+  #if ( @status_hunger = 1) {
+    cfood me
+  }
+  forage
+}</value>
+    </trigger>
+    <var name="cnt_forage">0</var>
+    <class name="Decipher">
+      <var name="fdDesc" type="StringList">
+        <value>amber|azure|blue|big|bumpy|grainy|healthy|huge|medium|small|smooth|speckly|swirly|tiny|translucent|vibrant|wrinkled|withered|wilted|yellowish|star</value>
+        <json>["amber","azure","blue","big","bumpy","grainy","healthy","huge","medium","small","smooth","speckly","swirly","tiny","translucent","vibrant","wrinkled","withered","wilted","yellowish","star"]</json>
+      </var>
+      <var name="fdEffect" type="StringList">
+        <value>cure blind|bless|cure light|mass heal|blindness|paralyze|flamestrike|sanctuary|travelling|sense life|feeblemind|poison|curse|levitate|cure critic|weakness|sleep|lightning bolt|fear|spirit armor|star shaped</value>
+        <json>["cure blind","bless","cure light","mass heal","blindness","paralyze","flamestrike","sanctuary","travelling","sense life","feeblemind","poison","curse","levitate","cure critic","weakness","sleep","lightning bolt","fear","spirit armor","star shaped"]</json>
+      </var>
+      <var name="ftemp2">@fdEffect.21</var>
+      <var name="ftemp1">@effect_list.4</var>
+      <var name="fdResult">a  blackberries</var>
+      <var name="fvar1">a</var>
+      <var name="fvar2">blackberries</var>
+      <var name="fvar3"/>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^%s{a|an}%s(%w) %2</pattern>
+        <value>config_trig_junk = 0
+#if %ismember( %1, @fdDesc) {
+  dec "a "%-1
+  #if (@status_food = 1) {
+    #sub  " "@fdResult
+  }
+  status_food = 0
+}
+</value>
+      </trigger>
+      <var name="fvar4"/>
+      <var name="fvar5"/>
+      <var name="effect1">
+        <json>cure blind</json>
+      </var>
+      <var name="effect2">
+        <json>poison</json>
+      </var>
+      <var name="effect3">
+        <json>paralyze</json>
+      </var>
+      <var name="effect4">
+        <json>curse</json>
+      </var>
+      <var name="fvar6"/>
+      <class name="Color">
+        <trigger priority="4000" repeat="true">
+          <pattern>{levitate|spirit armor|mass heal|cure critic|sense life|cure blind|bless|sanctuary|travelling|cure light|bonus practice|comprehend language|true sight}%s</pattern>
+          <value>#CW "#3366FF"
+</value>
+        </trigger>
+        <trigger priority="4000">
+          <pattern>{blindness|paralyze|feeblemind|poison|curse|weakness|sleep|lightning bolt|fear|flamestrike}%s</pattern>
+          <value>#CW "#FF6600"
+</value>
+        </trigger>
+        <trigger priority="4000" repeat="true">
+          <pattern>%ssome silver-leafed herbs</pattern>
+          <value>#CW "#FFCC00"
+</value>
+        </trigger>
+        <trigger priority="4000" repeat="true">
+          <pattern>%sa handful of small purple berries</pattern>
+          <value>#CW "hi,magenta"
+</value>
+        </trigger>
+        <trigger priority="4000" repeat="true">
+          <pattern>%ssome black-leafed herbs</pattern>
+          <value>#CW "hi,magenta"</value>
+        </trigger>
+        <trigger priority="4000" repeat="true">
+          <pattern>%sa dried piece of twisted root</pattern>
+          <value>#CW "hi,magenta"</value>
+        </trigger>
+        <trigger priority="4000" repeat="true">
+          <pattern>%sa luscious ripe peach</pattern>
+          <value>#CW "#FFCC00"</value>
+        </trigger>
+        <trigger priority="4000" repeat="true">
+          <pattern>%sstar shaped fruit</pattern>
+          <value>#CW "#FFCC00"</value>
+        </trigger>
+      </class>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^%s{a|an} %1~[%2~]</pattern>
+        <value>config_trig_junk = 0
+dec "a "%1
+#if (@status_food = 1) {
+  #sub  " "@fdResult~[%2~]
+}
+status_food = 0</value>
+      </trigger>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^You get {a|an} %1 from %2</pattern>
+        <value>config_trig_junk = 0
+dec "a "%1
+#if (@status_food = 1) {
+  #sub  "You get "@fdResult" from "%2
+}
+status_food = 0</value>
+      </trigger>
+      <var name="junk_foods" type="StringList">
+        <value>strawberries|blackberries|grapes|nuts</value>
+        <json>["strawberries","blackberries","grapes","nuts"]</json>
+      </var>
+      <var name="tmp_junk">blackberries</var>
+      <alias name="dec">
+        <value><![CDATA[#T+ newLine
+effect1 = %null
+effect2 = %null
+effect3 = %null
+effect4 = %null
+ftemp1 = ""
+ftemp2 = ""
+status_junk = 0
+status_useful = 0
+#noop #echop %regex(%1,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",fvar1,fvar2,fvar3,fvar4,fvar5,fvar6,fvar7,fvar8))
+fdResult = ""
+fvar12 = ""
+ftemp1 = ""
+ftemp2 = ""
+status_food = ""
+keyword_food = ""
+effect_list = ""
+#LOO 1,7 {
+  fvar12 = "@fvar"+%i
+  #IF %ismember(@fvar12,@food_type) {
+    keyword_food = @fvar12
+    status_food = 1
+    #LOO 1,21 {
+      ftemp1 = "@fdDesc."+%j
+      ftemp2 = "@fdEffect."+%j
+      #if (@fvar2 = @ftemp1) {
+        effect1 = @ftemp2
+        #ADDITEM effect_list @effect1
+      }
+      #if (@fvar3 = @ftemp1) {
+        effect2 = @ftemp2
+        #ADDITEM effect_list @effect2
+      }
+      #if (@fvar4 = @ftemp1) {
+        effect3 = @ftemp2
+        #ADDITEM effect_list @effect3
+      }
+      #if (@fvar5 = @ftemp1) {
+        effect4 = @ftemp2
+        #ADDITEM effect_list @effect4
+      }
+    }
+  }
+}
+#IF ((@config_autojunk == 1) & (@status_food == 1)) {
+  #LOO 1,4 {
+  ftemp1 = "@effect_list."%i
+    #IF %ismember(@ftemp1, @junk_effects) {
+      #IF (@status_junk = 0) {
+        status_junk = 1
+      }
+    }
+    #IF %ismember(@ftemp1, @useful_effects) {
+      status_useful = 1
+    }
+  }
+  #IF (@config_trig_junk = 1) {
+    #IF (@status_junk == 1 ) {
+      #say Junker~: Bad effect detected.
+      junk @keyword_food
+    }
+    #IF ((@status_useful != 1) && (@status_junk != 1) ) {
+      #say Junker~: Useless food detected.
+      junk @keyword_food
+    }
+  }
+}
+
+#IF (@status_food == 1) {
+  #if (@keyword_food = "strip") {
+    cnt_bark = (@cnt_bark + 1)
+    #IF (@cnt_bark > 1) {
+      keyword_food = "strip of "+@cnt_bark".bark"
+    }
+    {
+      keyword_food = "strip of bark"
+    }
+  }
+  #if (@keyword_food = "cone") {
+    cnt_cone = (@cnt_cone + 1)
+    #IF (@cnt_cone > 1) {
+      keyword_food = "pine "+@cnt_cone".cone"
+    }
+    {
+      keyword_food = "pine cone"
+    }
+  }
+  #if (@keyword_food = "fruit") {
+    cnt_fruit = (@cnt_fruit + 1)
+    #IF (@cnt_fruit > 1) {
+      keyword_food = (@cnt_fruit+"."+@keyword_food)
+    }
+  }
+  #if (@keyword_food = "pumpkin") {
+    cnt_pumpkin = (@cnt_pumpkin + 1)
+    #IF (@cnt_pumpkin > 1) {
+      keyword_food = (@cnt_pumpkin+"."+@keyword_food)
+    }
+  }
+  #if (@keyword_food = "strawberry") {
+    cnt_strawberry = (@cnt_strawberry + 1)
+    #IF (@cnt_strawberry > 1) {
+      keyword_food = (@cnt_strawberry+"."+@keyword_food)
+    }
+  }
+  #if (@keyword_food = "seed") {
+    cnt_seed = (@cnt_seed + 1)
+    #IF (@cnt_seed > 1) {
+      keyword_food = (@cnt_seed+"."+@keyword_food)
+    }
+  }
+  #if (@keyword_food = "flower") {
+    cnt_flower = (@cnt_flower + 1)
+    #IF (@cnt_flower > 1) {
+      keyword_food = (@cnt_flower+"."+@keyword_food)
+    }
+  }
+  #if (@keyword_food = "leaf") {
+    cnt_leaf = (@cnt_leaf + 1)
+    #IF (@cnt_leaf > 1) {
+      keyword_food = (@cnt_leaf+"."+@keyword_food)
+    }
+  }
+  
+  #if (@keyword_food = "grape") {
+    cnt_grape = (@cnt_grape + 1)
+    #IF (@cnt_grape > 1) {
+      keyword_food = (@cnt_grape+"."+@keyword_food)
+    }
+  }
+  #if (@keyword_food = "almond") {
+    cnt_almond = (@cnt_almond + 1)
+    #IF (@cnt_almond > 1) {
+      keyword_food = (@cnt_almond+"."+@keyword_food)
+    }
+  }
+  
+  #if (@keyword_food = "lichen") {
+    cnt_lichen = (@cnt_lichen + 1)
+    #IF (@cnt_lichen > 1) {
+      keyword_food = (@cnt_lichen+"."+@keyword_food)
+    }
+  }
+  
+  #if (@effect4 != %null) {
+    fdResult = "a "+@effect1+" "+@effect2+" "+@effect3+" "+@effect4+" "@keyword_food
+  }
+  #if (@effect4 = %null) {
+    fdResult = "a "+@effect1+" "+@effect2+" "+@effect3+" "+@keyword_food
+    
+  }
+  #if (@effect3 = %null) {
+    fdResult = "a "+@effect1+" "+@effect2+" "+@keyword_food
+  }
+  #if (@effect2 = %null) {
+    fdResult = "a "+@effect1+" "+@keyword_food
+  }
+}
+config_trig_junk = 0
+]]></value>
+      </alias>
+      <var name="fvar7"/>
+      <var name="food_type" type="StringList">
+        <value>fruit|seed|pumpkin|strawberry|flower|leaf|blackberry|lichen|grapes|strip|cone|strawberries|blackberries|nuts|almond|grape</value>
+        <json>["fruit","seed","pumpkin","strawberry","flower","leaf","blackberry","lichen","grapes","strip","cone","strawberries","blackberries","nuts","almond","grape"]</json>
+      </var>
+      <var name="fvar12">@fvar7</var>
+      <var name="status_food">0</var>
+      <var name="keyword_food">blackberries</var>
+      <var name="config_autojunk">1</var>
+      <var name="fvar8">14</var>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^You put {a|an} %1 in %2</pattern>
+        <value>config_trig_junk = 0
+dec "a "%1
+#if (@status_food = 1) {
+  #sub  "You put"@fdResult" in "%2
+}
+status_food = 0</value>
+      </trigger>
+      <var name="status_junk">0</var>
+      <var name="effect_list" type="Literal"/>
+      <var name="useful_effects" type="StringList">
+        <value>star shaped|mass heal</value>
+        <json>["star shaped","mass heal"]</json>
+      </var>
+      <var name="status_useful">0</var>
+      <var name="junk_effects" type="StringList">
+        <value>paralyze|feeblemind|sleep|weakness</value>
+        <json>["paralyze","feeblemind","sleep","weakness"]</json>
+      </var>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^You junk {a|an} (%w) %2</pattern>
+        <value>config_trig_junk = 0
+#if %ismember( %1, @fdDesc) {
+  dec "a "%-1
+  #if (@status_food = 1) {
+    #sub  "You junk "@fdResult"."
+  }
+  status_food = 0
+}</value>
+      </trigger>
+      <var name="config_trig_junk ">0</var>
+      <var name="cnt_strawberry">0</var>
+      <var name="cnt_fruit">0</var>
+      <var name="cnt_pumpkin">0</var>
+      <var name="cnt_cone">0</var>
+      <var name="cnt_flower">0</var>
+      <var name="cnt_bark">0</var>
+      <var name="cnt_seed">0</var>
+      <alias name="reset_food_counters">
+        <value>cnt_seed = 0
+cnt_strawberry = 0
+cnt_fruit = 0
+cnt_bark = 0
+cnt_pumpkin = 0
+cnt_flower = 0
+cnt_pumpkin = 0
+cnt_cone = 0
+cnt_leaf = 0
+cnt_almond = 0
+cnt_grape = 0
+cnt_lichen = 0</value>
+      </alias>
+      <var name="cnt_leaf">0</var>
+      <class name="newLine" enabled="false">
+        <trigger priority="1310">
+          <pattern>$</pattern>
+          <value>reset_food_counters
+#T- newLine</value>
+        </trigger>
+      </class>
+      <var name="cnt_grape">0</var>
+      <var name="cnt_almond">0</var>
+      <var name="cnt_lichen">0</var>
+      <var name="cnt_blackberry">0</var>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^{a|an} (%w) %2 lies here.$</pattern>
+        <value>config_trig_junk = 0
+#if %ismember( %1, @fdDesc) {
+  dec "a "%-1
+  #if (@status_food = 1) {
+    fdResult = (@fdResult + " lies here.")
+    #sub  @fdResult
+  }
+  status_food = 0
+}</value>
+      </trigger>
+      <trigger priority="3870" trigontrig="false" stop="true">
+        <pattern>^{a|an} %1 lies here...It glows blue!~[%2~]$</pattern>
+        <value>config_trig_junk = 0
+dec "a "%1
+#if (@status_food = 1) {
+  fdResult = (@fdResult + " lies here.")
+  #sub  @fdResult~[%2~]
+}
+status_food = 0</value>
+      </trigger>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^%s{a|an} (%w) %2~.~.It glows blue$</pattern>
+        <value>config_trig_junk = 0
+#if %ismember( %1, @fdDesc) {
+  dec "a "%-1
+  #if (@status_food = 1) {
+    fdResult = (@fdResult+"..It glows blue")
+    #sub  " "@fdResult
+  }
+  status_food = 0
+}</value>
+      </trigger>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^%s{a|an} %1~.~.It glows blue!~[%2~]$</pattern>
+        <value>config_trig_junk = 0
+dec "a "%1
+#if (@status_food = 1) {
+  fdResult = (@fdResult+"..It glows blue!")
+  #sub  " "@fdResult~[%2~]
+}
+status_food = 0</value>
+      </trigger>
+      <trigger priority="3870" trigontrig="false" stop="true">
+        <pattern>^{a|an} %1 lies here...It glows blue$</pattern>
+        <value>config_trig_junk = 0
+dec "a "%1
+#if (@status_food = 1) {
+  fdResult = (@fdResult + " lies here.")
+  #sub  @fdResult
+}
+status_food = 0</value>
+      </trigger>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^{a|an} %1 lies here.~[%2~]$</pattern>
+        <value>config_trig_junk = 0
+dec "a "%1
+#if (@status_food = 1) {
+  fdResult = (@fdResult + " lies here.")
+  #sub  @fdResult~[%2~]
+}
+status_food = 0</value>
+      </trigger>
+      <trigger priority="3870" trigontrig="false">
+        <pattern>^You drop {a|an} (%w) %2.$</pattern>
+        <value>config_trig_junk = 0
+#if %ismember( %1, @fdDesc) {
+  dec "a "%-1
+  #if (@status_food = 1) {
+    #sub  "You drop "@fdResult"."
+  }
+  status_food = 0
+}</value>
+      </trigger>
+    </class>
+    <trigger priority="4220">
+      <pattern>Can't really forage for food...here.</pattern>
+      <value>#if (@auto_forage = 1) {
+  #if (@mv_dir != "") {
+    @mv_dir
+    forage
+  }
+  #if (@forage_bot = 1) {
+    #wait 5000
+    cnt_forage = 100
+    forage
+  }
+}
+
+</value>
+    </trigger>
+    <class name="MapUpdater">
+      <trigger priority="4230">
+        <pattern>This seems like an average place to forage.</pattern>
+        <value>#CALL %maplocked( 0) 
+#CALL %roomcol(,"tan") 
+#CALL %maplocked( 1)
+@mv_dir
+cnt_qual = 0</value>
+      </trigger>
+      <trigger priority="4230">
+        <pattern>This seems like a poor place to forage.</pattern>
+        <value>#CALL %maplocked( 0) 
+#CALL %roomcol(,"tan") 
+#CALL %maplocked( 1)
+@mv_dir
+cnt_qual = 0</value>
+      </trigger>
+      <trigger priority="4230">
+        <pattern>This seems like a terrible place to forage.</pattern>
+        <value>#CALL %maplocked( 0) 
+#CALL %roomcol(,"tan") 
+#CALL %maplocked( 1)
+@mv_dir
+cnt_qual = 0</value>
+      </trigger>
+      <trigger priority="4230">
+        <pattern>This seems like a good place to forage.</pattern>
+        <value>#CALL %maplocked( 0) 
+#CALL %roomcol(,"cyan") 
+#CALL %maplocked( 1)
+@mv_dir
+cnt_qual = 0</value>
+      </trigger>
+      <trigger priority="4230">
+        <pattern>This seems like a great place to forage.</pattern>
+        <value>#CALL %maplocked( 0) 
+#CALL %roomcol(,"green") 
+#CALL %maplocked( 1)
+@mv_dir
+cnt_qual = 0</value>
+      </trigger>
+      <trigger priority="4230" case="true" enabled="false">
+        <pattern>At a curve in the river</pattern>
+        <value>#echo %maplocked( 0) 
+#CALL %roomcol(,"lightblue") 
+#echo %maplocked( 1)</value>
+      </trigger>
+      <trigger priority="4230" case="true" enabled="false">
+        <pattern>On the Galt River</pattern>
+        <value>#echo %maplocked( 0) 
+#CALL %roomcol(,"lightblue") 
+#echo %maplocked( 1)</value>
+      </trigger>
+      <trigger priority="4230" case="true" enabled="false">
+        <pattern>Along the Galt River</pattern>
+        <value>#echo %maplocked( 0) 
+#CALL %roomcol(,"lightblue") 
+#echo %maplocked( 1)</value>
+      </trigger>
+    </class>
+    <var name="mv_dir">n</var>
+    <var name="auto_forage">1</var>
+    <trigger priority="6270">
+      <pattern>Alas, you cannot go that way...</pattern>
+      <value>#if (@auto_forage = 1) {
+  #if (@mv_dir != "") {
+    #if (@mv_dir = n) { 
+      tmp_dir = 1
+    }
+    #if (@mv_dir = e) { 
+      tmp_dir = 2
+    }
+    #if (@mv_dir = s) { 
+      tmp_dir = 3
+    }
+    #if (@mv_dir = w) { 
+      tmp_dir = 4
+    }
+
+    #case @tmp_dir {
+      @step_dir
+      forager dir s
+    }
+    {
+      @step_dir
+      forager dir w
+    }
+    {
+      @step_dir
+      forager dir n
+    }
+    {
+      @step_dir
+      forager dir e
+    }
+    forage
+  }
+}
+</value>
+    </trigger>
+    <var name="forage_bot">0</var>
+    <var name="config_forage" type="Literal">lab2</var>
+    <var name="cnt_step">9</var>
+    <class name="Paths">
+      <var name="plains" type="StringList">
+        <value>15474|15473|15433|13259|13255|15402|15368|15369|15371|15360|15362|15363|15328|15330|15331|15320|15321|15323|13247|15290|15283|15248|15255|15236|13965|13320|15215|15239|13968|13323|15212|15171|15093|15094|15077|15078|15052|15053|15054|13183|13182|15042|15009|15010|15002|14969|14970|14971|14960|14931|14995|14955|14936|11825|11803|11746|11817|11811|11738|11664|11651|11586|11573|11667|11589|11584|11575|15530|15561|15604|14917|14916|14905|14904|14889|14888|14887|14877|14876|14844|14816|14835|14818|14807|14787|14782|12619|14746|14741|14739|14685|14640|14631|14586|14513|14629|14642|14683|14696|14736|14697|14682|14699|14680|14645|14626|14535|12635|14481|14531|14544|14795|14802|14823|14830|fin</value>
+        <json>[15474,15473,15433,13259,13255,15402,15368,15369,15371,15360,15362,15363,15328,15330,15331,15320,15321,15323,13247,15290,15283,15248,15255,15236,13965,13320,15215,15239,13968,13323,15212,15171,15093,15094,15077,15078,15052,15053,15054,13183,13182,15042,15009,15010,15002,14969,14970,14971,14960,14931,14995,14955,14936,11825,11803,11746,11817,11811,11738,11664,11651,11586,11573,11667,11589,11584,11575,15530,15561,15604,14917,14916,14905,14904,14889,14888,14887,14877,14876,14844,14816,14835,14818,14807,14787,14782,12619,14746,14741,14739,14685,14640,14631,14586,14513,14629,14642,14683,14696,14736,14697,14682,14699,14680,14645,14626,14535,12635,14481,14531,14544,14795,14802,14823,14830,"fin"]</json>
+      </var>
+      <var name="lab" type="StringList">
+        <value>7763|5686|7759|7758|5691|5692|5693|5694|7806|7807|7808|7887|7958|8012|8020|8022|8083|8084|8199|8257|8258|8259|8260|8249|8250|8251|8252|8411|8412|8413|8414|8415|8362|8361|8360|8359|8320|5724|8241|8185|8186|8187|8094|5715|8069|8068|8067|8000|8001|5713|5711|7933|7932|7931|7930|7929|7834|7833|fin</value>
+        <json>[7763,5686,7759,7758,5691,5692,5693,5694,7806,7807,7808,7887,7958,8012,8020,8022,8083,8084,8199,8257,8258,8259,8260,8249,8250,8251,8252,8411,8412,8413,8414,8415,8362,8361,8360,8359,8320,5724,8241,8185,8186,8187,8094,5715,8069,8068,8067,8000,8001,5713,5711,7933,7932,7931,7930,7929,7834,7833,"fin"]</json>
+      </var>
+      <var name="lab2" type="StringList">
+        <value>8788|8787|8786|8781|8780|8779|8778|8766|8750|8751|8752|6415|6413|6326|8702|8724|8725|8726|8727|8692|8693|8694|8695|8686|8685|8684|8679||6321||8664|8665|8666||8647|8625|8609|8608|8607|8606|6295|8573|8572|8571|8537|8536|8550|8551|8535|8534|8552|8533|8532|8531|8530|8522|8497|8495|8494|8493|8492|8490|8455|8456|8457|8435|8433|8383|8384|8385|8386|8391|8392|8331|8332|8333|8334|6504|6506|6507|8287|8280|8282|8172|8173|8174|8220|8219|8218|8238|8239|8240|8241|8187|8186|8185|8184|8158|8159|8160|8161|8104|8105|8106|8107|8058|8042|8043|8044|8045|7982|7911|7910|7909|7908|7907|7974|7785|7783|5670|5671|5672|5673|7683|7835|7834|7833|7763|5711|7933|7932|7931|7930|7929|7928|8000|8001|5713|5715|8069|8068|8067|8094|8093|5686|7759|7758|5691|5692|5693|5694|7806|7807|7808|7887|7958|8012|8020|8022|8083|8084|8199|8257|8258|8259|8260|8249|8250|8251|8252|8411|8412|8413|8414|8415|8362|8361|8360|8359|8320|5724|8241|8185|8186|8187|8094|5715|8069|8068|8067|8000|8001|5713|5711|7933|7932|7931|7930|7929|fin</value>
+        <json>[8788,8787,8786,8781,8780,8779,8778,8766,8750,8751,8752,6415,6413,6326,8702,8724,8725,8726,8727,8692,8693,8694,8695,8686,8685,8684,8679,"",6321,"",8664,8665,8666,"",8647,8625,8609,8608,8607,8606,6295,8573,8572,8571,8537,8536,8550,8551,8535,8534,8552,8533,8532,8531,8530,8522,8497,8495,8494,8493,8492,8490,8455,8456,8457,8435,8433,8383,8384,8385,8386,8391,8392,8331,8332,8333,8334,6504,6506,6507,8287,8280,8282,8172,8173,8174,8220,8219,8218,8238,8239,8240,8241,8187,8186,8185,8184,8158,8159,8160,8161,8104,8105,8106,8107,8058,8042,8043,8044,8045,7982,7911,7910,7909,7908,7907,7974,7785,7783,5670,5671,5672,5673,7683,7835,7834,7833,7763,5711,7933,7932,7931,7930,7929,7928,8000,8001,5713,5715,8069,8068,8067,8094,8093,5686,7759,7758,5691,5692,5693,5694,7806,7807,7808,7887,7958,8012,8020,8022,8083,8084,8199,8257,8258,8259,8260,8249,8250,8251,8252,8411,8412,8413,8414,8415,8362,8361,8360,8359,8320,5724,8241,8185,8186,8187,8094,5715,8069,8068,8067,8000,8001,5713,5711,7933,7932,7931,7930,7929,"fin"]</json>
+      </var>
+      <var name="korzen" type="StringList">
+        <value>35667|36537|36528|36527|36516|36514|36505|36502|35675|36486|36481|36475|36469|36454|36588|36466|36463|36452|35686|36679|36678|36677|36546|36547|36548|36549|35565|35564|35563|35562|36642|36643|36644|36645|36646|36648|36625|36624|36623|36622|36621|36603|36605|36606|36607|36608|36609|36566|35541|35981|35985|35982|35920|35983|35978|35465|35959|35466|35960|36116|36223|36222|36218|36226|36227|36170|36235|36258|36259|36282|36307|36261|36260|36257|36236|36263|36257|36260|36261|36305|36285|36262|36263|36281|36264|36255|36328|36254|36239|36156|36155|36163|36153|36150|36149|36152|36242|36268|36140|36141|36131|36128|36127|35936|35928|39540|35938|35937|35997|37475|37466|37457|37448|37439|37430|37421|37438|37431|37420|37413|37403|37450|37437|37432|37419|37414|37402|37397|37386|37418|37401|37398|37385|37382|37369|37416|37400|37399|37384|37383|37368|37365|37116|36294|36295|36319|36320|36321|36343|36344|36363|36366|36432|36440|36431|36412|36403|36703|36701|35757|36715|36714|36713|36712|36722|36723|36724|36735|36749|36750|36751|36752|36758|36757|36757|36755|36771|36772|35765|35766|36937|36930|36919|36923|36920|36911|36899|35770|36789|36788|37093|37105|37106|37373|37378|37389|37394|37390|37393|37410|37407|37409|37424|37427|37425|37426|37443|37444|37058|37057|37056|37055|37048|38340|37046|37047|38338|38319|38370|38369|38318|38339|37044|37045|36834|36833|36832|36831|36830|36829|36828|36827|37015|38294|38295|38296|38297|38298|38299|38314|38315|38316|37021|37020|38317|37016|37019|37018|37017|36807|36974|36976|36998|36801|37301|37300|37291|37290|37289|37288|37312|37313|37314|37320|37321|37322|37323|37324|37325|37326|37286|37285|37284|37283|fin</value>
+        <json>[35667,36537,36528,36527,36516,36514,36505,36502,35675,36486,36481,36475,36469,36454,36588,36466,36463,36452,35686,36679,36678,36677,36546,36547,36548,36549,35565,35564,35563,35562,36642,36643,36644,36645,36646,36648,36625,36624,36623,36622,36621,36603,36605,36606,36607,36608,36609,36566,35541,35981,35985,35982,35920,35983,35978,35465,35959,35466,35960,36116,36223,36222,36218,36226,36227,36170,36235,36258,36259,36282,36307,36261,36260,36257,36236,36263,36257,36260,36261,36305,36285,36262,36263,36281,36264,36255,36328,36254,36239,36156,36155,36163,36153,36150,36149,36152,36242,36268,36140,36141,36131,36128,36127,35936,35928,39540,35938,35937,35997,37475,37466,37457,37448,37439,37430,37421,37438,37431,37420,37413,37403,37450,37437,37432,37419,37414,37402,37397,37386,37418,37401,37398,37385,37382,37369,37416,37400,37399,37384,37383,37368,37365,37116,36294,36295,36319,36320,36321,36343,36344,36363,36366,36432,36440,36431,36412,36403,36703,36701,35757,36715,36714,36713,36712,36722,36723,36724,36735,36749,36750,36751,36752,36758,36757,36757,36755,36771,36772,35765,35766,36937,36930,36919,36923,36920,36911,36899,35770,36789,36788,37093,37105,37106,37373,37378,37389,37394,37390,37393,37410,37407,37409,37424,37427,37425,37426,37443,37444,37058,37057,37056,37055,37048,38340,37046,37047,38338,38319,38370,38369,38318,38339,37044,37045,36834,36833,36832,36831,36830,36829,36828,36827,37015,38294,38295,38296,38297,38298,38299,38314,38315,38316,37021,37020,38317,37016,37019,37018,37017,36807,36974,36976,36998,36801,37301,37300,37291,37290,37289,37288,37312,37313,37314,37320,37321,37322,37323,37324,37325,37326,37286,37285,37284,37283,"fin"]</json>
+      </var>
+      <var name="great" type="StringList">
+        <value>36645|36643|36625|36603|36466|36701|36254|36268|36140|36128|35936|35937|36937|36919|37093|37105|36801|38294|rec|7911|8058|8059|8041|7929|7763|5691|8199|8094|8184|8354|8282|8435|8551|8625|8685|8692|rec|fin</value>
+        <json>[36645,36643,36625,36603,36466,36701,36254,36268,36140,36128,35936,35937,36937,36919,37093,37105,36801,38294,"rec",7911,8058,8059,8041,7929,7763,5691,8199,8094,8184,8354,8282,8435,8551,8625,8685,8692,"rec","fin"]</json>
+      </var>
+    </class>
+    <var name="cnt_find">2</var>
+    <alias name="forager">
+      <value><![CDATA[#say ""
+#say "        "%ansi(magenta,high)@%ansi(green,high)->--->--- %ansi(cyan,high)Forager %ansi(green,high)---<---<-%ansi(magenta,high)@
+#if ( %1 = "" | %1 = "help" ) {
+  #say ""
+  #say %ansi(gray,high)Auto Forage: %ansi(green)@auto_forage
+  #say ""
+  #say %ansi(blue,high)===== %ansi(cyan,high)Forage Crawler %ansi(blue,high)=====
+  #say %ansi(gray,high)Move direction: %ansi(green)@mv_dir
+  #say %ansi(gray,high)Step direction: %ansi(green)@step_dir
+  #say ""
+  #say %ansi(blue,high)===== %ansi(cyan,high)Auto Junker  Info %ansi(blue,high)=====
+  #say %ansi(gray,high)Status: %ansi(green)@config_autojunk
+  #say %ansi(red)Junk effects: %ansi(gray,high)@junk_effects
+  #say %ansi(green)Keep effects: %ansi(gray,high)@useful_effects
+  #say ""
+  #say %ansi(blue,high)===== %ansi(cyan,high)Commands %ansi(blue,high)=====
+  #say %ansi(blue,high)*%ansi(cyan,high)General%ansi(blue,high)*
+  #say %ansi(gray,high)forager on%ansi(gray)|%ansi(gray,high)off "           "- Enables auto forage
+  #say %ansi(gray,high)forager dir n%ansi(gray)|%ansi(gray,high)e%ansi(gray)|%ansi(gray,high)s%ansi(gray)|%ansi(gray,high)w%ansi(gray)|%ansi(gray,high)off "  "- Sets auto crawl direction
+  #say %ansi(gray,high)forager list "             "- Lists all forage effects
+  #say ""
+  #say %ansi(blue,high)*%ansi(cyan,high)Junker%ansi(blue,high)*
+  #say %ansi(gray,high)forager junk on%ansi(gray)|%ansi(gray,high)off"                    "- Enables auto junk
+  #say %ansi(gray,high)forager junk add%ansi(gray)|%ansi(gray,high)remove <%ansi(gray)effect-name%ansi(gray,high)>"  "- Sets undesired effects
+  #say %ansi(gray,high)forager keep add%ansi(gray)|%ansi(gray,high)remove <%ansi(gray)effect-name%ansi(gray,high)>"  "- Sets desired effects
+}
+#if ( %1 = "on" | %1 = "1" ) {
+  auto_forage = 1
+  #say Auto forage turned on.
+}
+#if ( %1 = "off" | %1 = "0" ) {
+  auto_forage = 0
+  #say Auto forage turned off.
+}
+#if ( %1 = "dir" | %1 = "d" ) {
+  mv_dir = %2
+  #if (%2 = "null" | %2 = "off") {
+    mv_dir = ""
+  }
+  #say Move direction set to @mv_dir.
+}
+#if ( %1 = "step" | %1 = "s" ) {
+  step_dir = %2
+  #if (%2 = "null" | %2 = "off") {
+    step_dir = ""
+  }
+  #say Step direction set to @step_dir.
+}
+#if ( %1 = "list") {
+  forage_effects
+}
+#if ( %1 = "keep" | %1 = "k" ) {
+  #if (%2 = "add" | %2 = "a") {
+    #if (%4 = "") {
+      #IF %ismember(%3,@fdEffect) {
+        #ADDITEM useful_effects %3
+        #say Added %3 to keep list.
+      }
+      {
+        #say Error: %3 is not a valid effect.  Type forager list to see effects list.
+      }
+    } {
+      tmp_kw = %3 +" "+%4
+      #IF %ismember(@tmp_kw,@fdEffect) {
+        #ADDITEM useful_effects @tmp_kw
+        #say Added @tmp_kw to keep list.
+      }
+      {
+        #say Error: @tmp_kw is not a valid effect.  Type forager list to see effects list.
+      }
+    }
+
+  }
+  #if (%2 = "remove" | %2 = "r" | %2 = "rem") {
+    #if (%4 = "") {
+      #IF %ismember(%3,@fdEffect) {
+        #DELITEM useful_effects %3
+        #say Removed %3 from keep list.
+      }
+      {
+        #say Error: %3 is not a valid effect.  Type forager list to see effects list.
+      }
+    } {
+      tmp_kw = %3 +" "+%4
+      #IF %ismember(@tmp_kw,@fdEffect) {
+        #DELITEM useful_effects @tmp_kw
+        #say Removed @tmp_kw from keep list.
+      }
+      {
+        #say Error: @tmp_kw is not a valid effect.  Type forager list to see effects list.
+      }
+    }
+  }
+}
+#if ( %1 = "junk" | %1 = "j" ) {
+  #if (%2 = "add" | %2 = "a") {
+    #if (%4 = "") {
+      #IF %ismember(%3,@fdEffect) {
+        #ADDITEM junk_effects %3
+        #say Added %3 to junk list.
+      }
+      {
+        #say Error: %3 is not a valid effect.  Type forager list to see effects list.
+      }
+    } {
+      tmp_kw = %3 +" "+%4
+      #IF %ismember(@tmp_kw,@fdEffect) {
+        #ADDITEM junk_effects @tmp_kw 
+        #say Added @tmp_kw to junk list.
+      }
+      {
+        #say Error: @tmp_kw is not a valid effect.  Type forager list to see effects list.
+      }
+    }
+  }
+  #if (%2 = "remove" | %2 = "r" | %2 = "rem") {
+    #if (%4 = "") {
+      #IF %ismember(%3,@fdEffect) {
+        #DELITEM junk_effects %3
+        #say Removed %3 from junk list.
+      }
+      {
+        #say Error: %3 is not a valid effect.  Type forager list to see effects list.
+      }
+    } {
+      tmp_kw = %3 +" "+%4
+      #IF %ismember(@tmp_kw,@fdEffect) {
+        #DELITEM junk_effects @tmp_kw 
+        #say Removed @tmp_kw from junk list.
+      }
+      {
+        #say Error: @tmp_kw is not a valid effect.  Type forager list to see effects list.
+      }
+    }
+  }
+  #if (%2 = "on" | %2 = "1") {
+    config_autojunk = 1
+    #say %ansi(gray,high)Auto Junker %ansi(green)Enabled
+  }
+  #if (%2 = "off" | %2 = "0") {
+    config_autojunk = 0
+    #say %ansi(gray,high)Auto Junker %ansi(red)Disabled
+  }
+}]]></value>
+    </alias>
+    <alias name="forage_effects">
+      <value>#say "        "%ansi(blue,high)amber %ansi(gray,high)"        "--"    "%ansi(blue,high)cure blind
+#say "        "%ansi(blue,high)azure %ansi(gray,high)"        "--"    "%ansi(blue,high)bless
+#say "        "%ansi(blue,high)blue %ansi(gray,high)"         "--"    "%ansi(blue,high)cure light
+#say "        "%ansi(blue,high)big  %ansi(gray,high)"          "--"    "%ansi(blue,high)mass heal
+#say "        "%ansi(red,high)bumpy %ansi(gray,high)"        "--"    "%ansi(red,high)blindness
+#say "        "%ansi(red,high)grainy %ansi(gray,high)"       "--"    "%ansi(red,high)paralyze
+#say "        "%ansi(red,high)healthy %ansi(gray,high)"      "--"    "%ansi(red,high)flamestrike
+#echo "        "%ansi(blue,high)huge %ansi(gray,high)"         "--"    "%ansi(blue,high)sanctuary
+#echo "        "%ansi(blue,high)medium %ansi(gray,high)"       "--"    "%ansi(blue,high)travelling
+#echo "        "%ansi(blue,high)small %ansi(gray,high)"        "--"    "%ansi(blue,high)sense life
+#echo "        "%ansi(red,high)smooth %ansi(gray,high)"       "--"    "%ansi(red,high)feeblemind
+#echo "        "%ansi(red,high)speckly %ansi(gray,high)"      "--"    "%ansi(red,high)poison
+#echo "        "%ansi(red,high)swirly %ansi(gray,high)"       "--"    "%ansi(red,high)curse
+#echo "        "%ansi(blue,high)tiny %ansi(gray,high)"         "--"    "%ansi(blue,high)levitate
+#echo "        "%ansi(blue,high)translucent %ansi(gray,high)"  "--"    "%ansi(blue,high)cure critic
+#echo "        "%ansi(red,high)vibrant %ansi(gray,high)"      "--"    "%ansi(red,high)weakness
+#echo "        "%ansi(red,high)wrinkled %ansi(gray,high)"     "--"    "%ansi(red,high)sleep
+#echo "        "%ansi(red,high)withered %ansi(gray,high)"     "--"    "%ansi(red,high)lightning bolt
+#echo "        "%ansi(red,high)wilted %ansi(gray,high)"       "--"    "%ansi(red,high)fear
+#echo "        "%ansi(blue,high)yellowish %ansi(gray,high)"    "--"    "%ansi(blue,high)spirit armor</value>
+    </alias>
+    <var name="directions" type="StringList">
+      <value>n|e|s|w|d|u</value>
+      <json>["n","e","s","w","d","u"]</json>
+    </var>
+    <var name="tmp_dir">3</var>
+    <var name="config_trig_junk">0</var>
+    <var name="step_dir">w</var>
+    <var name="cnt_food">1611</var>
+    <var name="cnt_qual">0</var>
+    <var name="tmp_kw">mass heal</var>
+    <var name="walk_string">@lab2.1</var>
+    <trigger priority="11690">
+      <pattern>You manage to find a handful of small purple berries.</pattern>
+      <value>#if (@forage_bot = 1) {
+  junk purple-berries
+  //cnt_forage = 100
+  forage
+}</value>
+    </trigger>
+    <trigger priority="11690">
+      <pattern>You manage to find a dried piece of twisted root.</pattern>
+      <value>#if (@forage_bot = 1) {
+  junk twisted-root
+  //cnt_forage = 100
+  forage
+}</value>
+    </trigger>
+    <trigger priority="11690">
+      <pattern>You manage to find some black-leafed herbs.</pattern>
+      <value>#if (@forage_bot = 1) {
+  junk black-herbs
+  //cnt_forage = 100
+  forage
+}</value>
+    </trigger>
+  </class>
+</cmud>
