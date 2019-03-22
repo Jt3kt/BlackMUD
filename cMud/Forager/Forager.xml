@@ -263,10 +263,34 @@ effect_list = ""
   #if (@keyword_food = "cone") {
     cnt_cone = (@cnt_cone + 1)
     #IF (@cnt_cone > 1) {
-      keyword_food = "pine "+@cnt_cone".cone"
+      keyword_food = @cnt_cone".pine cone"
     }
     {
       keyword_food = "pine cone"
+    }
+  }
+  #if (@keyword_food = "pinion") {
+    cnt_pinion = (@cnt_pinion + 1)
+    #IF (@cnt_pinion > 1) {
+      keyword_food = @cnt_cone".pinion nut"
+    }
+    {
+      keyword_food = "pinion nut"
+    }
+  }
+  #if (@keyword_food = "oleander") {
+    cnt_oleander = (@cnt_oleander + 1)
+    #IF (@cnt_oleander > 1) {
+      keyword_food = @cnt_oleander".oleander root"
+    }
+    {
+      keyword_food = "oleander root"
+    }
+  }
+  #if (@keyword_food = "wildrose") {
+    cnt_wildrose = (@cnt_wildrose + 1)
+    #IF (@cnt_wildrose > 1) {
+      keyword_food = (@cnt_wildrose+"."+@keyword_food)
     }
   }
   #if (@keyword_food = "fruit") {
@@ -404,7 +428,10 @@ cnt_cone = 0
 cnt_leaf = 0
 cnt_almond = 0
 cnt_grape = 0
-cnt_lichen = 0</value>
+cnt_lichen = 0
+cnt_wildrose = 0
+cnt_pinion = 0
+cnt_oleander = 0</value>
       </alias>
       <var name="cnt_leaf">0</var>
       <class name="newLine" enabled="false">
@@ -493,6 +520,9 @@ status_food = 0</value>
   status_food = 0
 }</value>
       </trigger>
+      <var name="cnt_wildrose">0</var>
+      <var name="cnt_pinion">0</var>
+      <var name="cnt_oleander">0</var>
     </class>
     <trigger priority="4220">
       <pattern>Can't really forage for food...here.</pattern>
