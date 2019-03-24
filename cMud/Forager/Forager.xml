@@ -269,6 +269,15 @@ effect_list = ""
       keyword_food = "pine cone"
     }
   }
+  #if (@keyword_food = "cactus") {
+    cnt_cactus = (@cnt_cactus + 1)
+    #IF (@cnt_cactus > 1) {
+      keyword_food = @cnt_cactus".cactus pear"
+    }
+    {
+      keyword_food = "cactus pear"
+    }
+  }
   #if (@keyword_food = "pinion") {
     cnt_pinion = (@cnt_pinion + 1)
     #IF (@cnt_pinion > 1) {
@@ -431,7 +440,8 @@ cnt_grape = 0
 cnt_lichen = 0
 cnt_wildrose = 0
 cnt_pinion = 0
-cnt_oleander = 0</value>
+cnt_oleander = 0
+cnt_cactus = 0</value>
       </alias>
       <var name="cnt_leaf">0</var>
       <class name="newLine" enabled="false">
