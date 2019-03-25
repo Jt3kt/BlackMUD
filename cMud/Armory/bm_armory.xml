@@ -4573,5 +4573,164 @@ armor ins
   }
 </value>
     </alias>
+    <class name="EgoGuard">
+      <trigger priority="16010">
+        <pattern>%1~:You put %2 on your right finger.</pattern>
+        <value>#if (@armory_debug &gt; 0) {
+  #say Wearing %2
+}
+#ADDITEM EQ_Worn %trim(%2)</value>
+      </trigger>
+      <trigger priority="16010">
+        <pattern>%1~:You put %2 on your left finger.</pattern>
+        <value>#if (@armory_debug &gt; 0) {
+  #say Wearing %2
+}
+#ADDITEM EQ_Worn %trim(%2)</value>
+      </trigger>
+      <trigger priority="16030">
+        <pattern>%1~:OK.</pattern>
+        <value>#if (@armory_debug &gt; 0) {
+  #say Wearing %1
+}
+#ADDITEM EQ_Worn %trim(%1)</value>
+      </trigger>
+      <trigger priority="16040">
+        <pattern>You stop using %1.</pattern>
+        <value>#if %ismember( %1, @EQ_Worn) {
+  #if (@armory_debug &gt; 0) {
+    #say Removing %1
+  }
+  #DELITEM EQ_Worn %trim(%1)
+}</value>
+      </trigger>
+      <var name="EQ_Worn" type="StringList">
+        <value>a large circular white amulet|a pair of black leather gloves|a wolf skin skirt|a blazing iron cuirass|a pair of black iron armbands|an aura of coalescing colors|A large golden ring with a royal seal|a huge polished diamond cooking pot|a green scaled bracer|a reflective brass buckler adorned with silver spikes|a mithril face plate|the one ring|a pair of ethereal boots</value>
+        <json>["a large circular white amulet","a pair of black leather gloves","a wolf skin skirt","a blazing iron cuirass","a pair of black iron armbands","an aura of coalescing colors","A large golden ring with a royal seal","a huge polished diamond cooking pot","a green scaled bracer","a reflective brass buckler adorned with silver spikes","a mithril face plate","the one ring","a pair of ethereal boots"]</json>
+      </var>
+      <trigger priority="16010">
+        <pattern>%1~:You wear %2 around your right wrist.</pattern>
+        <value>#if (@armory_debug &gt; 0) {
+  #say Wearing %2
+}
+#ADDITEM EQ_Worn %trim(%2)</value>
+      </trigger>
+      <trigger priority="16010">
+        <pattern>%1~:You wear %2 around your left wrist.</pattern>
+        <value>#if (@armory_debug &gt; 0) {
+  #say Wearing %2
+}
+#ADDITEM EQ_Worn %trim(%2)</value>
+      </trigger>
+      <trigger priority="16010">
+        <pattern>%1~:You start using %2.</pattern>
+        <value>#if (@armory_debug &gt; 0) {
+  #say Wearing %2
+}
+#ADDITEM EQ_Worn %trim(%2)</value>
+      </trigger>
+      <trigger priority="16090">
+        <pattern>%1 almost seems to leap from your grasp, and falls to the ground.~'</pattern>
+        <value>eq_leap = %trim(%1)
+#if %ismember( @eq_leap, @EQ_Worn) {
+  kw_find @eq_leap
+  get @kw_ego
+}</value>
+      </trigger>
+      <alias name="kw_find">
+        <value><![CDATA[kw_ego = ""
+kwf_var1 = "";kwf_var2 = "";kwf_var3 = "";kwf_var4 = "";kwf_var5 = "";kwf_var6 = "";kwf_var7 = "";kwf_var8 = ""
+#echop %regex(@eq_leap,"(\b[^\s]+\b)? (\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?\s?(\b[^\s]+\b)?",kwf_var1,kwf_var2, kwf_var3,kwf_var4,kwf_var5,kwf_var6,kwf_var7,kwf_var8,kwf_var9,kwf_var10))
+#say EQ: @eq_leap
+#LOO 1,8 {
+  temp= "@kwf_var"+%i
+  #if (@temp = "a" | @temp = "A" | @temp = "an" | @temp = "of" | @temp = "some" | @temp = "pair" | @temp = "set" | @temp = "made"| @temp = "large"| @temp = "from" | @temp = "with" | @temp = "leathery" | @temp = "lensed"  | @temp = "") {
+    #if (%i = 1) {
+      kwf_var1 = 0
+    }
+    #if (%i = 2) {
+      kwf_var2 = 0
+    }
+    #if (%i = 3) {
+      kwf_var3 = 0
+    }
+    #if (%i = 4) {
+      kwf_var4 = 0
+    }
+    #if (%i = 5) {
+      kwf_var5 = 0
+    }
+    #if (%i = 6) {
+      kwf_var6 = 0
+    }
+    #if (%i = 7) {
+      kwf_var7 = 0
+    }
+    #if (%i = 8) {
+      kwf_var8 = 0
+    }
+  }
+}
+#if (@armory_debug > 0) {
+  #say V1:@kwf_var1 V2:@kwf_var2 V3:@kwf_var3 V4:@kwf_var4 V5:@kwf_var5 V6:@kwf_var6 V7:@kwf_var7 V8:@kwf_var8
+}
+#if (@kwf_var1 != 0 ) {
+  kw_ego = @kwf_var1
+}
+#if (@kwf_var2 != 0 ) {
+  kw_ego = @kwf_var2
+}
+#if (@kwf_var1 != 0 & @kwf_var2 != 0 ) {
+  kw_ego = @kwf_var1+"-"+@kwf_var2
+}
+#if (@kwf_var2 != 0 & @kwf_var3 != 0 ) {
+  kw_ego = @kwf_var2+"-"+@kwf_var3
+}
+#if (@kwf_var2 != 0 & @kwf_var4 != 0 ) {
+  kw_ego = @kwf_var2+"-"+@kwf_var4
+}
+#if (@kwf_var2 != 0 & @kwf_var5 != 0 ) {
+  kw_ego = @kwf_var2+"-"+@kwf_var5
+}
+  
+#if (@kwf_var3 != 0 & @kwf_var4 != 0 ) {
+  kw_ego = @kwf_var3+"-"+@kwf_var4
+}
+#if (@var3 != 0 & @var5 != 0 ) {
+  kw_ego = @kwf_var3+"-"+@kwf_var5
+}
+#if (@kwf_var3 != 0 & @kwf_var6 != 0 ) {
+  kw_ego = @kwf_var3+"-"+@kwf_var6
+}
+
+#if (@kwf_var4 != 0 & @kwf_var5 != 0 ) {
+  kw_ego = @kwf_var4+"-"+@kwf_var5
+}
+#if (@kwf_var4 != 0 & @kwf_var6 != 0 ) {
+  kw_ego = @kwf_var4+"-"+@kwf_var6
+}
+#if (@kwf_var4 != 0 & @kwf_var7 != 0 ) {
+  kw_ego = @kwf_var4+"-"+@kwf_var7
+}
+#if (@armory_debug > 0) {
+  #echo Keyword Finder: @kw_ego
+}
+cnt_kw = (@cnt_kw + 1)
+kwf_var1 = "";kwf_var2 = "";kwf_var3 = "";kwf_var4 = "";kwf_var5 = "";kwf_var6 = "";kwf_var7 = "";kwf_var8 = ""
+]]></value>
+      </alias>
+      <var name="eq_leap">A large golden ring with a royal seal</var>
+      <var name="kwf_var1" type="Literal"/>
+      <var name="kwf_var2" type="Literal"/>
+      <var name="kwf_var3" type="Literal"/>
+      <var name="kwf_var4" type="Literal"/>
+      <var name="kwf_var5" type="Literal"/>
+      <var name="kwf_var6" type="Literal"/>
+      <var name="kwf_var7" type="Literal"/>
+      <var name="kwf_var8" type="Literal"/>
+      <var name="kwf_var9"/>
+      <var name="kwf_var10">37</var>
+      <var name="kw_ego">ring-royal</var>
+    </class>
   </class>
 </cmud>
