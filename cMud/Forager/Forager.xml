@@ -378,12 +378,12 @@ config_trig_junk = 0
       </alias>
       <var name="fvar7"/>
       <var name="food_type" type="StringList">
-        <value>fruit|seed|pumpkin|strawberry|flower|leaf|blackberry|lichen|grapes|strip|cone|strawberries|blackberries|nuts|almond|grape</value>
-        <json>["fruit","seed","pumpkin","strawberry","flower","leaf","blackberry","lichen","grapes","strip","cone","strawberries","blackberries","nuts","almond","grape"]</json>
+        <value>fruit|seed|pumpkin|strawberry|flower|leaf|blackberry|lichen|grapes|strip|cone|strawberries|blackberries|nuts|almond|grape|wildrose|pinion|oleander|cactus</value>
+        <json>["fruit","seed","pumpkin","strawberry","flower","leaf","blackberry","lichen","grapes","strip","cone","strawberries","blackberries","nuts","almond","grape","wildrose","pinion","oleander","cactus"]</json>
       </var>
       <var name="fvar12">@fvar7</var>
       <var name="status_food">0</var>
-      <var name="keyword_food">blackberries</var>
+      <var name="keyword_food" type="Literal"/>
       <var name="config_autojunk">1</var>
       <var name="fvar8">14</var>
       <trigger priority="3870" trigontrig="false">
@@ -533,6 +533,7 @@ status_food = 0</value>
       <var name="cnt_wildrose">0</var>
       <var name="cnt_pinion">0</var>
       <var name="cnt_oleander">0</var>
+      <var name="cnt_cactus">0</var>
     </class>
     <trigger priority="4220">
       <pattern>Can't really forage for food...here.</pattern>
@@ -557,7 +558,8 @@ status_food = 0</value>
 #CALL %roomcol(,"tan") 
 #CALL %maplocked( 1)
 @mv_dir
-cnt_qual = 0</value>
+cnt_qual = 0
+status_update = 1</value>
       </trigger>
       <trigger priority="4230">
         <pattern>This seems like a poor place to forage.</pattern>
@@ -565,7 +567,8 @@ cnt_qual = 0</value>
 #CALL %roomcol(,"tan") 
 #CALL %maplocked( 1)
 @mv_dir
-cnt_qual = 0</value>
+cnt_qual = 0
+status_update = 1</value>
       </trigger>
       <trigger priority="4230">
         <pattern>This seems like a terrible place to forage.</pattern>
@@ -573,7 +576,8 @@ cnt_qual = 0</value>
 #CALL %roomcol(,"tan") 
 #CALL %maplocked( 1)
 @mv_dir
-cnt_qual = 0</value>
+cnt_qual = 0
+status_update = 1</value>
       </trigger>
       <trigger priority="4230">
         <pattern>This seems like a good place to forage.</pattern>
@@ -581,7 +585,8 @@ cnt_qual = 0</value>
 #CALL %roomcol(,"cyan") 
 #CALL %maplocked( 1)
 @mv_dir
-cnt_qual = 0</value>
+cnt_qual = 0
+status_update = 1</value>
       </trigger>
       <trigger priority="4230">
         <pattern>This seems like a great place to forage.</pattern>
@@ -589,7 +594,8 @@ cnt_qual = 0</value>
 #CALL %roomcol(,"green") 
 #CALL %maplocked( 1)
 @mv_dir
-cnt_qual = 0</value>
+cnt_qual = 0
+status_update = 1</value>
       </trigger>
       <trigger priority="4230" case="true" enabled="false">
         <pattern>At a curve in the river</pattern>
@@ -609,6 +615,7 @@ cnt_qual = 0</value>
 #CALL %roomcol(,"lightblue") 
 #echo %maplocked( 1)</value>
       </trigger>
+      <var name="status_update">0</var>
     </class>
     <var name="mv_dir">n</var>
     <var name="auto_forage">1</var>

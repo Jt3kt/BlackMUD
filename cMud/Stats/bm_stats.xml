@@ -64,7 +64,7 @@ per_hp = (@avg_hp*100)
     </stat>
     <trigger priority="190">
       <pattern>You receive (%d) experience.</pattern>
-      <value>#if (%1 != @xp_temp) {
+      <value><![CDATA[#if (%1 != @xp_temp) {
   to_lev = @to_lev - %1
   xp = @xp + %1
   xp_gained = @xp_gained + %1
@@ -74,10 +74,30 @@ per_hp = (@avg_hp*100)
   xpcalc
   //Track xp to prevent duplicate gain
   xp_temp = %1
+  #if (@auto_forage = 1 & @mv_dir != "" & @forage_bot = 0 & @status_update = 0) {
+    #if (%1 < 78000) {
+      #CALL %maplocked( 0) 
+      #CALL %roomcol(,"tan") 
+      #CALL %maplocked( 1)
+      @mv_dir
+      forage
+      cnt_qual = 0
+    }
+    #if (%1 >= 950000) {
+      #CALL %maplocked( 0) 
+      #CALL %roomcol(,"green") 
+      #CALL %maplocked( 1)
+      @mv_dir
+      forage
+      cnt_qual = 0
+    }
+  } {
+    status_update = 0
+  }
 } {
   xp_temp = 0
 }
-</value>
+]]></value>
     </trigger>
     <trigger priority="210">
       <pattern>You have scored %1 exp, and have %2 gold coins.</pattern>
