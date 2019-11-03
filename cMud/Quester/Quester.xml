@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<cmud>
+  <class name="Quester">
+    <alias name="gt">
+      <value>#CASE %1 
+{
+  #say
+} 
+{
+  #say 2
+} 
+{
+ #say 3
+}</value>
+    </alias>
+    <alias name="rig">
+      <value>keyword = %1
+min = %2
+max = %3
+#if (%4 != "") {
+  desc = %4
+}
+#loo @min,@max {"@"tohit %{i}.@keyword 50 }
+#loo @min,@max {"@"todam %{i}.@keyword 65 }
+#loo @min,@max {"@"hp %{i}.@keyword 8500}
+#loo @min,@max {"@"exp %{i}.@keyword 4500000}
+#loo @min,@max {string char %{i}.@keyword @desc}
+#loo @min,@max {setbit %{i}.@keyword action meta}
+#loo @min,@max {setbit %{i}.@keyword affection sanctuary}</value>
+    </alias>
+    <var name="keyword" type="Literal">goblin-raider</var>
+    <var name="max">7</var>
+    <var name="min">1</var>
+    <class name="ZoneBuilder">
+      <alias name="cmaze" enabled="false">
+        <value><![CDATA[svnum = 92590
+r1_cnt = 0
+r2_cnt = 0
+r3_cnt = 0
+r4_cnt = 0
+#LOO 1,%1 {
+  #if (%i < 5) {
+    rdisc = 1
+    r1_cnt = @r1_cnt + 1
+  } {
+    #if ( %i > 4 && %i < %1 ) {
+      rdisc = %random(1,3)
+      #say Random Description is @rdisc
+      #if ( @rdisc = 1 ) {
+        r1_cnt = @r1_cnt + 1
+      }
+      #if ( @rdisc = 2 ) {
+        #if ( @r2_cnt < 5 ) {
+          rdisc = 2
+          r2_cnt = @r2_cnt + 1
+        } {
+          rdisc = 1
+          r1_cnt = @r1_cnt + 1
+        }
+      }
+      #if ( @rdisc = 3 ) {
+        #if ( @r3_cnt < 5 ) {
+          rdisc = 3
+          r3_cnt = @r3_cnt + 1
+        } {
+          rdisc = 1
+          r1_cnt = @r1_cnt + 1
+        }
+      }
+    } {
+      rdisc = 4
+      r4_cnt = 1
+    }
+  }
+  rvar = "@r"@rdisc"_disc"
+  goto @svnum
+  redit
+  #if (@rdisc = 1) {
+    3
+    7
+    #cr
+    4
+    11
+  }
+  #if (@rdisc = 2) {
+    3
+    7
+    3
+    #cr
+    4
+    6
+  }
+  #if (@rdisc = 3) {
+    3
+    7
+    1
+    4
+    3
+    #cr
+    4
+    9
+  }
+  #if (@rdisc = 4) {
+    3
+    7
+    3
+    #cr
+    4
+    1
+  }
+  5 //Exits
+  %random(1,6) // 1N 2E 3S 4w 5u 6d
+  // 1Door 2Closed 3Locked 4Secret 5RSLocked 6Pickproof 7Climb 8Bouncer CR-Exit
+  #cr
+  1 // Destination
+  uvnum
+  @svnum // Destination room #
+  // 3 Keyword (door)
+  // Keyword
+  // 2 Door key
+  // vnum
+  #cr // Continue from Other Exit Info
+  #cr // Continue from adding exits
+  1
+  @rvar.1
+  2
+  #LOO 2,%numitems(@r1_disc) {
+    @rvar.%j
+  }
+  #cr // Continue to finish room build
+}
+]]></value>
+      </alias>
+      <var name="svnum">93381</var>
+      <alias name="uvnum">
+        <value>svnum = @svnum + 1
+</value>
+      </alias>
+      <var name="r1_disc" type="StringList">
+        <value>Within a temporal maze|Bursts of colors and energy swirl around as you make your way down, around,|and all but upside down this maze of cosmic energy. Your senses dull and|your mind goes blank as your senses are in recoil from the immensity of the|chaos surround. As you begin to collect your bearings a tug on the back of|your mind screams at you.. this is not someplace you want to be!|@</value>
+        <json>["Within a temporal maze","Bursts of colors and energy swirl around as you make your way down, around,","and all but upside down this maze of cosmic energy. Your senses dull and","your mind goes blank as your senses are in recoil from the immensity of the","chaos surround. As you begin to collect your bearings a tug on the back of","your mind screams at you.. this is not someplace you want to be!","@"]</json>
+      </var>
+      <var name="r2_disc" type="StringList">
+        <value>Standing on a plateau of cosmic energy|Stepping out of the chaotic storm you find yourself on a plateau of encapsulated energy.|Within your peripheral vision the ground folds in upon itself while shimmering and shaking.|A nearly endless spanse stands ahead of you as you notice a solitary ball of red energy|off in the far distance.  As you take a step forward your reality shifts...|@</value>
+        <json>["Standing on a plateau of cosmic energy","Stepping out of the chaotic storm you find yourself on a plateau of encapsulated energy.","Within your peripheral vision the ground folds in upon itself while shimmering and shaking.","A nearly endless spanse stands ahead of you as you notice a solitary ball of red energy","off in the far distance.  As you take a step forward your reality shifts...","@"]</json>
+      </var>
+      <var name="r3_disc" type="StringList">
+        <value>Within the void|You find yourself standing in a place of nothingness...|@</value>
+        <json>["Within the void","You find yourself standing in a place of nothingness...","@"]</json>
+      </var>
+      <var name="r4_disc" type="StringList">
+        <value>Standing within a shallow pool|The pool stretches out as far as the eye can see of a deep silver that captures the|light surround.  It shimmers and shines in an almost blindingly brilliant fashion.|Periodically a small ripple of rings will seemingly spring to life across the smooth|surface.|@</value>
+        <json>["Standing within a shallow pool","The pool stretches out as far as the eye can see of a deep silver that captures the","light surround.  It shimmers and shines in an almost blindingly brilliant fashion.","Periodically a small ripple of rings will seemingly spring to life across the smooth","surface.","@"]</json>
+      </var>
+      <var name="rdisc">4</var>
+      <var name="r1_cnt">8</var>
+      <var name="r2_cnt">3</var>
+      <var name="r3_cnt">3</var>
+      <var name="r4_cnt">1</var>
+      <var name="vnum_root">93379</var>
+      <var name="vnum_broot">0</var>
+      <alias name="cmz" enabled="false">
+        <value><![CDATA[svnum = 93150
+r1_cnt = 0
+r2_cnt = 0
+r3_cnt = 0
+r4_cnt = 0
+vnum_branch = 0
+vnum_root = 0
+tmp_inc = 0
+vnum_broot= 0
+//branch_list = 0
+#LOO 1,%1 {
+  #say -- LOOP BEGIN --
+  #if (%i < 5) {
+    rdisc = 1
+    r1_cnt = @r1_cnt + 1
+  } {
+    #if ((%i > 4)AND(%i < %1)) { //Define rooms between start and finish
+      rdisc = %random(1,3)
+      #say Random Description is @rdisc
+      #if ( @rdisc = 1 ) {
+        r1_cnt = @r1_cnt + 1
+      }
+      #if ( @rdisc = 2 ) {
+        #if ( @r2_cnt < 5 ) {
+          rdisc = 2
+          r2_cnt = @r2_cnt + 1
+        } {
+          rdisc = 1
+          r1_cnt = @r1_cnt + 1
+        }
+      }
+      #if ( @rdisc = 3 ) {
+        #if ( @r3_cnt < 5 ) {
+          rdisc = 3
+          r3_cnt = @r3_cnt + 1
+        } {
+          rdisc = 1
+          r1_cnt = @r1_cnt + 1
+        }
+      }
+    } {
+      rdisc = 4
+      r4_cnt = 1
+    }
+  }
+  branch_status = %ismember(@svnum,@branch_list)
+  #if ((@vnum_branch = 1)) {
+    #say GO BACK TO ORIGIN SET - GO BACK TO ORIGIN SET
+    #say ivar = %i - tmp_inc = @tmp_inc
+    goto @vnum_root // Go back to originating branch root
+    vnum_branch = 0
+  } {
+    #say GOING TO NEW ROOM - GOING TO NEW ROOM
+    goto @svnum
+    #if ((@vnum_broot = 1)) {
+      vnum_branch = 1
+    }
+  }
+  #if ((%random(1,100)<70)AND(%i > 4)AND(@vnum_broot = 0)AND(@branch_status<1)) { //Logic to determine branches
+    #say NEW BRANCH
+    #say ivar = %i - tmp_inc = @tmp_inc
+    vnum_broot = 1 //Set branch root = true
+    vnum_root = @svnum //Record branch's root room
+    #var branch_list %additem(@svnum,@branch_list)
+    #say UPDATED BRANCH_LIST @branch_list
+    #say BRANCH ROOT SET to @vnum_root
+    tmp_inc = %i
+  }  
+  rvar = "@r"@rdisc"_disc"
+  redit
+  #if (@rdisc = 1) {
+    3 // Set Flags
+    #LOO 1,%numitems(@r1_flags) {
+      @r1_flags.%j
+    }
+    #cr
+    4 // Set Sector
+    @r1_sect
+  }
+  #if (@rdisc = 2) {
+    3 // Set Flags
+    #LOO 1,%numitems(@r2_flags) {
+      @r2_flags.%j
+    }
+    #cr
+    4 // Set Sector
+    @r2_sect
+  }
+  #if (@rdisc = 3) {
+    3 // Set Flags
+    #LOO 1,%numitems(@r3_flags) {
+      @r3_flags.%j
+    }
+    #cr
+    4 // Set Sector
+    @r3_sect
+  }
+  #if (@rdisc = 4) {
+    3 // Set Flags
+    #LOO 1,%numitems(@r4_flags) {
+      @r4_flags.%j
+    }
+    #cr
+    4 // Set Sector
+    @r4_sect
+  }
+  5 //Exits
+  #if ((@vnum_branch = 1)AND(@tmp_inc != %i)) {
+    vnum_dir = %random(1,6) // 1N 2E 3S 4w 5u 6d
+    @vnum_dir
+  } {
+    vnum_temp = %random(1,6) // 1N 2E 3S 4w 5u 6d
+    #UNTIL (@vnum_temp != @vnum_dir) {
+      vnum_temp = %random(1,6) // 1N 2E 3S 4w 5u 6d
+    }
+    @vnum_temp
+  }
+  // 1Door 2Closed 3Locked 4Secret 5RSLocked 6Pickproof 7Climb 8Bouncer CR-Exit
+  #cr
+  
+  #if ((@vnum_branch = 1)AND(@tmp_inc != %i)) {
+    1 // Destination
+    #say SETTING DESTINATION  back to ROOT - Current NUM: @svnum - Root NUM: @vnum_root
+    @vnum_root // Destination room #
+    vnum_broot = 0
+    // 3 Keyword (door)
+    // Keyword
+    // 2 Door key
+    // vnum
+    #cr // Continue from Other Exit Info
+    #cr // Continue from adding exits
+    #say UPDATING VNUM by 1 - UPDATING VNUM by 1
+    uvnum //Update vnum by 1
+  } {
+    1 // Destination
+    #say SETTING DESTINATION TO NEW ROOM - Previous VNUM: @svnum
+    uvnum //Update vnum by 1
+    #say SETTING DESTINATION TO NEW ROOM - New VNUM: @svnum
+    @svnum // Destination room #
+    // 3 Keyword (door)
+    // Keyword
+    // 2 Door key
+    // vnum
+    #cr // Continue from Other Exit Info
+    #cr // Continue from adding exits
+  }
+  // Room description section
+  1 // Set room title
+  @rvar.1 
+  2 // Set room description
+  #LOO 2,%numitems(@rvar) {
+    @rvar.%j
+  }
+  #cr // Finish room build
+  #say -- LOOP FIN --
+}
+#loo 1,%numitems(@branch_list) {
+  #DELITEM branch_list 1
+}
+]]></value>
+      </alias>
+      <var name="r1_flags" type="StringList">
+        <value>7</value>
+        <json>[7]</json>
+      </var>
+      <var name="r1_sect">11</var>
+      <var name="r2_flags" type="StringList">
+        <value>7|3</value>
+        <json>[7,3]</json>
+      </var>
+      <var name="r3_flags" type="StringList">
+        <value>7|1|4|3</value>
+        <json>[7,1,4,3]</json>
+      </var>
+      <var name="r4_flags" type="StringList">
+        <value>7|3</value>
+        <json>[7,3]</json>
+      </var>
+      <var name="r2_sect">6</var>
+      <var name="r3_sect">9</var>
+      <var name="r4_sect">1</var>
+      <var name="vnum_dir">6</var>
+      <var name="vnum_temp">2</var>
+      <var name="tmp_inc">13</var>
+      <var name="branch_list" type="StringList">
+        <value>93373|93374|93378|93379</value>
+        <json>[93373,93374,93378,93379]</json>
+      </var>
+      <var name="branch_status">0</var>
+      <var name="vnum_branch">0</var>
+      <alias name="cm">
+        <value><![CDATA[svnum = 93370
+r1_cnt = 0
+r2_cnt = 0
+r3_cnt = 0
+r4_cnt = 0
+vnum_branch = 0
+vnum_root = 0
+tmp_inc = 0
+linkback_dir = 0
+vnum_broot= 0
+//branch_list = 0
+#LOO 1,%1 {
+  #say -- LOOP BEGIN -- svnum: @svnum -- i: %i
+  #if (%i < 5) {
+    rdisc = 1
+    r1_cnt = @r1_cnt + 1
+  } {
+    #if ((%i > 4)AND(%i < %1)) { //Define rooms between start and finish
+      rdisc = %random(1,3)
+      #say Random Description is @rdisc
+      #if ( @rdisc = 1 ) {
+        r1_cnt = @r1_cnt + 1
+      }
+      #if ( @rdisc = 2 ) {
+        #if ( @r2_cnt < 5 ) {
+          rdisc = 2
+          r2_cnt = @r2_cnt + 1
+        } {
+          rdisc = 1
+          r1_cnt = @r1_cnt + 1
+        }
+      }
+      #if ( @rdisc = 3 ) {
+        #if ( @r3_cnt < 5 ) {
+          rdisc = 3
+          r3_cnt = @r3_cnt + 1
+        } {
+          rdisc = 1
+          r1_cnt = @r1_cnt + 1
+        }
+      }
+    } {
+      rdisc = 4
+      r4_cnt = 1
+    }
+  }
+  branch_status = %ismember(@tmp_vnum,@branch_list)
+  #if ((@vnum_branch = 1)) {
+    #say GO BACK TO ORIGIN SET - GO BACK TO ORIGIN SET
+    #say ivar = %i - tmp_inc = @tmp_inc
+    goto @vnum_root // Go back to originating branch root
+    tmp_vnum = @vnum_root
+    #say SET: vnum_branch = 0
+    vnum_branch = 0
+  } {
+    #say GOING TO NEW ROOM - GOING TO NEW ROOM
+    goto @svnum
+    tmp_vnum = @svnum
+    #if ((@vnum_broot = 1)) {
+      #say SET: vnum_branch = 1
+      vnum_branch = 1
+    }
+  }
+  #if ((%random(1,100)<50)AND(%i > 1)AND(@vnum_broot = 0)AND(@branch_status<1)) { //Logic to determine branches
+    #say NEW BRANCH
+    #say SET: vnum_broot = 1
+    vnum_broot = 1 //Set branch root = true
+    vnum_root = @svnum //Record branch's root room
+    #var branch_list %additem(@svnum,@branch_list)
+    tmp_inc = %i
+  }  
+  rvar = "@r"@rdisc"_disc"
+  redit
+  #say SECTION BEGIN - FLAGS
+  #say Branch Status = @branch_status
+  #if ((@branch_status = 0)) {
+    #if (@rdisc = 1) {
+      #say Setting rdisc1 flags: @r1_flags
+      3 // Set Flags
+      #LOO 1,%numitems(@r1_flags) {
+        @r1_flags.%j
+      }
+      #cr
+      4 // Set Sector
+      @r1_sect
+    }
+    #if (@rdisc = 2) {
+      #say Setting rdisc2 flags: @r2_flags
+      3 // Set Flags
+      #LOO 1,%numitems(@r2_flags) {
+        @r2_flags.%j
+      }
+      #cr
+      4 // Set Sector
+      @r2_sect
+    }
+    #if (@rdisc = 3) {
+      #say Setting rdisc3 flags: @r3_flags
+      3 // Set Flags
+      #LOO 1,%numitems(@r3_flags) {
+        @r3_flags.%j
+      }
+      #cr
+      4 // Set Sector
+      @r3_sect
+    }
+    #if (@rdisc = 4) {
+      #say Setting rdisc4 flags: @r4_flags
+      3 // Set Flags
+      #LOO 1,%numitems(@r4_flags) {
+        @r4_flags.%j
+      }
+      #cr
+      4 // Set Sector
+      @r4_sect
+    }
+  }
+  #say SECTION END - FLAGS
+  #say SECTION BEGIN - EXITS
+  5 //Exits
+  #if ((@vnum_branch = 1)) {
+    #say 
+    vnum_dir = %random(1,6) // 1N 2E 3S 4w 5u 6d
+    #if (@linkback_dir != 0) {
+      @linkback_dir
+      #say Linkback exit: @linkback_dir
+    } {
+      @vnum_dir
+      #say Rolled exit: @vnum_dir
+    }
+  } {
+    vnum_dir = %random(1,6) // 1N 2E 3S 4w 5u 6d
+    #say Rolling exit: @vnum_dir
+    vnum_temp = %random(1,6) // 1N 2E 3S 4w 5u 6d
+    //#UNTIL (@vnum_temp != @vnum_dir) {
+    //  vnum_temp = %random(1,6) // 1N 2E 3S 4w 5u 6d
+    //}
+    //@vnum_temp
+    #if (@vnum_dir != "") {
+      #if (@vnum_dir = 1) { 
+        linkback_dir = 3
+        #say Set linkback dir: @linkback_dir
+      }
+      #if (@vnum_dir = 2) { 
+        linkback_dir = 4
+        #say Set linkback dir: @linkback_dir
+      }
+      #if (@vnum_dir = 3) { 
+        linkback_dir = 1
+        #say Set linkback dir: @linkback_dir
+      }
+      #if (@vnum_dir = 4) { 
+        linkback_dir = 2
+        #say Set linkback dir: @linkback_dir
+      }
+      #if (@vnum_dir = 5) { 
+        linkback_dir = 6
+        #say Set linkback dir: @linkback_dir
+      }
+      #if (@vnum_dir = 6) { 
+        linkback_dir = 5
+        #say Set linkback dir: @linkback_dir
+      }
+    }
+    @vnum_dir
+  }
+  // 1Door 2Closed 3Locked 4Secret 5RSLocked 6Pickproof 7Climb 8Bouncer CR-Exit
+  #cr
+  #if ((@vnum_branch = 1)AND(@tmp_inc != %i)) {
+    1 // Destination
+    #say SETTING DESTINATION  back to ROOT - Current NUM: @svnum - Root NUM: @vnum_root
+    @vnum_root // Destination room #
+    #say SET: vnum_broot = 0
+    vnum_broot = 0
+    // 3 Keyword (door)
+    // Keyword
+    // 2 Door key
+    // vnum
+    #cr // Continue from Other Exit Info
+    #cr // Continue from adding exits
+    #say UPDATING VNUM by 1 - UPDATING VNUM by 1
+    //uvnum //Update vnum by 1
+  } {
+    1 // Destination
+    #say SETTING DESTINATION TO NEW ROOM - Previous VNUM: @svnum
+    uvnum //Update vnum by 1
+    #say SETTING DESTINATION TO NEW ROOM - New VNUM: @svnum
+    @svnum // Destination room #
+    // 3 Keyword (door)
+    // Keyword
+    // 2 Door key
+    // vnum
+    #cr // Continue from Other Exit Info
+    #cr // Continue from adding exits
+  }
+  #say SECTION END - EXITS
+  // Room description section
+  1 // Set room title
+  @rvar.1 
+  2 // Set room description
+  #LOO 2,%numitems(@rvar) {
+    @rvar.%j
+  }
+  #cr // Finish room build
+  #say -- LOOP FIN -- svnum: @svnum -- i: %i
+}
+#loo 1,%numitems(@branch_list) {
+  #DELITEM branch_list 1
+}
+]]></value>
+      </alias>
+      <var name="tmp_vnum">93379</var>
+      <var name="linkback_dir">5</var>
+    </class>
+    <var name="desc"/>
+  </class>
+</cmud>

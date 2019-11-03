@@ -40,10 +40,10 @@
     <var name="eq_light" type="Literal"/>
     <var name="eq_shield">a reflective brass buckler adorned with silver spikes (excellent)..It glows softly..It hums powerfully</var>
     <var name="eq_back">a massive diamond-tipped claymore with an iron hilt..It hums powerfully</var>
-    <var name="eq_sheath1">a steel mace pulsing with energy..It glows softly..It hums powerfully</var>
-    <var name="eq_sheath2" type="Literal"/>
+    <var name="eq_sheath1" type="Literal"/>
+    <var name="eq_sheath2">a steel mace pulsing with energy..It glows softly..It hums powerfully</var>
     <var name="kw_sheath1" type="Literal"/>
-    <var name="kw_sheath2" type="Literal"/>
+    <var name="kw_sheath2">pulsing-glows</var>
     <var name="kw_back">claymore-iron</var>
     <var name="kw_light">light-sphere</var>
     <var name="kw_held" type="Literal"/>
@@ -123,7 +123,7 @@
       <var name="ring2_5">emerald-ring</var>
       <var name="ring1_5">emerald-ring</var>
       <var name="neck2_5">onyx-necklace</var>
-      <var name="neck1_5">silver-pendant</var>
+      <var name="neck1_5">onyx-necklace</var>
       <var name="light_5">brass-lamp</var>
       <var name="legs_5">rough-pants</var>
       <var name="held_5">yellow-pebble</var>
@@ -131,29 +131,29 @@
       <var name="hands_5">black-gloves</var>
       <var name="feet_5">ancient-hide</var>
       <var name="face_5">cold-glasses</var>
-      <var name="body_5">ever-changing-armor</var>
+      <var name="body_5">leather-jerkin</var>
       <var name="back_5"/>
       <var name="arms_5">sleeves-volcanic</var>
       <var name="about_5">gray-cape</var>
     </class>
     <class name="Hybrid">
-      <var name="wrist2_3">scaled-bracer</var>
-      <var name="wrist1_3">scaled-bracer</var>
+      <var name="wrist2_3">bracelet-carved</var>
+      <var name="wrist1_3">bracelet-carved</var>
       <var name="waist_3">belt-skulls</var>
-      <var name="skirt_3">skin-skirt</var>
-      <var name="shield_3">shield-eagle</var>
+      <var name="skirt_3">skin-snake</var>
+      <var name="shield_3">brass-shield</var>
       <var name="ring2_3">royal-seal</var>
       <var name="ring1_3">white-ring</var>
       <var name="neck2_3">white-amulet</var>
-      <var name="neck1_3">white-amulet</var>
+      <var name="neck1_3">medallion-Phaet</var>
       <var name="light_3"/>
-      <var name="legs_3">scale-leggings</var>
-      <var name="held_3">adamantium-sphere</var>
+      <var name="legs_3">green-leggings</var>
+      <var name="held_3">demon-horn</var>
       <var name="head_3">diamond-pot</var>
-      <var name="hands_3">black-gloves</var>
+      <var name="hands_3">platinum-gauntlets</var>
       <var name="feet_3">ancient-hide</var>
       <var name="face_3">face-plate</var>
-      <var name="body_3">iron-cuirass</var>
+      <var name="body_3">black-armor</var>
       <var name="back_3"/>
       <var name="arms_3">black-armbands</var>
       <var name="about_3">gray-cape</var>
@@ -2352,7 +2352,7 @@ conf_ins_back = 0]]></value>
   conf_ins_sheath = (@conf_ins_sheath + 1)
 }]]></value>
       </trigger>
-      <var name="cnt_sheath">1</var>
+      <var name="cnt_sheath">0</var>
       <trigger priority="500">
         <pattern>&lt;wielded right handed&gt;%s%1</pattern>
         <value><![CDATA[#if (@conf_ins_wright = 1) {
@@ -3312,27 +3312,27 @@ armor ins
     <var name="conf_ins_light">0</var>
     <var name="conf_ins_feet">0</var>
     <var name="kw_swap"/>
-    <var name="conf_ins_2hand">0</var>
-    <var name="conf_ins_abody">0</var>
-    <var name="conf_ins_alegs">0</var>
-    <var name="conf_ins_arms">0</var>
-    <var name="conf_ins_back">0</var>
-    <var name="conf_ins_body">0</var>
-    <var name="conf_ins_face">0</var>
-    <var name="conf_ins_feet">0</var>
-    <var name="conf_ins_hands">0</var>
-    <var name="conf_ins_head">0</var>
-    <var name="conf_ins_held">0</var>
-    <var name="conf_ins_legs">0</var>
-    <var name="conf_ins_light">0</var>
-    <var name="conf_ins_neck">0</var>
-    <var name="conf_ins_ring">0</var>
-    <var name="conf_ins_sheath">0</var>
-    <var name="conf_ins_shield">0</var>
-    <var name="conf_ins_waist">0</var>
-    <var name="conf_ins_wleft">0</var>
-    <var name="conf_ins_wright">0</var>
-    <var name="conf_ins_wrist">0</var>
+    <var name="conf_ins_2hand"/>
+    <var name="conf_ins_abody"/>
+    <var name="conf_ins_alegs"/>
+    <var name="conf_ins_arms"/>
+    <var name="conf_ins_back"/>
+    <var name="conf_ins_body"/>
+    <var name="conf_ins_face"/>
+    <var name="conf_ins_feet"/>
+    <var name="conf_ins_hands"/>
+    <var name="conf_ins_head"/>
+    <var name="conf_ins_held"/>
+    <var name="conf_ins_legs"/>
+    <var name="conf_ins_light"/>
+    <var name="conf_ins_neck"/>
+    <var name="conf_ins_ring"/>
+    <var name="conf_ins_sheath"/>
+    <var name="conf_ins_shield"/>
+    <var name="conf_ins_waist"/>
+    <var name="conf_ins_wleft"/>
+    <var name="conf_ins_wright"/>
+    <var name="conf_ins_wrist"/>
     <var name="sum_conf_ns">0</var>
     <alias name="wear_eq">
       <value><![CDATA[#if (%1 = "1") {  
